@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config/site';
+---
+
+<Layout
+  title="Company and privacy"
+  description="Company identification and privacy information for the Paul Creos website."
+>
+  <main id="main-content">
+    <section class="content-section legal-content" aria-labelledby="legal-heading">
+      <p class="eyebrow">Company & privacy</p>
+      <h1 id="legal-heading">Legal information</h1>
+
+      <dl class="company-details">
+        <div><dt>Company name</dt><dd>CREOS s.r.o.</dd></div>
+        <div><dt>Registered address</dt><dd>Obchodna 182, 078 01 Secovce, Slovakia</dd></div>
+        <div><dt>Identification number (IČO)</dt><dd>47422475</dd></div>
+        <div><dt>Tax IDs</dt><dd>DIČ 2023902584, IČ DPH SK2023902584</dd></div>
+        <div><dt>Email</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd></div>
+        <div><dt>Website</dt><dd><a href={SITE.url}>{SITE.url}</a></dd></div>
+      </dl>
+
+      <p class="legal-note">
+        The company is registered in the Commercial Register of the District Court
+        Košice I, section Sro, entry no. 33529/V.
+      </p>
+
+      <h2>Data protection and external services</h2>
+      <p>
+        This website does not use cookies, analytics, contact forms, or tracking
+        technologies. It does not collect personal information directly. Links to
+        Etsy, Instagram, Pinterest, and other external services are governed by the
+        privacy policies of those services.
+      </p>
+
+      <p lang="sk">
+        Táto webová stránka nepoužíva cookies, analytické nástroje, kontaktné
+        formuláre ani sledovacie technológie a priamo nezhromažďuje osobné údaje.
+        Odkazy na Etsy, Instagram, Pinterest a ďalšie externé služby sa riadia
+        pravidlami ochrany súkromia príslušných služieb.
+      </p>
+    </section>
+  </main>
+</Layout>

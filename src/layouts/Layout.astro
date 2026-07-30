@@ -1,0 +1,97 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: URL | string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  canonical = new URL(Astro.url.pathname, SITE.url),
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+} = Astro.props;
+
+const pageTitle = title === SITE.name || title.includes(`| ${SITE.name}`)
+  ? title
+  : `${title} | ${SITE.name}`;
+const canonicalUrl = canonical instanceof URL ? canonical : new URL(canonical, SITE.url);
+const socialImage = new URL('/og-paul-creos.jpg', SITE.url);
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#paul-creos`,
+      name: SITE.name,
+      url: SITE.url,
+      email: SITE.email,
+      worksFor: { '@id': `${SITE.url}/#organization` },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: 'CREOS',
+      legalName: 'CREOS s.r.o.',
+      url: SITE.url,
+      email: SITE.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Obchodna 182',
+        postalCode: '078 01',
+        addressLocality: 'Secovce',
+        addressCountry: 'SK',
+      },
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#463f3a" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} articles`} href="/rss.xml" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1731" />
+    <meta property="og:image:height" content="909" />
+    <meta property="og:image:alt" content="Paul Creos — Craft, technology, and the living Earth" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body class="bg-background">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>

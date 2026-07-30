@@ -1,0 +1,111 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import gallery001 from '../images/gallery/gallery-001.png';
+import gallery002 from '../images/gallery/gallery-002.png';
+import gallery003 from '../images/gallery/gallery-003.png';
+import gallery004 from '../images/gallery/gallery-004.png';
+import gallery005 from '../images/gallery/gallery-005.png';
+import gallery006 from '../images/gallery/gallery-006.png';
+
+const galleryItems = [
+  {
+    image: gallery001,
+    alt: 'Oak coffee table with carved CNC details',
+    caption: 'An elegant coffee table made from solid oak with intricately carved CNC details.',
+    material: 'Oak',
+  },
+  {
+    image: gallery002,
+    alt: 'Set of handcrafted beechwood serving bowls',
+    caption: 'Deep serving bowls crafted from beechwood, suitable for nuts and snacks.',
+    material: 'Beech',
+  },
+  {
+    image: gallery003,
+    alt: 'Ornamental relief carved in ash wood',
+    caption: 'A decorative piece showcasing precise relief carving in ash wood.',
+    material: 'Ash',
+  },
+  {
+    image: gallery004,
+    alt: 'Spruce soundboard for a musical instrument',
+    caption: 'A spruce resonance board for a musical instrument, highlighting its fine grain.',
+    material: 'Spruce',
+  },
+  {
+    image: gallery005,
+    alt: 'Carved oak storage box with a fitted lid',
+    caption: 'A functional storage box made from oak, complete with a fitted lid.',
+    material: 'Oak',
+  },
+  {
+    image: gallery006,
+    alt: 'Three-dimensional portrait relief carved in beechwood',
+    caption: 'A detailed three-dimensional portrait relief carved into beechwood.',
+    material: 'Beech',
+  },
+];
+
+const itemsWithFullImages = await Promise.all(
+  galleryItems.map(async (item) => ({
+    ...item,
+    fullImage: await getImage({
+      src: item.image,
+      width: 1024,
+      format: 'webp',
+      quality: 82,
+    }),
+  })),
+);
+---
+
+<Layout
+  title="Gallery"
+  description="A gallery of furniture, carved wooden objects, reliefs, and crafted details by Paul Creos."
+>
+  <main id="main-content">
+    <Hero
+      title="See the detail, feel the form."
+      lines={['Selected objects, materials, and crafted details.']}
+      tone="earth"
+    />
+
+    <section class="content-section gallery-section" aria-labelledby="gallery-heading">
+      <h1 id="gallery-heading">Selected work</h1>
+      <p class="section-intro">
+        Explore crafted objects in oak, beech, ash, and spruce. Open any image for a closer view.
+      </p>
+
+      <div class="gallery-grid">
+        {itemsWithFullImages.map((item) => (
+          <figure class="gallery-item">
+            <a
+              href={item.fullImage.src}
+              data-fslightbox="creos-gallery"
+              data-caption={`${item.caption} Material: ${item.material}.`}
+              aria-label={`Open larger image: ${item.alt}`}
+            >
+              <Image
+                src={item.image}
+                alt={item.alt}
+                widths={[320, 480, 640]}
+                sizes="(min-width: 64rem) 240px, (min-width: 48rem) 50vw, 100vw"
+                format="webp"
+                quality={78}
+                loading="lazy"
+                class="gallery-image"
+              />
+            </a>
+            <figcaption>
+              <span>{item.alt}</span>
+              <small>Material: {item.material}</small>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+    <script is:inline src="/js/fslightbox.js" defer></script>
+  </main>
+</Layout>

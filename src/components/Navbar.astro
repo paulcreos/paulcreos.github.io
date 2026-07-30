@@ -1,0 +1,37 @@
+---
+import MyLogoText from '../images/CREOS-logo-text.svg';
+const pathname = Astro.url.pathname;
+const items = [
+  { href: '/', label: 'Home', active: pathname === '/' },
+  { href: '/gallery', label: 'Gallery', active: pathname.startsWith('/gallery') },
+  {
+    href: '/articles',
+    label: 'Articles',
+    active: pathname.startsWith('/articles') || pathname.startsWith('/category'),
+  },
+  {
+    href: '/about',
+    label: 'About',
+    active: pathname.startsWith('/about'),
+  },
+];
+---
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="brand-link" aria-label="Paul Creos home">
+      <svg class="brand-logo" viewBox="0 0 320 160" aria-hidden="true">
+        <MyLogoText />
+      </svg>
+    </a>
+    <ul class="nav-links">
+      {items.map((item) => (
+        <li>
+          <a href={item.href} aria-current={item.active ? 'page' : undefined}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

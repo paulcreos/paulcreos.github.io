@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleList from '../../components/ArticleList.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import { CATEGORY_KEYS, CATEGORY_META, type Category } from '../../data/categories';
+
+export function getStaticPaths() {
+  return CATEGORY_KEYS.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+interface Props {
+  category: Category;
+}
+
+const { category } = Astro.props;
+const meta = CATEGORY_META[category];
+---
+
+<Layout title={`${meta.label} articles`} description={meta.description}>
+  <main id="main-content">
+    <section class="content-section category-page">
+      <h1>{meta.label}</h1>
+      <p class="section-intro">{meta.description}</p>
+      <CategoryNav />
+      <ArticleList category={category} />
+    </section>
+  </main>
+</Layout>

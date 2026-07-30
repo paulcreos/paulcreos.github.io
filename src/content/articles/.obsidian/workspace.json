@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "9591ebc364fef89f",
+    "type": "split",
+    "children": [
+      {
+        "id": "23368ff00c359124",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3c248f31382223c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "The-Path-of-the-Modern-Druid.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The-Path-of-the-Modern-Druid"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "33eedce0d2fdcbfd",
+    "type": "split",
+    "children": [
+      {
+        "id": "991b1681dc517b44",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fe532bd2922e4de3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3261d2b3d6b2c74d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "14c950a8b3aa544c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9d4d14f08dc9966b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6c530f31d6d1ea98",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90a2415ddac1e371",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "The-Path-of-the-Modern-Druid.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for The-Path-of-the-Modern-Druid"
+            }
+          },
+          {
+            "id": "379b70b7b2c77dec",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "The-Path-of-the-Modern-Druid.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from The-Path-of-the-Modern-Druid"
+            }
+          },
+          {
+            "id": "4bd6acbaeb66afc9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f42b5cecbc9faa3d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "6892bdc8f92bfc26",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "The-Path-of-the-Modern-Druid.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of The-Path-of-the-Modern-Druid"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3c248f31382223c6",
+  "lastOpenFiles": [
+    "2026-07-29.md",
+    "The-Path-of-the-Modern-Druid.md",
+    "the-modern-frontend-landscape.md",
+    "_templates/generate-description.md",
+    "Untitled.md",
+    "_templates/article.md",
+    "_templates/The Path of the Modern Druid.md",
+    "zoedepth-blender.md",
+    "marigold.md",
+    "the-definitive-guide-to-headless-cms-for-astro-projects.md",
+    "_templates/article.md.md",
+    "_templates"
+  ]
+}

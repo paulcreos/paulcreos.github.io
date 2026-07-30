@@ -1,0 +1,56 @@
+---
+import Layout from './Layout.astro';
+import { SITE } from '../config/site';
+
+const { frontmatter, slug } = Astro.props;
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  datePublished: frontmatter.date.toISOString(),
+  dateModified: (frontmatter.updatedDate ?? frontmatter.date).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: frontmatter.author ?? SITE.author,
+    url: SITE.url,
+  },
+  publisher: {
+    '@type': 'Person',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  mainEntityOfPage: `${SITE.url}/articles/${slug}`,
+};
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  canonical={`/articles/${slug}`}
+  type="article"
+  publishedTime={frontmatter.date}
+  modifiedTime={frontmatter.updatedDate}
+>
+  <main id="main-content" class="article-shell">
+    <article>
+      <header class="article-header">
+        <h1>{frontmatter.title}</h1>
+        <p class="article-meta">
+          <time datetime={frontmatter.date.toISOString()}>
+            {frontmatter.date.toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </time>
+          {frontmatter.author && <span> · {frontmatter.author}</span>}
+        </p>
+      </header>
+      <div class="article-content">
+        <slot />
+      </div>
+    </article>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </main>
+</Layout>

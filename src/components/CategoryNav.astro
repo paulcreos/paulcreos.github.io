@@ -1,0 +1,10 @@
+---
+import { CATEGORY_KEYS, CATEGORY_META } from '../data/categories';
+---
+
+<nav class="category-nav" aria-label="Article categories">
+  <a href="/articles">All</a>
+  {CATEGORY_KEYS.map((category) => (
+    <a href={`/category/${category}`}>{CATEGORY_META[category].label}</a>
+  ))}
+</nav>

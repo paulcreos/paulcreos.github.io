@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import aboutNemeton from '../images/about-nemeton-hooded.jpg';
+---
+
+<Layout
+  title="About"
+  description="Meet Paul Creos and discover a creative path shaped by wood, symbols, Gaelic and Slavic inspiration, digital precision, hand carving, and fire."
+>
+  <main id="main-content">
+    <header class="about-hero" aria-labelledby="about-hero-heading">
+      <Image
+        class="about-hero-image"
+        src={aboutNemeton}
+        alt="A hooded figure standing among ancient oak trees in a misty nemeton"
+        widths={[768, 1280, 1774]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="about-hero-shade" aria-hidden="true"></div>
+      <div class="about-hero-content">
+        <p class="about-hero-eyebrow">Paul Creos</p>
+        <h1 id="about-hero-heading">Between craft and spirit.</h1>
+        <p>My work begins where material, symbol, and inner experience meet.</p>
+      </div>
+    </header>
+
+    <section class="about-section" aria-labelledby="about-heading">
+      <div class="about-intro">
+        <p class="eyebrow">About me</p>
+        <h2 id="about-heading">Made slowly. Made with intention.</h2>
+        <div class="about-copy">
+          <p>
+            I am Paul Creos. My work is part of a personal path I call{' '}
+            <em>Imthecht in Druad</em> — a journey between inner intention and the
+            world that can be touched.
+          </p>
+          <p>
+            I create original reliefs and objects from solid wood, drawing on nature,
+            the memory held within trees, ancient ornament, and the quiet language of
+            symbols. Gaelic and Slavic traditions meet here as sources of personal
+            inspiration rather than fixed boundaries.
+          </p>
+          <p>
+            Each work begins with CNC shaping, then passes into my hands. I refine the
+            form with Mikisyo chisels, deepen its character through Razertip
+            pyrography, and finish the surface with Osmo to preserve the warmth and
+            natural presence of the wood.
+          </p>
+          <p>
+            The machine establishes the path. The hand gives it rhythm, variation,
+            and life. Through stillness and repetition, an inner idea becomes a
+            physical form — something that carries both light and shadow.
+          </p>
+        </div>
+      </div>
+
+      <blockquote class="about-manifest">
+        <p>I turn intention into matter — and matter into meaning.</p>
+      </blockquote>
+
+      <div class="process-line" aria-label="Creative process">
+        <span>Wood</span>
+        <span aria-hidden="true">·</span>
+        <span>CNC</span>
+        <span aria-hidden="true">·</span>
+        <span>Chisels</span>
+        <span aria-hidden="true">·</span>
+        <span>Fire</span>
+        <span aria-hidden="true">·</span>
+        <span>Finish</span>
+      </div>
+    </section>
+
+    <section class="social-section" aria-labelledby="social-heading">
+      <div class="social-heading">
+        <p class="eyebrow">Follow the path</p>
+        <h2 id="social-heading">Discover new works and the process behind them.</h2>
+      </div>
+
+      <div class="social-links">
+        <a
+          class="social-card social-card-primary"
+          href="https://paulcreos.etsy.com"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <span class="social-name">Etsy</span>
+          <span class="social-description">Explore available works</span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="social-card"
+          href="https://www.instagram.com/paulcreos"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <span class="social-name">Instagram</span>
+          <span class="social-description">Follow new pieces and work in progress</span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="social-card"
+          href="https://www.pinterest.com/paulcreos"
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <span class="social-name">Pinterest</span>
+          <span class="social-description">Enter the visual archive</span>
+          <span class="social-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

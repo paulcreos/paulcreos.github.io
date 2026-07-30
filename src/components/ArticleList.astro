@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import { CATEGORY_META, type Category } from '../data/categories';
+
+interface Props {
+  limit?: number;
+  category?: Category;
+}
+
+const { limit, category } = Astro.props;
+let articles = (await getCollection('articles')).filter((article) => !article.data.draft);
+
+if (category) {
+  articles = articles.filter((article) => article.data.category === category);
+}
+
+const sortedArticles = articles
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, limit ?? undefined);
+---
+
+<div class="article-list">
+  {sortedArticles.map((article) => {
+    const meta = CATEGORY_META[article.data.category];
+    const url = `/articles/${article.id}`;
+
+    return (
+      <article class="article-card">
+        <h2><a href={url}>{article.data.title}</a></h2>
+        <p class="article-card-meta">
+          <a
+            href={`/category/${article.data.category}`}
+            class={`category-badge ${meta.classes}`}
+          >
+            {meta.label}
+          </a>
+          <time datetime={article.data.date.toISOString()}>
+            {article.data.date.toLocaleDateString('en-GB')}
+          </time>
+          {article.data.author && <span> · {article.data.author}</span>}
+        </p>
+        <p class="article-summary">{article.data.description}</p>
+        <p class="read-more">
+          <a href={url}>Read article <span aria-hidden="true">→</span></a>
+        </p>
+      </article>
+    );
+  })}
+
+  {sortedArticles.length === 0 && (
+    <p class="empty-state">No articles found.</p>
+  )}
+</div>
