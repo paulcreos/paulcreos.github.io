@@ -1,10 +1,26 @@
 ---
 import { CATEGORY_KEYS, CATEGORY_META } from '../data/categories';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const allIsActive = pathname === '/articles';
 ---
 
 <nav class="category-nav" aria-label="Article categories">
-  <a href="/articles">All</a>
-  {CATEGORY_KEYS.map((category) => (
-    <a href={`/category/${category}`}>{CATEGORY_META[category].label}</a>
-  ))}
+  <a
+    href="/articles"
+    class:list={['category-nav-link', 'category-nav-all', { 'is-active': allIsActive }]}
+    aria-current={allIsActive ? 'page' : undefined}
+  >All</a>
+  {CATEGORY_KEYS.map((category) => {
+    const isActive = pathname === `/category/${category}`;
+    const meta = CATEGORY_META[category];
+
+    return (
+      <a
+        href={`/category/${category}`}
+        class:list={['category-nav-link', { 'is-active': isActive }]}
+        aria-current={isActive ? 'page' : undefined}
+      >{meta.label}</a>
+    );
+  })}
 </nav>
