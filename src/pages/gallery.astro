@@ -1,8 +1,6 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import ImageHero from '../components/ImageHero.astro';
-import galleryHero from '../images/gallery-hero-v1.png';
 import gallery001 from '../images/gallery/gallery-001.png';
 import gallery002 from '../images/gallery/gallery-002.png';
 import gallery003 from '../images/gallery/gallery-003.png';
@@ -67,16 +65,8 @@ const itemsWithFullImages = await Promise.all(
   description="A gallery of furniture, carved wooden objects, reliefs, and crafted details by Paul Creos."
 >
   <main id="main-content">
-    <ImageHero
-      image={galleryHero}
-      alt="Three circular carved wood reliefs displayed in a dark artisan workshop"
-      motto="Con-ric in soilse frisin scáth."
-      headingId="gallery-hero-heading"
-      objectPosition="center"
-    />
-
     <section class="content-section gallery-section" aria-labelledby="gallery-heading">
-      <h2 id="gallery-heading">Selected work</h2>
+      <h1 id="gallery-heading">Gallery</h1>
       <p class="section-intro">
         Explore crafted objects in oak, beech, ash, and spruce. Open any image for a closer view.
       </p>

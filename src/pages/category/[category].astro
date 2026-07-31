@@ -1,13 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import type { ImageMetadata } from 'astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
-import ImageHero from '../../components/ImageHero.astro';
 import { CATEGORY_KEYS, CATEGORY_META, type Category } from '../../data/categories';
-import aboutNemeton from '../../images/about-nemeton-hooded.jpg';
-import technologyHero from '../../images/technology-hero-v1.png';
-import worksHero from '../../images/works-hero-wolf-v2.png';
 
 export function getStaticPaths() {
   return CATEGORY_KEYS.map((category) => ({
@@ -22,46 +17,12 @@ interface Props {
 
 const { category } = Astro.props;
 const meta = CATEGORY_META[category];
-const heroByCategory = {
-  works: {
-    image: worksHero,
-    alt: 'A handcrafted circular wolf relief with carving tools on a dark workbench',
-    motto: 'Is fínné forsin n-imthecht-so cech dentaid.',
-    objectPosition: 'center',
-  },
-  technology: {
-    image: technologyHero,
-    alt: 'A compact CNC router carving a circular wood relief beside fine hand chisels',
-    motto: 'Sáigim na préma comrit.',
-    objectPosition: 'center',
-  },
-  druidism: {
-    image: aboutNemeton,
-    alt: 'A hooded figure standing among ancient oak trees in a misty nemeton',
-    motto: 'Eter in n-astad ocus puls in bethu.',
-    objectPosition: 'center',
-  },
-} satisfies Record<Category, {
-  image: ImageMetadata;
-  alt: string;
-  motto: string;
-  objectPosition: string;
-}>;
-const hero = heroByCategory[category];
 ---
 
 <Layout title={`${meta.label} articles`} description={meta.description}>
   <main id="main-content">
-    <ImageHero
-      image={hero.image}
-      alt={hero.alt}
-      motto={hero.motto}
-      headingId={`${category}-hero-heading`}
-      objectPosition={hero.objectPosition}
-    />
-
     <section class="content-section category-page">
-      <h2>{meta.label}</h2>
+      <h1>{meta.label}</h1>
       <p class="section-intro">{meta.description}</p>
       <CategoryNav />
       <ArticleList category={category} />

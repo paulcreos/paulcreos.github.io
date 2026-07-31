@@ -2,8 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
-import ImageHero from '../../components/ImageHero.astro';
-import articlesHero from '../../images/articles-hero-v1.png';
 ---
 
 <Layout
@@ -11,16 +9,11 @@ import articlesHero from '../../images/articles-hero-v1.png';
   description="Articles by Paul Creos on craftsmanship, digital fabrication, creative technology, and modern Druidry."
 >
   <main id="main-content">
-    <ImageHero
-      image={articlesHero}
-      alt="An open sketchbook with relief studies, carving tools, and wood on an artisan workbench"
-      motto="Is é in crann coimthechtid mo chuimne ocus mo thairisi."
-      headingId="articles-hero-heading"
-      objectPosition="center"
-    />
-
     <section class="content-section" aria-labelledby="all-articles">
-      <h2 id="all-articles">All articles</h2>
+      <h1 id="all-articles">Articles</h1>
+      <p class="section-intro">
+        Notes on craft, symbolism, wood, and the meeting of handwork with technology.
+      </p>
       <CategoryNav />
       <ArticleList />
     </section>
