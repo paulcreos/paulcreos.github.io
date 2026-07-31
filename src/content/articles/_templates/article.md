@@ -20,5 +20,8 @@ description:
 date: <% tp.date.now("YYYY-MM-DD") %>
 author: 'Paul Creos'
 category: technology
+# For Works articles, uncomment both lines below:
+# cover: images/example.jpg
+# coverAlt: A concise description of the artwork shown in the image
 draft: true
 ---

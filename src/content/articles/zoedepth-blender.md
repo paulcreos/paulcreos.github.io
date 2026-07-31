@@ -6,7 +6,7 @@ author: 'Paul Creos'
 category: technology
 
 ---
-![Workflow with ZoeDepth and Blender](images/zoedepth-blender-workflow.jpg)
+
 In the era of AI-driven creativity, blending cutting-edge depth estimation with powerful 3D tools unlocks a world of possibilities in digital fabrication. Enter ZoeDepth—a state-of-the-art AI model for monocular depth estimation—and Blender, the free, open-source 3D powerhouse. Together, they let you morph any flat 2D image into a tactile 3D relief, perfect for CNC milling, 3D printing, architectural prototypes, or even cinematic VFX.
 
 This streamlined workflow empowers artists, makers, and designers to prototype physical forms in minutes, bridging the gap between digital sketches and real-world objects. Whether you're sculpting a custom sign or visualizing a product concept, here's how to nail it step by step.

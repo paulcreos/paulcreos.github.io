@@ -1,49 +1,42 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import gallery001 from '../images/gallery/gallery-001.png';
-import gallery002 from '../images/gallery/gallery-002.png';
-import gallery003 from '../images/gallery/gallery-003.png';
-import gallery004 from '../images/gallery/gallery-004.png';
-import gallery005 from '../images/gallery/gallery-005.png';
-import gallery006 from '../images/gallery/gallery-006.png';
+import ravenSigil from '../content/articles/images/raven-sigil-cover-v1.png';
+import ravenSigilKnotwork from '../content/articles/images/raven-sigil-knotwork-cover-v1.png';
+import wolfGuardian from '../content/articles/images/wolf-guardian-cover-v1.png';
+import wolfGuardianDetail from '../content/articles/images/wolf-guardian-detail-v1.png';
+import wolfGuardianMacro from '../content/articles/images/wolf-guardian-macro-v1.png';
 
 const galleryItems = [
   {
-    image: gallery001,
-    alt: 'Oak coffee table with carved CNC details',
-    caption: 'An elegant coffee table made from solid oak with intricately carved CNC details.',
-    material: 'Oak',
+    image: ravenSigil,
+    alt: 'Circular wooden raven relief with a triskele and protective Latin inscriptions',
+    caption: 'The Raven Sigil, a protective circular relief combining carving, pyrography, and symbolic detail.',
+    material: 'Ash / Birch',
   },
   {
-    image: gallery002,
-    alt: 'Set of handcrafted beechwood serving bowls',
-    caption: 'Deep serving bowls crafted from beechwood, suitable for nuts and snacks.',
-    material: 'Beech',
+    image: ravenSigilKnotwork,
+    alt: 'Circular wooden raven relief surrounded by a continuous Celtic-inspired knot border',
+    caption: 'The Raven Sigil knotwork variant, framed by an unbroken interlaced border.',
+    material: 'Ash / Birch',
   },
   {
-    image: gallery003,
-    alt: 'Ornamental relief carved in ash wood',
-    caption: 'A decorative piece showcasing precise relief carving in ash wood.',
-    material: 'Ash',
+    image: wolfGuardian,
+    alt: 'Circular wooden relief of a snarling wolf framed by Celtic-inspired knotwork',
+    caption: 'The Wolf Guardian, a carved relief shaped around strength, vigilance, and the protection of a boundary.',
+    material: 'Ash / Birch',
   },
   {
-    image: gallery004,
-    alt: 'Spruce soundboard for a musical instrument',
-    caption: 'A spruce resonance board for a musical instrument, highlighting its fine grain.',
-    material: 'Spruce',
+    image: wolfGuardianDetail,
+    alt: 'Detail of a carved wooden wolf with a chain, knot pendant, and triskele',
+    caption: 'A close view of the Wolf Guardian showing the layered fur, chain, pendants, and pyrographic detail.',
+    material: 'Ash / Birch',
   },
   {
-    image: gallery005,
-    alt: 'Carved oak storage box with a fitted lid',
-    caption: 'A functional storage box made from oak, complete with a fitted lid.',
-    material: 'Oak',
-  },
-  {
-    image: gallery006,
-    alt: 'Three-dimensional portrait relief carved in beechwood',
-    caption: 'A detailed three-dimensional portrait relief carved into beechwood.',
-    material: 'Beech',
+    image: wolfGuardianMacro,
+    alt: 'Close detail of the carved Wolf Guardian face, chain, and symbolic pendants',
+    caption: 'A closer study of the Wolf Guardian revealing the hand-finished surfaces and fine pyrographic lines.',
+    material: 'Ash / Birch',
   },
 ];
 
@@ -62,13 +55,13 @@ const itemsWithFullImages = await Promise.all(
 
 <Layout
   title="Gallery"
-  description="A gallery of furniture, carved wooden objects, reliefs, and crafted details by Paul Creos."
+  description="A gallery of carved wooden reliefs and hand-finished symbolic details by Paul Creos."
 >
   <main id="main-content">
     <section class="content-section gallery-section" aria-labelledby="gallery-heading">
       <h1 id="gallery-heading">Gallery</h1>
       <p class="section-intro">
-        Explore crafted objects in oak, beech, ash, and spruce. Open any image for a closer view.
+        Explore carved reliefs in ash and birch. Open any image for a closer view.
       </p>
 
       <div class="gallery-grid">

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ImageHero from '../components/ImageHero.astro';
+import FollowThePath from '../components/FollowThePath.astro';
 import aboutNemeton from '../images/about-nemeton-hooded.jpg';
 ---
 
@@ -65,46 +66,6 @@ import aboutNemeton from '../images/about-nemeton-hooded.jpg';
       </div>
     </section>
 
-    <section class="social-section" aria-labelledby="social-heading">
-      <div class="social-heading">
-        <p class="eyebrow">Follow the path</p>
-        <h2 id="social-heading">Discover new works and the process behind them.</h2>
-      </div>
-
-      <div class="social-links">
-        <a
-          class="social-card social-card-primary"
-          href="https://paulcreos.etsy.com"
-          target="_blank"
-          rel="me noopener noreferrer"
-        >
-          <span class="social-name">Etsy</span>
-          <span class="social-description">Explore available works</span>
-          <span class="social-arrow" aria-hidden="true">↗</span>
-        </a>
-
-        <a
-          class="social-card"
-          href="https://www.instagram.com/paulcreos"
-          target="_blank"
-          rel="me noopener noreferrer"
-        >
-          <span class="social-name">Instagram</span>
-          <span class="social-description">Follow new pieces and work in progress</span>
-          <span class="social-arrow" aria-hidden="true">↗</span>
-        </a>
-
-        <a
-          class="social-card"
-          href="https://www.pinterest.com/paulcreos"
-          target="_blank"
-          rel="me noopener noreferrer"
-        >
-          <span class="social-name">Pinterest</span>
-          <span class="social-description">Enter the visual archive</span>
-          <span class="social-arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </section>
+    <FollowThePath />
   </main>
 </Layout>

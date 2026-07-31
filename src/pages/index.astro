@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ArticleList from '../components/ArticleList.astro';
 import CategoryNav from '../components/CategoryNav.astro';
 import ImageHero from '../components/ImageHero.astro';
+import FollowThePath from '../components/FollowThePath.astro';
 import { SITE } from '../config/site';
 import homeCraftHero from '../images/home-craft-hero.jpg';
 ---
@@ -29,5 +30,7 @@ import homeCraftHero from '../images/home-craft-hero.jpg';
       <CategoryNav />
       <ArticleList limit={3} />
     </section>
+
+    <FollowThePath />
   </main>
 </Layout>
