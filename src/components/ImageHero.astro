@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import currentLogoUrl from '../images/CREOS-logo-warm.svg?url';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  motto: string;
+  headingId: string;
+  objectPosition?: string;
+  mobileObjectPosition?: string;
+  parallaxRange?: number;
+}
+
+const {
+  image,
+  alt,
+  motto,
+  headingId,
+  objectPosition = 'center',
+  mobileObjectPosition = objectPosition,
+  parallaxRange = 82,
+} = Astro.props;
+---
+
+<header
+  class="image-hero"
+  aria-labelledby={headingId}
+  data-parallax-range={parallaxRange}
+  style={`--hero-object-position: ${objectPosition}; --hero-mobile-object-position: ${mobileObjectPosition};`}
+>
+  <Image
+    class="image-hero-background"
+    src={image}
+    alt={alt}
+    widths={[768, 1280, 1774]}
+    sizes="100vw"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="image-hero-shade" aria-hidden="true"></div>
+  <div class="image-hero-content">
+    <a class="image-hero-brand" href="/" aria-label="Paul Creos home">
+      <img src={currentLogoUrl} alt="Paul Creos" />
+    </a>
+    <h1 id={headingId}>{motto}</h1>
+    <slot />
+  </div>
+</header>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const heroes = document.querySelectorAll<HTMLElement>('.image-hero');
+
+  if (!reduceMotion.matches) {
+    let framePending = false;
+
+    const updateParallax = () => {
+      const viewportHeight = window.innerHeight;
+
+      heroes.forEach((hero) => {
+        const bounds = hero.getBoundingClientRect();
+
+        if (bounds.bottom > 0 && bounds.top < viewportHeight) {
+          const progress = Math.min(
+            1,
+            Math.max(0, (viewportHeight - bounds.top) / (viewportHeight + bounds.height)),
+          );
+          const range = Number(hero.dataset.parallaxRange ?? 82);
+          const offset = (progress - 0.5) * range;
+          hero.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
+        }
+      });
+
+      framePending = false;
+    };
+
+    const requestUpdate = () => {
+      if (!framePending) {
+        window.requestAnimationFrame(updateParallax);
+        framePending = true;
+      }
+    };
+
+    updateParallax();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+  }
+</script>

@@ -2,7 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
-import Hero from '../../components/Hero.astro';
+import ImageHero from '../../components/ImageHero.astro';
+import articlesHero from '../../images/articles-hero-v1.png';
 ---
 
 <Layout
@@ -10,14 +11,16 @@ import Hero from '../../components/Hero.astro';
   description="Articles by Paul Creos on craftsmanship, digital fabrication, creative technology, and modern Druidry."
 >
   <main id="main-content">
-    <Hero
-      title="Behind the form."
-      lines={['Thoughts on craftsmanship, design, and process.']}
-      tone="accent"
+    <ImageHero
+      image={articlesHero}
+      alt="An open sketchbook with relief studies, carving tools, and wood on an artisan workbench"
+      motto="Is é in crann coimthechtid mo chuimne ocus mo thairisi."
+      headingId="articles-hero-heading"
+      objectPosition="center"
     />
 
     <section class="content-section" aria-labelledby="all-articles">
-      <h1 id="all-articles">All articles</h1>
+      <h2 id="all-articles">All articles</h2>
       <CategoryNav />
       <ArticleList />
     </section>
