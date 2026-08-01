@@ -867,7 +867,7 @@ h2 {
   position: relative;
   display: grid;
   min-height: clamp(31rem, 68vw, 47rem);
-  align-items: end;
+  align-items: center;
   overflow: hidden;
   isolation: isolate;
   background: #1b281e;
@@ -941,10 +941,6 @@ h2 {
   .about-hero-shade {
     background:
       linear-gradient(0deg, rgb(12 28 18 / 0.9) 0%, rgb(22 44 27 / 0.28) 70%, transparent 100%);
-  }
-
-  .about-hero-content {
-    padding-bottom: 3rem;
   }
 
   .about-hero-content h1 {
