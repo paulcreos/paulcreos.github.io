@@ -235,32 +235,33 @@ h2 {
 .home-hero-content {
   width: min(100%, var(--content-width));
   margin-inline: auto;
-  padding: clamp(4rem, 10vw, 7rem) 1rem;
+  padding: clamp(3rem, 8vw, 6rem) 1rem;
 }
 
 .home-hero-eyebrow {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.8rem;
   color: var(--hero-accent);
   font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .home-hero-content h1 {
-  max-width: 8ch;
+  max-width: 11ch;
   margin: 0;
   color: inherit;
-  font-size: clamp(3rem, 8vw, 6.25rem);
-  line-height: 0.92;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.98;
+  text-wrap: balance;
 }
 
 .home-hero-lead {
-  max-width: 29rem;
-  margin: 1.5rem 0 0;
-  color: rgb(248 244 237 / 0.84);
-  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-  line-height: 1.5;
+  max-width: 32rem;
+  margin: 1.3rem 0 0;
+  color: rgb(248 244 237 / 0.82);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.55;
   text-wrap: balance;
 }
 
