@@ -582,6 +582,19 @@ h2 {
   text-decoration: none;
 }
 
+.logo-mark {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.logo-mark img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
 .identity-band img {
   width: 100%;
   height: auto;
@@ -1522,24 +1535,20 @@ a.work-shop-link:hover {
   color: #f8f4ed;
 }
 
-.about-section::before {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  width: 8rem;
-  height: 8rem;
-  border: 1px solid rgb(228 189 128 / 0.16);
-  border-radius: 50%;
-  content: "";
-  transform: translateX(-50%);
-}
-
 .about-intro {
   position: relative;
   z-index: 1;
   width: min(100%, 43rem);
   margin-inline: auto;
   text-align: center;
+}
+
+.about-intro-logo {
+  display: block;
+  width: clamp(3.75rem, 8vw, 5rem);
+  margin: -1.1rem auto 1.25rem;
+  filter: drop-shadow(0 0.35rem 0.7rem rgb(5 7 5 / 0.26));
+  opacity: 0.92;
 }
 
 .eyebrow {

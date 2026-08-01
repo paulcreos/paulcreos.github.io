@@ -5,11 +5,11 @@ import FollowThePath from '../components/FollowThePath.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import WorkCategoryNav from '../components/WorkCategoryNav.astro';
 import CelticDivider from '../components/CelticDivider.astro';
+import LogoMark from '../components/LogoMark.astro';
 import { PAGE_META } from '../data/page-meta';
 import homeCraftHero from '../images/home-craft-hero.jpg';
 import worksHero from '../images/works-hero-wolf-v2.png';
 import nemetonHero from '../images/about-nemeton-hooded.jpg';
-import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
 ---
 
 <Layout {...PAGE_META.home}>
@@ -62,7 +62,7 @@ import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
     <section class="identity-band" aria-label="Paul Creos — Imthecht in Druad">
       <CelticDivider class="identity-band-ornament identity-band-ornament-top" />
       <a href="/" aria-label="Paul Creos home">
-        <img src={crestLogoUrl} alt="Paul Creos" />
+        <LogoMark />
       </a>
       <p>Imthecht in Druad</p>
       <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />

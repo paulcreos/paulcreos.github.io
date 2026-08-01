@@ -5,6 +5,7 @@ import CelticDivider from '../components/CelticDivider.astro';
 import FollowThePath from '../components/FollowThePath.astro';
 import { PAGE_META } from '../data/page-meta';
 import aboutNemeton from '../images/about-nemeton-hooded.jpg';
+import LogoMark from '../components/LogoMark.astro';
 ---
 
 <Layout {...PAGE_META.about}>
@@ -29,6 +30,7 @@ import aboutNemeton from '../images/about-nemeton-hooded.jpg';
 
     <section class="about-section" aria-labelledby="about-heading">
       <div class="about-intro">
+        <LogoMark class="about-intro-logo" alt="Paul Creos" />
         <p class="eyebrow">About me</p>
         <h2 id="about-heading">Made slowly. Made with intention.</h2>
         <div class="about-copy">
