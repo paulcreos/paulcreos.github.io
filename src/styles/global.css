@@ -220,8 +220,14 @@ h2 {
   height: 124%;
   object-fit: cover;
   object-position: center;
+  opacity: 0;
   transform: translate3d(0, var(--parallax-y), 0) scale(1.015);
+  transition: opacity 900ms ease;
   will-change: transform;
+}
+
+.home-hero-image.is-active {
+  opacity: 1;
 }
 
 .home-hero-shade {
@@ -233,9 +239,21 @@ h2 {
 }
 
 .home-hero-content {
+  grid-area: 1 / 1;
+  z-index: 1;
   width: min(100%, var(--content-width));
   margin-inline: auto;
   padding: clamp(3rem, 8vw, 6rem) 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.75rem);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.home-hero-content.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .home-hero-eyebrow {
@@ -247,13 +265,19 @@ h2 {
   text-transform: uppercase;
 }
 
-.home-hero-content h1 {
+.home-hero-content h1,
+.home-hero-title {
   max-width: 11ch;
   margin: 0;
   color: inherit;
   font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
   line-height: 0.98;
   text-wrap: balance;
+}
+
+.home-hero-title {
+  font-family: var(--font-display);
 }
 
 .home-hero-lead {
@@ -305,6 +329,34 @@ h2 {
   background: rgb(248 244 237 / 0.1);
 }
 
+.home-hero-controls {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  gap: 0.65rem;
+  transform: translateX(-50%);
+}
+
+.home-hero-controls button {
+  width: 0.72rem;
+  height: 0.72rem;
+  padding: 0;
+  border: 1px solid rgb(214 186 143 / 0.7);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.home-hero-controls button:hover,
+.home-hero-controls button.is-active {
+  background: var(--hero-accent);
+  border-color: var(--hero-accent);
+  transform: scale(1.12);
+}
+
 @media (max-width: 640px) {
   .home-hero {
     min-height: 43rem;
@@ -322,6 +374,17 @@ h2 {
 
   .home-hero-content {
     padding-bottom: 3.5rem;
+  }
+
+  .home-hero-controls {
+    bottom: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-image,
+  .home-hero-content {
+    transition: none;
   }
 }
 
