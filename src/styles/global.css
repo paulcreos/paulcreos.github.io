@@ -1143,8 +1143,7 @@ a.work-shop-link:hover {
 .work-cover img {
   display: block;
   width: 100%;
-  max-height: min(68vh, 42rem);
-  object-fit: cover;
+  height: auto;
 }
 
 .article-content > :first-child {
