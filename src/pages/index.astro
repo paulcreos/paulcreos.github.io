@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import ArticleList from '../components/ArticleList.astro';
 import CategoryNav from '../components/CategoryNav.astro';
-import ImageHero from '../components/ImageHero.astro';
 import FollowThePath from '../components/FollowThePath.astro';
 import { SITE } from '../config/site';
 import homeCraftHero from '../images/home-craft-hero.jpg';
@@ -10,20 +10,29 @@ import homeCraftHero from '../images/home-craft-hero.jpg';
 
 <Layout title={SITE.name} description={SITE.description}>
   <main id="main-content">
-    <ImageHero
-      image={homeCraftHero}
-      alt="Hands carving an intricate circular relief from solid wood"
-      motto="Imthecht in Druad"
-      headingId="home-hero-heading"
-      objectPosition="center"
-      mobileObjectPosition="64% center"
-      parallaxRange={110}
-    >
-      <nav class="image-hero-actions" aria-label="Explore Paul Creos">
-        <a class="image-hero-action-primary" href="/category/works">Explore the works</a>
-        <a href="/about">Enter the story</a>
-      </nav>
-    </ImageHero>
+    <header class="home-hero" aria-labelledby="home-hero-heading">
+      <Image
+        class="home-hero-image"
+        src={homeCraftHero}
+        alt="Hands carving an intricate circular relief from solid wood"
+        widths={[768, 1280, 1774]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="home-hero-shade" aria-hidden="true"></div>
+      <div class="home-hero-content">
+        <p class="home-hero-eyebrow">From the Nemeton</p>
+        <h1 id="home-hero-heading">Wood lives again.</h1>
+        <p class="home-hero-lead">
+          Once part of a living tree, shaped anew through technology, hand, fire, and intention.
+        </p>
+        <nav class="home-hero-actions" aria-label="Explore Paul Creos">
+          <a class="home-hero-primary" href="/category/works">Explore the works</a>
+          <a class="home-hero-secondary" href="/about">Enter the story</a>
+        </nav>
+      </div>
+    </header>
 
     <section class="content-section" aria-labelledby="latest-articles">
       <h2 id="latest-articles">Latest articles</h2>
@@ -34,3 +43,39 @@ import homeCraftHero from '../images/home-craft-hero.jpg';
     <FollowThePath />
   </main>
 </Layout>
+
+<script>
+  const hero = document.querySelector<HTMLElement>('.home-hero');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (hero && !reduceMotion.matches) {
+    let framePending = false;
+
+    const updateParallax = () => {
+      const bounds = hero.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      if (bounds.bottom > 0 && bounds.top < viewportHeight) {
+        const progress = Math.min(
+          1,
+          Math.max(0, (viewportHeight - bounds.top) / (viewportHeight + bounds.height)),
+        );
+        const offset = (progress - 0.5) * 110;
+        hero.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
+      }
+
+      framePending = false;
+    };
+
+    const requestUpdate = () => {
+      if (!framePending) {
+        window.requestAnimationFrame(updateParallax);
+        framePending = true;
+      }
+    };
+
+    updateParallax();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+  }
+</script>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ImageHero from '../components/ImageHero.astro';
+import { Image } from 'astro:assets';
 import FollowThePath from '../components/FollowThePath.astro';
 import aboutNemeton from '../images/about-nemeton-hooded.jpg';
 ---
@@ -10,14 +10,23 @@ import aboutNemeton from '../images/about-nemeton-hooded.jpg';
   description="Meet Paul Creos and discover a creative path shaped by wood, symbols, Gaelic and Slavic inspiration, digital precision, hand carving, and fire."
 >
   <main id="main-content">
-    <ImageHero
-      image={aboutNemeton}
-      alt="A hooded figure standing among ancient oak trees in a misty nemeton"
-      motto="Am druí for imthecht — ocus is é-so mo Imthecht in Druad."
-      headingId="about-hero-heading"
-      objectPosition="center"
-      mobileObjectPosition="62% center"
-    />
+    <header class="about-hero" aria-labelledby="about-hero-heading">
+      <Image
+        class="about-hero-image"
+        src={aboutNemeton}
+        alt="A hooded figure standing among ancient oak trees in a misty nemeton"
+        widths={[768, 1280, 1774]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="about-hero-shade" aria-hidden="true"></div>
+      <div class="about-hero-content">
+        <p class="about-hero-eyebrow">The druid’s path</p>
+        <h1 id="about-hero-heading">Between craft and spirit.</h1>
+        <p>My work begins where material, symbol, and inner experience meet.</p>
+      </div>
+    </header>
 
     <section class="about-section" aria-labelledby="about-heading">
       <div class="about-intro">
