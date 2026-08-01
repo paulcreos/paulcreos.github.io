@@ -1675,7 +1675,7 @@ a.work-shop-link:hover {
   padding: 1.4rem;
   border: 1px solid rgb(195 160 111 / 0.28);
   border-radius: 0.45rem;
-  background: linear-gradient(145deg, rgb(103 129 88 / 0.12), rgb(11 23 15 / 0.08));
+  background: linear-gradient(145deg, rgb(115 79 48 / 0.14), rgb(12 10 8 / 0.08));
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
@@ -1692,7 +1692,7 @@ a.work-shop-link:hover {
   z-index: 1;
   inset: 0;
   background:
-    linear-gradient(0deg, rgb(10 22 14 / 0.94) 0%, rgb(20 39 25 / 0.72) 58%, rgb(20 38 24 / 0.66) 100%);
+    linear-gradient(0deg, rgb(11 10 8 / 0.94) 0%, rgb(31 25 19 / 0.76) 58%, rgb(42 33 25 / 0.64) 100%);
   content: "";
   transition: background 240ms ease;
 }
@@ -1718,14 +1718,14 @@ a.work-shop-link:hover {
 
 .social-card:hover {
   border-color: rgb(195 160 111 / 0.72);
-  background: linear-gradient(145deg, rgb(120 148 99 / 0.2), rgb(195 160 111 / 0.06));
+  background: linear-gradient(145deg, rgb(145 101 60 / 0.2), rgb(195 160 111 / 0.06));
   text-decoration: none;
   transform: translateY(-0.2rem);
 }
 
 .social-card:hover::after {
   background:
-    linear-gradient(0deg, rgb(10 22 14 / 0.9) 0%, rgb(20 39 25 / 0.58) 58%, rgb(20 38 24 / 0.5) 100%);
+    linear-gradient(0deg, rgb(11 10 8 / 0.9) 0%, rgb(31 25 19 / 0.6) 58%, rgb(42 33 25 / 0.5) 100%);
 }
 
 .social-card:hover .social-card-media img {
@@ -1735,7 +1735,7 @@ a.work-shop-link:hover {
 .social-card-primary {
   border-color: rgb(211 178 127 / 0.7);
   background:
-    linear-gradient(145deg, rgb(195 160 111 / 0.2), rgb(69 91 65 / 0.16));
+    linear-gradient(145deg, rgb(195 160 111 / 0.2), rgb(100 68 40 / 0.16));
 }
 
 .social-name {
