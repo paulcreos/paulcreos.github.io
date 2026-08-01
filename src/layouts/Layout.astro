@@ -75,5 +75,32 @@ const personSchema = {
     <Navbar />
     <slot />
     <Footer />
+
+    <script>
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+        const sections = document.querySelectorAll<HTMLElement>(
+          'main > section:not(.identity-band), main > article',
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            });
+          },
+          { rootMargin: '0px 0px -8%', threshold: 0.1 },
+        );
+
+        sections.forEach((section) => {
+          section.classList.add('scroll-reveal');
+          observer.observe(section);
+        });
+      }
+    </script>
   </body>
 </html>

@@ -153,6 +153,24 @@ h2 {
   margin-inline: auto;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(1.35rem);
+    filter: blur(2px);
+    transition:
+      opacity 650ms ease-out,
+      transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 650ms ease-out;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 .site-nav {
   border-bottom: 1px solid rgb(185 154 120 / 0.42);
   background: var(--brand-walnut-background);
