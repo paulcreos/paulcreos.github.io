@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import { CATEGORY_META, type Category } from '../data/categories';
+import { WORK_AVAILABILITY } from '../data/work-availability';
 
 interface Props {
   limit?: number;
@@ -25,6 +26,9 @@ const sortedArticles = articles
     const meta = CATEGORY_META[article.data.category];
     const url = `/articles/${article.id}`;
     const showCover = article.data.category === 'works' && article.data.cover;
+    const availability = article.data.availability
+      ? WORK_AVAILABILITY[article.data.availability]
+      : undefined;
 
     return (
       <article class:list={['article-card', { 'article-card-visual': showCover }]}>
@@ -48,12 +52,24 @@ const sortedArticles = articles
             >
               {meta.label}
             </a>
+            {availability && (
+              <span class:list={['availability-badge', availability.className]}>
+                {availability.label}
+              </span>
+            )}
             <time datetime={article.data.date.toISOString()}>
               {article.data.date.toLocaleDateString('en-GB')}
             </time>
             {article.data.author && <span> · {article.data.author}</span>}
           </p>
           <p class="article-summary">{article.data.description}</p>
+          {article.data.availability === 'available' && article.data.shopUrl && (
+            <p class="article-shop-link">
+              <a href={article.data.shopUrl} target="_blank" rel="noopener noreferrer">
+                View on Etsy <span aria-hidden="true">↗</span>
+              </a>
+            </p>
+          )}
           <p class="read-more">
             <a href={url}>Read article <span aria-hidden="true">→</span></a>
           </p>

@@ -2,6 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import CelticDivider from '../components/CelticDivider.astro';
 import Layout from '../layouts/Layout.astro';
+import { PAGE_META } from '../data/page-meta';
 import ravenSigil from '../content/articles/images/raven-sigil-cover-v1.png';
 import ravenSigilKnotwork from '../content/articles/images/raven-sigil-knotwork-cover-v1.png';
 import wolfGuardian from '../content/articles/images/wolf-guardian-cover-v1.png';
@@ -54,10 +55,7 @@ const itemsWithFullImages = await Promise.all(
 );
 ---
 
-<Layout
-  title="Gallery"
-  description="A gallery of carved wooden reliefs and hand-finished symbolic details by Paul Creos."
->
+<Layout {...PAGE_META.gallery}>
   <main id="main-content">
     <section class="content-section gallery-section" aria-labelledby="gallery-heading">
       <h1 id="gallery-heading">Gallery</h1>

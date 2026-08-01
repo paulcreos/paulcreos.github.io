@@ -1,8 +1,8 @@
 export const SITE = {
   name: 'Paul Creos',
-  title: 'Paul Creos — Craft, technology, and the living Earth',
+  title: 'Paul Creos | Handcrafted Wood Reliefs & Druidic Art',
   description:
-    'Paul Creos explores craftsmanship, digital fabrication, creative technology, and a living relationship with nature.',
+    'Discover handcrafted wood reliefs by Paul Creos, where CNC precision, hand carving, pyrography, and druidic symbolism bring wood to life.',
   url: 'https://paulcreos.com',
   email: 'paulcreos@gmail.com',
   locale: 'en',

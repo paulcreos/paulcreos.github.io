@@ -3,8 +3,12 @@ import Layout from './Layout.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import SmallDivider from '../components/SmallDivider.astro';
 import { SITE } from '../config/site';
+import { WORK_AVAILABILITY, type WorkAvailability } from '../data/work-availability';
 
 const { frontmatter, slug } = Astro.props;
+const availability = frontmatter.availability
+  ? WORK_AVAILABILITY[frontmatter.availability as WorkAvailability]
+  : undefined;
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -52,6 +56,18 @@ const articleSchema = {
       <CelticDivider tone="forest" class="article-divider" />
       <div class="article-content">
         <slot />
+        {availability && (
+          <p class:list={['work-availability-note', availability.className]}>
+            {availability.label}
+          </p>
+        )}
+        {frontmatter.availability === 'available' && frontmatter.shopUrl && (
+          <p class="work-shop-cta">
+            <a href={frontmatter.shopUrl} target="_blank" rel="noopener noreferrer">
+              View available work on Etsy <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        )}
         <SmallDivider tone="forest" class="article-ending-mark" />
       </div>
     </article>

@@ -3,12 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
 import CelticDivider from '../../components/CelticDivider.astro';
+import { PAGE_META } from '../../data/page-meta';
 ---
 
-<Layout
-  title="Articles"
-  description="Articles by Paul Creos on craftsmanship, digital fabrication, creative technology, and modern Druidry."
->
+<Layout {...PAGE_META.articles}>
   <main id="main-content">
     <section class="content-section" aria-labelledby="all-articles">
       <h1 id="all-articles">Articles</h1>

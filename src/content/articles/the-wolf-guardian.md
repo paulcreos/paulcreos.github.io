@@ -4,6 +4,7 @@ description: A circular wolf relief in ash and birch, combining Celtic-inspired 
 date: 2026-07-31
 author: 'Paul Creos'
 category: works
+availability: in-progress
 cover: images/wolf-guardian-cover-v1.png
 coverAlt: Circular wooden relief of a snarling wolf framed by Celtic-inspired knotwork
 draft: false

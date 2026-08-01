@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { PAGE_META } from '../data/page-meta';
 ---
 
-<Layout
-  title="Page not found"
-  description="The requested page could not be found on Paul Creos."
->
+<Layout {...PAGE_META.notFound}>
   <main id="main-content" class="not-found">
     <p class="error-code" aria-hidden="true">404</p>
     <h1>Page not found</h1>

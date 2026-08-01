@@ -20,7 +20,7 @@ const { category } = Astro.props;
 const meta = CATEGORY_META[category];
 ---
 
-<Layout title={`${meta.label} articles`} description={meta.description}>
+<Layout title={meta.title} description={meta.description}>
   <main id="main-content">
     <section class="content-section category-page">
       <h1>{meta.label}</h1>

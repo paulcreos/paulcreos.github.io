@@ -4,6 +4,7 @@ description: A circular raven relief carved in ash and birch, combining CNC prep
 date: 2026-07-31
 author: 'Paul Creos'
 category: works
+availability: in-progress
 cover: images/raven-sigil-cover-v1.png
 coverAlt: Circular wooden relief of a raven bearing a triskele and surrounded by protective Latin inscriptions
 draft: false

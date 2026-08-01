@@ -3,13 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import CelticDivider from '../components/CelticDivider.astro';
 import FollowThePath from '../components/FollowThePath.astro';
+import { PAGE_META } from '../data/page-meta';
 import aboutNemeton from '../images/about-nemeton-hooded.jpg';
 ---
 
-<Layout
-  title="About"
-  description="Meet Paul Creos and discover a creative path shaped by wood, symbols, Gaelic and Slavic inspiration, digital precision, hand carving, and fire."
->
+<Layout {...PAGE_META.about}>
   <main id="main-content">
     <header class="about-hero" aria-labelledby="about-hero-heading">
       <Image

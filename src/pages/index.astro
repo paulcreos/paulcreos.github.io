@@ -5,12 +5,12 @@ import ArticleList from '../components/ArticleList.astro';
 import CategoryNav from '../components/CategoryNav.astro';
 import FollowThePath from '../components/FollowThePath.astro';
 import CelticDivider from '../components/CelticDivider.astro';
-import { SITE } from '../config/site';
+import { PAGE_META } from '../data/page-meta';
 import homeCraftHero from '../images/home-craft-hero.jpg';
 import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
 ---
 
-<Layout title={SITE.name} description={SITE.description}>
+<Layout {...PAGE_META.home}>
   <main id="main-content">
     <header class="home-hero" aria-labelledby="home-hero-heading">
       <Image

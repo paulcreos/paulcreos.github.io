@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config/site';
+import { PAGE_META } from '../data/page-meta';
 ---
 
-<Layout
-  title="Company and privacy"
-  description="Company identification and privacy information for the Paul Creos website."
->
+<Layout {...PAGE_META.legal}>
   <main id="main-content">
     <section class="content-section legal-content" aria-labelledby="legal-heading">
       <p class="eyebrow">Company & privacy</p>
