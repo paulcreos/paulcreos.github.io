@@ -100,6 +100,21 @@ const personSchema = {
           section.classList.add('scroll-reveal');
           observer.observe(section);
         });
+
+        const identityBand = document.querySelector<HTMLElement>('.identity-band');
+        if (identityBand) {
+          const identityObserver = new IntersectionObserver(
+            (entries) => {
+              if (!entries[0].isIntersecting) return;
+
+              identityBand.classList.add('is-visible');
+              identityObserver.unobserve(identityBand);
+            },
+            { rootMargin: '0px 0px -12%', threshold: 0.2 },
+          );
+
+          identityObserver.observe(identityBand);
+        }
       }
     </script>
   </body>
