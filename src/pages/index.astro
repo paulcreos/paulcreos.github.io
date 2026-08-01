@@ -89,6 +89,41 @@ import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
     let activeSlide = 0;
     let rotationTimer: number | undefined;
 
+    const prepareTitle = (slide: HTMLElement) => {
+      const title = slide.querySelector<HTMLElement>('h1, .home-hero-title');
+      if (!title || title.classList.contains('hero-title-words')) return title;
+
+      const words = title.textContent?.trim().split(/\s+/) ?? [];
+      title.textContent = '';
+      title.classList.add('hero-title-words');
+
+      words.forEach((word, index) => {
+        const wordElement = document.createElement('span');
+        wordElement.className = 'hero-title-word';
+        wordElement.textContent = word;
+        wordElement.style.setProperty('--word-index', String(index));
+        title.append(wordElement, document.createTextNode(' '));
+      });
+
+      return title;
+    };
+
+    const revealTitle = (slide: HTMLElement) => {
+      if (reduceMotion.matches) return;
+
+      const title = prepareTitle(slide);
+      if (!title) return;
+
+      title.classList.remove('is-revealed');
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          if (slide.classList.contains('is-active')) title.classList.add('is-revealed');
+        });
+      });
+    };
+
+    slides.forEach(prepareTitle);
+
     const showSlide = (index: number) => {
       activeSlide = index;
       slides.forEach((slide, slideIndex) => {
@@ -97,12 +132,15 @@ import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
         slide.setAttribute('aria-hidden', String(!active));
       });
       images.forEach((image, imageIndex) => image.classList.toggle('is-active', imageIndex === index));
+      revealTitle(slides[index]);
       controls.forEach((control, controlIndex) => {
         const active = controlIndex === index;
         control.classList.toggle('is-active', active);
         control.toggleAttribute('aria-current', active);
       });
     };
+
+    revealTitle(slides[activeSlide]);
 
     const startRotation = () => {
       if (reduceMotion.matches || slides.length < 2) return;

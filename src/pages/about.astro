@@ -81,3 +81,30 @@ import aboutNemeton from '../images/about-nemeton-hooded.jpg';
     <FollowThePath />
   </main>
 </Layout>
+
+<script>
+  const aboutHero = document.querySelector<HTMLElement>('.about-hero-content');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (aboutHero && !reduceMotion.matches) {
+    const title = aboutHero.querySelector<HTMLElement>('h1');
+
+    if (title) {
+      const words = title.textContent?.trim().split(/\s+/) ?? [];
+      title.textContent = '';
+      title.classList.add('hero-title-words');
+
+      words.forEach((word, index) => {
+        const wordElement = document.createElement('span');
+        wordElement.className = 'hero-title-word';
+        wordElement.textContent = word;
+        wordElement.style.setProperty('--word-index', String(index));
+        title.append(wordElement, document.createTextNode(' '));
+      });
+
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => title.classList.add('is-revealed'));
+      });
+    }
+  }
+</script>
