@@ -2,7 +2,7 @@
 import { CATEGORY_KEYS, CATEGORY_META } from '../data/categories';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
-const allIsActive = pathname === '/articles';
+const allIsActive = pathname === '/articles' || pathname === '/';
 ---
 
 <nav class="category-nav" aria-label="Article categories">

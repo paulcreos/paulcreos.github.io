@@ -1,5 +1,7 @@
 ---
 import Layout from './Layout.astro';
+import CelticDivider from '../components/CelticDivider.astro';
+import SmallDivider from '../components/SmallDivider.astro';
 import { SITE } from '../config/site';
 
 const { frontmatter, slug } = Astro.props;
@@ -47,8 +49,10 @@ const articleSchema = {
           {frontmatter.author && <span> · {frontmatter.author}</span>}
         </p>
       </header>
+      <CelticDivider tone="forest" class="article-divider" />
       <div class="article-content">
         <slot />
+        <SmallDivider tone="forest" class="article-ending-mark" />
       </div>
     </article>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

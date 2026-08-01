@@ -1,5 +1,6 @@
 ---
 import { Image, getImage } from 'astro:assets';
+import CelticDivider from '../components/CelticDivider.astro';
 import Layout from '../layouts/Layout.astro';
 import ravenSigil from '../content/articles/images/raven-sigil-cover-v1.png';
 import ravenSigilKnotwork from '../content/articles/images/raven-sigil-knotwork-cover-v1.png';
@@ -63,6 +64,7 @@ const itemsWithFullImages = await Promise.all(
       <p class="section-intro">
         Explore carved reliefs in ash and birch. Open any image for a closer view.
       </p>
+      <CelticDivider tone="forest" class="gallery-divider" />
 
       <div class="gallery-grid">
         {itemsWithFullImages.map((item) => (

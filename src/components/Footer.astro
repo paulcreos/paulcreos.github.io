@@ -1,9 +1,11 @@
 ---
 import { SITE } from '../config/site';
+import FooterDivider from './FooterDivider.astro';
 ---
 
 <footer class="site-footer">
   <div class="content-width">
+    <FooterDivider class="footer-divider" />
     <p>
       <span>© 2013–{new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
       {' '}

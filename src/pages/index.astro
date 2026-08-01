@@ -4,8 +4,10 @@ import { Image } from 'astro:assets';
 import ArticleList from '../components/ArticleList.astro';
 import CategoryNav from '../components/CategoryNav.astro';
 import FollowThePath from '../components/FollowThePath.astro';
+import CelticDivider from '../components/CelticDivider.astro';
 import { SITE } from '../config/site';
 import homeCraftHero from '../images/home-craft-hero.jpg';
+import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
 ---
 
 <Layout title={SITE.name} description={SITE.description}>
@@ -33,6 +35,15 @@ import homeCraftHero from '../images/home-craft-hero.jpg';
         </nav>
       </div>
     </header>
+
+    <section class="identity-band" aria-label="Paul Creos — Imthecht in Druad">
+      <CelticDivider class="identity-band-ornament identity-band-ornament-top" />
+      <a href="/" aria-label="Paul Creos home">
+        <img src={crestLogoUrl} alt="Paul Creos" />
+      </a>
+      <p>Imthecht in Druad</p>
+      <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />
+    </section>
 
     <section class="content-section" aria-labelledby="latest-articles">
       <h2 id="latest-articles">Latest articles</h2>

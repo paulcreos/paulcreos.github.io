@@ -1,0 +1,38 @@
+---
+interface Props {
+  class?: string;
+  tone?: 'copper' | 'forest';
+}
+
+const { class: className, tone = 'copper' } = Astro.props;
+const color = tone === 'forest' ? '#385a3b' : 'var(--cta-wood)';
+---
+
+<span class={className} style={`color: ${color};`} aria-hidden="true">
+  <span class="small-divider-line"></span>
+  <span class="small-divider-mark"></span>
+  <span class="small-divider-line"></span>
+</span>
+
+<style>
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .small-divider-line {
+    width: 1.25rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.64;
+  }
+
+  .small-divider-mark {
+    width: 0.38rem;
+    height: 0.38rem;
+    border: 1px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0.92;
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import CelticDivider from '../components/CelticDivider.astro';
 import FollowThePath from '../components/FollowThePath.astro';
 import aboutNemeton from '../images/about-nemeton-hooded.jpg';
 ---
@@ -58,9 +59,13 @@ import aboutNemeton from '../images/about-nemeton-hooded.jpg';
         </div>
       </div>
 
+      <CelticDivider tone="forest" class="about-manifest-ornament about-manifest-ornament-top" />
+
       <blockquote class="about-manifest">
         <p>I turn intention into matter — and matter into meaning.</p>
       </blockquote>
+
+      <CelticDivider tone="forest" class="about-manifest-ornament about-manifest-ornament-bottom" />
 
       <div class="process-line" aria-label="Creative process">
         <span>Wood</span>

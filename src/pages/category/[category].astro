@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
+import CelticDivider from '../../components/CelticDivider.astro';
 import { CATEGORY_KEYS, CATEGORY_META, type Category } from '../../data/categories';
 
 export function getStaticPaths() {
@@ -24,6 +25,7 @@ const meta = CATEGORY_META[category];
     <section class="content-section category-page">
       <h1>{meta.label}</h1>
       <p class="section-intro">{meta.description}</p>
+      <CelticDivider tone="forest" class="category-divider" />
       <CategoryNav />
       <ArticleList category={category} />
     </section>

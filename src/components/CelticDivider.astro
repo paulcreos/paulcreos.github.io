@@ -1,0 +1,65 @@
+---
+interface Props {
+  class?: string;
+  tone?: 'copper' | 'forest';
+}
+
+const { class: className, tone = 'copper' } = Astro.props;
+const dividerColor = tone === 'forest' ? '#385a3b' : 'var(--cta-wood)';
+---
+
+<svg
+  class:list={[className, `divider-tone-${tone}`]}
+  style={`color: ${dividerColor};`}
+  viewBox="0 0 900 52"
+  role="presentation"
+  aria-hidden="true"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g class="divider-lines" stroke="currentColor" stroke-linecap="round">
+    <path d="M12 26H366" />
+    <path d="M534 26H888" />
+    <path d="M42 21H354" />
+    <path d="M546 21H858" />
+  </g>
+
+  <g class="divider-ornament" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M366 26c18 0 24-14 42-14 18 0 25 14 42 14-17 0-24 14-42 14-18 0-24-14-42-14Z" />
+    <path d="M534 26c-18 0-24-14-42-14-18 0-25 14-42 14 17 0 24 14 42 14 18 0 24-14 42-14Z" />
+    <path d="M432 26c7-7 14-7 18 0 4-7 11-7 18 0-7 7-14 7-18 0-4 7-11 7-18 0Z" />
+  </g>
+
+  <g fill="currentColor">
+    <circle cx="12" cy="26" r="2.15" />
+    <circle cx="888" cy="26" r="2.15" />
+    <circle cx="450" cy="26" r="1.75" />
+  </g>
+</svg>
+
+<style>
+  svg {
+    display: block;
+    color: var(--cta-wood);
+  }
+
+  .divider-lines {
+    opacity: 0.34;
+    stroke-width: 1;
+  }
+
+  .divider-ornament {
+    opacity: 0.86;
+    stroke-width: 1.2;
+  }
+
+  .divider-tone-forest .divider-lines {
+    opacity: 0.62;
+    stroke-width: 1.1;
+  }
+
+  .divider-tone-forest .divider-ornament {
+    opacity: 1;
+    stroke-width: 1.35;
+  }
+</style>

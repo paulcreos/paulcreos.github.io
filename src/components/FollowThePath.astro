@@ -1,3 +1,10 @@
+---
+import { Image } from 'astro:assets';
+import ravenRelief from '../content/articles/images/raven-sigil-cover-v1.png';
+import wolfDetail from '../content/articles/images/wolf-guardian-macro-v1.png';
+import knotworkDetail from '../content/articles/images/raven-sigil-knotwork-cover-v1.png';
+---
+
 <section class="social-section" aria-labelledby="social-heading">
   <div class="social-heading">
     <p class="eyebrow">Follow the path</p>
@@ -11,6 +18,9 @@
       target="_blank"
       rel="me noopener noreferrer"
     >
+      <span class="social-card-media" aria-hidden="true">
+        <Image src={ravenRelief} alt="" widths={[480, 720]} sizes="(min-width: 48rem) 16rem, 100vw" />
+      </span>
       <span class="social-name">Etsy</span>
       <span class="social-description">Explore available works</span>
       <span class="social-arrow" aria-hidden="true">↗</span>
@@ -22,6 +32,9 @@
       target="_blank"
       rel="me noopener noreferrer"
     >
+      <span class="social-card-media" aria-hidden="true">
+        <Image src={wolfDetail} alt="" widths={[480, 720]} sizes="(min-width: 48rem) 16rem, 100vw" />
+      </span>
       <span class="social-name">Instagram</span>
       <span class="social-description">Follow new pieces and work in progress</span>
       <span class="social-arrow" aria-hidden="true">↗</span>
@@ -33,9 +46,13 @@
       target="_blank"
       rel="me noopener noreferrer"
     >
+      <span class="social-card-media" aria-hidden="true">
+        <Image src={knotworkDetail} alt="" widths={[480, 720]} sizes="(min-width: 48rem) 16rem, 100vw" />
+      </span>
       <span class="social-name">Pinterest</span>
       <span class="social-description">Enter the visual archive</span>
       <span class="social-arrow" aria-hidden="true">↗</span>
     </a>
   </div>
+
 </section>
