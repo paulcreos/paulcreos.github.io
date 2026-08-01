@@ -56,10 +56,7 @@ html {
 body {
   min-width: 20rem;
   margin: 0;
-  background:
-    radial-gradient(circle at 8% 12%, rgb(111 134 89 / 0.16), transparent 28rem),
-    radial-gradient(circle at 92% 46%, rgb(63 88 68 / 0.12), transparent 30rem),
-    var(--color-background);
+  background: #191512;
   color: var(--color-text);
   font-family: Petrona, Georgia, serif;
   font-size: 1rem;
@@ -214,18 +211,11 @@ h2 {
 
   .scroll-reveal {
     opacity: 0;
-    transform: translateY(1.35rem);
-    filter: blur(2px);
-    transition:
-      opacity 650ms ease-out,
-      transform 750ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 650ms ease-out;
+    transition: opacity 700ms ease-out;
   }
 
   .scroll-reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
   }
 }
 
@@ -1051,13 +1041,13 @@ h2 {
 .work-specification {
   display: grid;
   margin: 0 0 clamp(2rem, 5vw, 3rem);
-  border-block: 1px solid rgb(72 94 70 / 0.25);
+  border-block: 1px solid rgb(228 189 128 / 0.2);
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .work-specification div {
   padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgb(72 94 70 / 0.18);
+  border-bottom: 1px solid rgb(228 189 128 / 0.14);
 }
 
 .work-specification div:nth-last-child(-n + 2) {
@@ -1065,7 +1055,7 @@ h2 {
 }
 
 .work-specification dt {
-  color: #536847;
+  color: #d8b48e;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1074,7 +1064,7 @@ h2 {
 
 .work-specification dd {
   margin: 0.15rem 0 0;
-  color: var(--color-text);
+  color: rgb(248 244 237 / 0.88);
 }
 
 .articles-divider {
@@ -1089,19 +1079,21 @@ h2 {
 
 .article-card {
   padding: clamp(1.25rem, 5vw, 2rem);
-  border: 1px solid rgb(195 160 111 / 0.26);
+  border: 1px solid rgb(228 189 128 / 0.25);
   border-radius: 0.55rem;
-  background: rgb(240 239 226 / 0.92);
+  background:
+    linear-gradient(135deg, rgb(62 49 35 / 0.42), transparent 48%),
+    rgb(24 21 18 / 0.82);
   box-shadow:
-    0 0.35rem 1.4rem rgb(5 7 5 / 0.2),
-    inset 0 1px rgb(255 255 255 / 0.42);
+    0 0.45rem 1.6rem rgb(5 7 5 / 0.28),
+    inset 0 1px rgb(255 239 209 / 0.05);
   text-align: center;
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .article-card:hover {
-  border-color: rgb(195 160 111 / 0.58);
-  box-shadow: 0 0.65rem 1.8rem rgb(5 7 5 / 0.28);
+  border-color: rgb(228 189 128 / 0.56);
+  box-shadow: 0 0.75rem 2rem rgb(5 7 5 / 0.38);
   transform: translateY(-0.12rem);
 }
 
@@ -1140,17 +1132,17 @@ h2 {
 }
 
 .article-card h2 a {
-  color: var(--color-text);
-  text-decoration-color: rgb(195 160 111 / 0.65);
+  color: #f8f4ed;
+  text-decoration-color: rgb(228 189 128 / 0.65);
 }
 
 .article-card h2 a:hover {
-  color: #425438;
+  color: #f1ca91;
 }
 
 .article-card-meta {
   margin: 1rem 0;
-  color: var(--color-muted);
+  color: rgb(248 244 237 / 0.68);
   font-size: 0.875rem;
 }
 
@@ -1171,9 +1163,9 @@ h2 {
   border: 1px solid currentColor;
 }
 
-.is-available { color: #316443; }
-.is-sold { color: #786051; }
-.is-in-progress { color: #87653c; }
+.article-card .is-available { color: #b5d19b; }
+.article-card .is-sold { color: #d68c82; }
+.article-card .is-in-progress { color: #e4bd80; }
 
 .article-shop-link {
   margin: 1.15rem 0 0;
@@ -1205,16 +1197,16 @@ a.work-shop-link:hover {
 
 .category-badge {
   margin-right: 0.6rem;
-  border: 1px solid rgb(195 160 111 / 0.34);
-  background: rgb(195 160 111 / 0.12);
-  color: #6a5538;
+  border: 1px solid rgb(228 189 128 / 0.34);
+  background: rgb(228 189 128 / 0.1);
+  color: #e4bd80;
   text-decoration: none;
   box-shadow: none;
 }
 
 .article-summary {
   margin: 0;
-  color: var(--color-muted);
+  color: rgb(242 237 226 / 0.8);
   font-size: clamp(1rem, 2.5vw, 1.15rem);
 }
 
@@ -1223,9 +1215,9 @@ a.work-shop-link:hover {
 }
 
 .read-more a {
-  color: #52643f;
+  color: #e4bd80;
   font-weight: 700;
-  text-decoration-color: rgb(195 160 111 / 0.72);
+  text-decoration-color: rgb(228 189 128 / 0.72);
 }
 
 .empty-state {
@@ -1264,23 +1256,27 @@ a.work-shop-link:hover {
 }
 
 .articles-page .article-content {
-  border-color: rgb(228 189 128 / 0.22);
-  background: rgb(240 239 226 / 0.92);
-  color: var(--color-text);
-  box-shadow: 0 0.6rem 2rem rgb(5 7 5 / 0.28);
+  border-color: rgb(228 189 128 / 0.28);
+  background:
+    linear-gradient(135deg, rgb(56 46 34 / 0.34), transparent 46%),
+    rgb(22 19 16 / 0.72);
+  color: rgb(242 237 226 / 0.9);
+  box-shadow: 0 0.8rem 2.4rem rgb(5 7 5 / 0.34), inset 0 1px rgb(255 239 209 / 0.04);
 }
 
 .work-page .article-content {
-  border-color: rgb(228 189 128 / 0.22);
-  background: rgb(240 239 226 / 0.92);
-  color: var(--color-text);
-  box-shadow: 0 0.6rem 2rem rgb(5 7 5 / 0.28);
+  border-color: rgb(228 189 128 / 0.28);
+  background:
+    linear-gradient(135deg, rgb(56 46 34 / 0.34), transparent 46%),
+    rgb(22 19 16 / 0.72);
+  color: rgb(242 237 226 / 0.9);
+  box-shadow: 0 0.8rem 2.4rem rgb(5 7 5 / 0.34), inset 0 1px rgb(255 239 209 / 0.04);
 }
 
 .work-description {
   max-width: 42rem;
   margin: 0 auto clamp(1.75rem, 4vw, 2.5rem);
-  color: var(--color-muted);
+  color: rgb(242 237 226 / 0.82);
   font-size: clamp(1.08rem, 2.5vw, 1.22rem);
   line-height: 1.55;
   text-align: center;
@@ -1346,8 +1342,18 @@ a.work-shop-link:hover {
 
 .article-content h2,
 .article-content h3 {
+  color: #e4bd80;
   margin-top: 2em;
   margin-bottom: 0.65em;
+}
+
+.article-content a:not(.work-shop-link) {
+  color: #e4bd80;
+  text-decoration-color: rgb(228 189 128 / 0.5);
+}
+
+.article-content a:not(.work-shop-link):hover {
+  color: #f8e3be;
 }
 
 .article-content p,
@@ -1375,7 +1381,7 @@ a.work-shop-link:hover {
 .article-content th,
 .article-content td {
   padding: 0.55rem 0.7rem;
-  border: 1px solid rgb(70 63 58 / 0.35);
+  border: 1px solid rgb(228 189 128 / 0.22);
   text-align: left;
 }
 
@@ -1383,7 +1389,8 @@ a.work-shop-link:hover {
   max-width: 100%;
   padding: 1rem;
   border-radius: 0.35rem;
-  background: #211f1d;
+  border: 1px solid rgb(228 189 128 / 0.16);
+  background: rgb(10 10 8 / 0.72);
   color: #f8f5ef;
   overflow-x: auto;
   font-size: 0.875rem;
@@ -1392,11 +1399,30 @@ a.work-shop-link:hover {
 .article-content :not(pre) > code {
   padding: 0.1em 0.3em;
   border-radius: 0.2rem;
-  background: rgb(70 63 58 / 0.13);
+  background: rgb(228 189 128 / 0.13);
 }
 
 .legal-content {
   max-width: 45rem;
+  color: rgb(248 244 237 / 0.86);
+}
+
+.legal-content h1,
+.legal-content h2 {
+  color: #e4bd80;
+}
+
+.legal-content .eyebrow,
+.legal-content a {
+  color: #d8b48e;
+}
+
+.legal-content .company-details div {
+  border-color: rgb(228 189 128 / 0.2);
+}
+
+.legal-content .legal-note {
+  color: rgb(248 244 237 / 0.64);
 }
 
 .about-hero {
