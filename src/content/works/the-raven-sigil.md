@@ -1,12 +1,17 @@
 ---
-title: 'The Raven Sigil: A Protective Wood Relief'
+title: 'Raven Warden'
 description: A circular raven relief carved in ash and birch, combining CNC preparation, hand carving, pyrography, Celtic-inspired forms, and a pair of protective Latin inscriptions.
 date: 2026-07-31
 author: 'Paul Creos'
-category: works
+workCategory: reliefs
 availability: in-progress
 cover: images/raven-sigil-cover-v1.png
 coverAlt: Circular wooden relief of a raven bearing a triskele and surrounded by protective Latin inscriptions
+materials:
+  - Ash
+  - Birch
+dimensions: 'Ø 22 cm × 22 mm'
+createdDate: 2026-07-31
 draft: false
 ---
 

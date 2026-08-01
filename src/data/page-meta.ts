@@ -14,6 +14,11 @@ export const PAGE_META = {
     description:
       'Read Paul Creos on handcrafted wood reliefs, creative technology, digital fabrication, symbolism, nature, and the modern druid path.',
   },
+  works: {
+    title: 'Original Handcrafted Wood Reliefs',
+    description:
+      'Explore original wood reliefs by Paul Creos, shaped from solid timber through CNC preparation, hand carving, pyrography, and symbolic detail.',
+  },
   gallery: {
     title: 'Gallery of Handcrafted Wood Reliefs',
     description:

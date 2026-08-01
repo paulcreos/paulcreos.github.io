@@ -1,0 +1,91 @@
+---
+import Layout from './Layout.astro';
+import CelticDivider from '../components/CelticDivider.astro';
+import SmallDivider from '../components/SmallDivider.astro';
+import { Image } from 'astro:assets';
+import { SITE } from '../config/site';
+import { WORK_AVAILABILITY, type WorkAvailability } from '../data/work-availability';
+
+const { frontmatter, slug } = Astro.props;
+const availability = WORK_AVAILABILITY[frontmatter.availability as WorkAvailability];
+const workSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: frontmatter.title,
+  description: frontmatter.description,
+  image: frontmatter.cover?.src,
+  brand: { '@type': 'Brand', name: SITE.name },
+  url: `${SITE.url}/works/${slug}`,
+};
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  canonical={`/works/${slug}`}
+  type="article"
+  publishedTime={frontmatter.date}
+  modifiedTime={frontmatter.updatedDate}
+>
+  <main id="main-content" class="work-page">
+    <article class="article-shell work-shell">
+      <header class="article-header">
+        <p class="eyebrow">Original work</p>
+        <h1>{frontmatter.title}</h1>
+        <p class:list={['work-availability-note', availability.className]}>{availability.label}</p>
+      </header>
+      <CelticDivider class="article-divider" />
+      <figure class="work-cover">
+        <Image
+          src={frontmatter.cover}
+          alt={frontmatter.coverAlt}
+          widths={[768, 1024, 1440]}
+          sizes="(min-width: 50rem) 48rem, calc(100vw - 2rem)"
+          loading="eager"
+        />
+      </figure>
+      <div class="article-content">
+        <p class="work-description">{frontmatter.description}</p>
+        <dl class="work-specification">
+          <div>
+            <dt>Material</dt>
+            <dd>{frontmatter.materials.join(' / ')}</dd>
+          </div>
+          <div>
+            <dt>Dimensions</dt>
+            <dd>{frontmatter.dimensions}</dd>
+          </div>
+          {frontmatter.createdDate && (
+            <div>
+              <dt>Created</dt>
+              <dd>{frontmatter.createdDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}</dd>
+            </div>
+          )}
+          {frontmatter.edition && (
+            <div>
+              <dt>Edition</dt>
+              <dd>{frontmatter.edition}</dd>
+            </div>
+          )}
+        </dl>
+        <slot />
+        <p class="work-shop-cta">
+          {frontmatter.shopUrl ? (
+            <a
+              class:list={['work-shop-link', availability.className]}
+              href={frontmatter.shopUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {availability.label} <span aria-hidden="true">↗</span>
+            </a>
+          ) : (
+            <span class:list={['work-shop-link', availability.className]}>{availability.label}</span>
+          )}
+        </p>
+        <SmallDivider tone="forest" class="article-ending-mark" />
+      </div>
+    </article>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(workSchema)} />
+  </main>
+</Layout>

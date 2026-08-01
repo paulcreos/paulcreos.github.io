@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import ArticleList from '../components/ArticleList.astro';
-import CategoryNav from '../components/CategoryNav.astro';
 import FollowThePath from '../components/FollowThePath.astro';
+import WorkGrid from '../components/WorkGrid.astro';
+import WorkCategoryNav from '../components/WorkCategoryNav.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import { PAGE_META } from '../data/page-meta';
 import homeCraftHero from '../images/home-craft-hero.jpg';
@@ -68,10 +68,10 @@ import crestLogoUrl from '../images/CREOS-logo-warm.svg?url';
       <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />
     </section>
 
-    <section class="content-section" aria-labelledby="latest-articles">
-      <h2 id="latest-articles">Latest articles</h2>
-      <CategoryNav />
-      <ArticleList limit={3} />
+    <section class="content-section works-section home-works-section" aria-labelledby="latest-works">
+      <h2 id="latest-works">Latest works</h2>
+      <WorkCategoryNav />
+      <WorkGrid limit={9} />
     </section>
 
     <FollowThePath />

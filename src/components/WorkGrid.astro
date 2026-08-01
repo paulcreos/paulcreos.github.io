@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { WORK_AVAILABILITY } from '../data/work-availability';
+import type { WorkCategory } from '../data/work-categories';
+
+interface Props {
+  limit?: number;
+  category?: WorkCategory;
+}
+
+const { limit, category } = Astro.props;
+let works = await getCollection('works');
+
+if (category) {
+  works = works.filter((work) => work.data.workCategory === category);
+}
+
+const sortedWorks = works
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, limit ?? undefined);
+---
+
+<div class="work-grid">
+  {sortedWorks.map((work) => {
+    const availability = WORK_AVAILABILITY[work.data.availability];
+    const url = `/works/${work.id}`;
+
+    return (
+      <article class="work-card">
+        <a class="work-card-link" href={url} aria-label={`Explore ${work.data.title}`}>
+          <Image
+            src={work.data.cover}
+            alt={work.data.coverAlt}
+            widths={[480, 720, 960]}
+            sizes="(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw"
+            loading="lazy"
+          />
+          <span class="work-card-shade" aria-hidden="true"></span>
+          <span class="work-card-content">
+            <span class="work-card-title">{work.data.title}</span>
+            <span class:list={['work-card-status', availability.className]}>{availability.label}</span>
+          </span>
+        </a>
+      </article>
+    );
+  })}
+</div>
+
+{sortedWorks.length === 0 && <p class="empty-state">New works are taking form.</p>}

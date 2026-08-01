@@ -1,0 +1,26 @@
+---
+import { WORK_CATEGORY_KEYS, WORK_CATEGORY_META } from '../data/work-categories';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const allIsActive = pathname === '/works' || pathname === '/';
+---
+
+<nav class="category-nav" aria-label="Work categories">
+  <a
+    href="/works"
+    class:list={['category-nav-link', 'category-nav-all', { 'is-active': allIsActive }]}
+    aria-current={allIsActive ? 'page' : undefined}
+  >All</a>
+  {WORK_CATEGORY_KEYS.map((category) => {
+    const isActive = pathname === `/works/category/${category}`;
+    const meta = WORK_CATEGORY_META[category];
+
+    return (
+      <a
+        href={`/works/category/${category}`}
+        class:list={['category-nav-link', { 'is-active': isActive }]}
+        aria-current={isActive ? 'page' : undefined}
+      >{meta.label}</a>
+    );
+  })}
+</nav>

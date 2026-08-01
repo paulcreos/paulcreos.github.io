@@ -3,6 +3,7 @@ import MyLogoText from '../images/CREOS-logo-text.svg';
 const pathname = Astro.url.pathname;
 const items = [
   { href: '/', label: 'Home', active: pathname === '/' },
+  { href: '/works', label: 'Works', active: pathname.startsWith('/works') },
   {
     href: '/articles',
     label: 'Articles',

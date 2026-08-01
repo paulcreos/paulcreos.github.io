@@ -1,4 +1,4 @@
-export const CATEGORY_KEYS = ['works', 'technology', 'druidism'] as const;
+export const CATEGORY_KEYS = ['technology', 'druidism'] as const;
 
 export type Category = (typeof CATEGORY_KEYS)[number];
 
@@ -6,12 +6,6 @@ export const CATEGORY_META: Record<
   Category,
   { label: string; title: string; description: string; classes: string }
 > = {
-  works: {
-    label: 'Works',
-    title: 'Works: Handcrafted Wood Reliefs',
-    description: 'Explore original wood reliefs and sculptural objects, handcrafted by Paul Creos from solid timber with carved and burned symbolic detail.',
-    classes: 'bg-amber-100 text-amber-900',
-  },
   technology: {
     label: 'Technology',
     title: 'Technology: Digital Fabrication & Creative Tools',

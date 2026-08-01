@@ -3,11 +3,11 @@ import { Image, getImage } from 'astro:assets';
 import CelticDivider from '../components/CelticDivider.astro';
 import Layout from '../layouts/Layout.astro';
 import { PAGE_META } from '../data/page-meta';
-import ravenSigil from '../content/articles/images/raven-sigil-cover-v1.png';
-import ravenSigilKnotwork from '../content/articles/images/raven-sigil-knotwork-cover-v1.png';
-import wolfGuardian from '../content/articles/images/wolf-guardian-cover-v1.png';
-import wolfGuardianDetail from '../content/articles/images/wolf-guardian-detail-v1.png';
-import wolfGuardianMacro from '../content/articles/images/wolf-guardian-macro-v1.png';
+import ravenSigil from '../content/works/images/raven-sigil-cover-v1.png';
+import ravenSigilKnotwork from '../content/works/images/raven-sigil-knotwork-cover-v1.png';
+import wolfGuardian from '../content/works/images/wolf-guardian-cover-v1.png';
+import wolfGuardianDetail from '../content/works/images/wolf-guardian-detail-v1.png';
+import wolfGuardianMacro from '../content/works/images/wolf-guardian-macro-v1.png';
 
 const galleryItems = [
   {
@@ -56,13 +56,13 @@ const itemsWithFullImages = await Promise.all(
 ---
 
 <Layout {...PAGE_META.gallery}>
-  <main id="main-content">
+  <main id="main-content" class="gallery-page">
     <section class="content-section gallery-section" aria-labelledby="gallery-heading">
       <h1 id="gallery-heading">Gallery</h1>
       <p class="section-intro">
         Explore carved reliefs in ash and birch. Open any image for a closer view.
       </p>
-      <CelticDivider tone="forest" class="gallery-divider" />
+      <CelticDivider class="gallery-divider" />
 
       <div class="gallery-grid">
         {itemsWithFullImages.map((item) => (

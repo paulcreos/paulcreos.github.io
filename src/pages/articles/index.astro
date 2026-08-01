@@ -7,13 +7,13 @@ import { PAGE_META } from '../../data/page-meta';
 ---
 
 <Layout {...PAGE_META.articles}>
-  <main id="main-content">
+  <main id="main-content" class="articles-page">
     <section class="content-section" aria-labelledby="all-articles">
       <h1 id="all-articles">Articles</h1>
       <p class="section-intro">
         Notes on craft, symbolism, wood, and the meeting of handwork with technology.
       </p>
-      <CelticDivider tone="forest" class="articles-divider" />
+      <CelticDivider class="articles-divider" />
       <CategoryNav />
       <ArticleList />
     </section>

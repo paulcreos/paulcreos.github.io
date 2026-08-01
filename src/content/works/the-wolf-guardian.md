@@ -1,12 +1,17 @@
 ---
-title: 'The Wolf Guardian: A Carved Wood Relief'
+title: 'Wolf Guardian'
 description: A circular wolf relief in ash and birch, combining Celtic-inspired knotwork, symbolic pendants, CNC preparation, hand carving, pyrography, and a tactile oil finish.
 date: 2026-07-31
 author: 'Paul Creos'
-category: works
+workCategory: reliefs
 availability: in-progress
 cover: images/wolf-guardian-cover-v1.png
 coverAlt: Circular wooden relief of a snarling wolf framed by Celtic-inspired knotwork
+materials:
+  - Ash
+  - Birch
+dimensions: 'Ø 22 cm × 22 mm'
+createdDate: 2026-07-31
 draft: false
 ---
 

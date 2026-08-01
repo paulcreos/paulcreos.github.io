@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import WorkGrid from '../../../components/WorkGrid.astro';
+import WorkCategoryNav from '../../../components/WorkCategoryNav.astro';
+import CelticDivider from '../../../components/CelticDivider.astro';
+import { WORK_CATEGORY_KEYS, WORK_CATEGORY_META, type WorkCategory } from '../../../data/work-categories';
+
+export function getStaticPaths() {
+  return WORK_CATEGORY_KEYS.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}
+
+interface Props {
+  category: WorkCategory;
+}
+
+const { category } = Astro.props;
+const meta = WORK_CATEGORY_META[category];
+---
+
+<Layout title={meta.title} description={meta.description}>
+  <main id="main-content" class="works-page">
+    <section class="content-section works-section" aria-labelledby="works-heading">
+      <h1 id="works-heading">{meta.label}</h1>
+      <p class="section-intro">{meta.description}</p>
+      <CelticDivider tone="forest" class="works-divider" />
+      <WorkCategoryNav />
+      <WorkGrid category={category} />
+    </section>
+  </main>
+</Layout>
