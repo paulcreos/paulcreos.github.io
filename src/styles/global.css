@@ -15,6 +15,7 @@
 :root {
   color-scheme: light;
   --content-width: 48rem;
+  --reading-width: 48rem;
   --font-display: Petrona, Georgia, serif;
   --focus-color: #0b5cad;
   --hero-accent: #d8b48e;
@@ -142,9 +143,13 @@ h2 {
 
 .content-width,
 .nav-inner,
-.content-section,
-.article-shell {
+.content-section {
   width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+.article-shell {
+  width: min(100% - 2rem, var(--reading-width));
   margin-inline: auto;
 }
 
@@ -717,6 +722,10 @@ h2 {
 
 .work-page .eyebrow {
   color: #e4bd80;
+}
+
+.work-page .article-shell {
+  width: min(100% - 2rem, var(--content-width));
 }
 
 .works-page .section-intro {
@@ -1695,6 +1704,60 @@ a.work-shop-link:hover {
 
 .fslightbox-caption {
   color: #fff;
+}
+
+@media (min-width: 96rem) {
+  :root {
+    --content-width: 64rem;
+  }
+
+  .home-hero,
+  .about-hero {
+    min-height: clamp(40rem, 58vw, 54rem);
+  }
+
+  .home-hero-content h1,
+  .home-hero-title,
+  .about-hero-content h1 {
+    font-size: clamp(3.25rem, 4.8vw, 6rem);
+  }
+
+  .home-hero-lead,
+  .about-hero-content > p:last-child {
+    font-size: 1.35rem;
+  }
+
+  .home-hero-actions a {
+    min-height: 3.25rem;
+    padding-inline: 1.35rem;
+    font-size: 1rem;
+  }
+
+  .content-section {
+    padding-block: clamp(3.5rem, 5vw, 5.75rem);
+  }
+
+  .work-grid,
+  .gallery-grid,
+  .social-links {
+    gap: 1.35rem;
+  }
+
+  .work-card-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 140rem) {
+  :root {
+    --content-width: 72rem;
+  }
+
+  .home-hero-content h1,
+  .home-hero-title,
+  .about-hero-content h1 {
+    font-size: 6.5rem;
+  }
 }
 
 @media (max-width: 39rem) {
