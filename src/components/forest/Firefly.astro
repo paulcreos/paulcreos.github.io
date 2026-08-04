@@ -1,0 +1,94 @@
+---
+interface Props {
+  class?: string;
+  profile?: 'curious' | 'distant' | 'wanderer';
+}
+
+const { class: className = '', profile = 'curious' } = Astro.props;
+---
+
+<span
+  class:list={['forest-firefly', `forest-firefly--${profile}`, className]}
+  data-firefly
+  data-firefly-profile={profile}
+  data-firefly-state="sleeping"
+  aria-hidden="true"
+>
+  <span class="forest-firefly__glow"></span>
+</span>
+
+<style>
+  .forest-firefly {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.31rem;
+    height: 0.31rem;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .forest-firefly__glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #fffbd8;
+    box-shadow:
+      0 0 0.34rem 0.12rem rgb(255 244 166 / 0.95),
+      0 0 1rem 0.34rem rgb(225 245 137 / 0.62),
+      0 0 2rem 0.72rem rgb(190 229 112 / 0.3);
+    animation: firefly-pulse 2.9s ease-in-out infinite;
+  }
+
+  .forest-firefly--distant {
+    width: 0.17rem;
+    height: 0.17rem;
+  }
+
+  .forest-firefly--distant .forest-firefly__glow {
+    background: #f4f5bd;
+    box-shadow:
+      0 0 0.24rem 0.08rem rgb(240 241 157 / 0.7),
+      0 0 0.72rem 0.22rem rgb(196 220 116 / 0.32),
+      0 0 1.35rem 0.4rem rgb(173 208 106 / 0.13);
+    animation-duration: 4.2s;
+  }
+
+  .forest-firefly--wanderer {
+    width: 0.27rem;
+    height: 0.27rem;
+  }
+
+  .forest-firefly--wanderer .forest-firefly__glow {
+    background: #fff0b5;
+    box-shadow:
+      0 0 0.26rem 0.09rem rgb(255 224 132 / 0.78),
+      0 0 0.78rem 0.24rem rgb(235 190 92 / 0.38),
+      0 0 1.45rem 0.44rem rgb(209 158 72 / 0.15);
+    animation-duration: 3.5s;
+  }
+
+  @keyframes firefly-pulse {
+    0%,
+    100% {
+      opacity: 0.58;
+      transform: scale(0.75);
+    }
+
+    45% {
+      opacity: 1;
+      transform: scale(1.18);
+    }
+
+    68% {
+      opacity: 0.72;
+      transform: scale(0.9);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .forest-firefly {
+      display: none;
+    }
+  }
+</style>

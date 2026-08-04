@@ -6,6 +6,7 @@ import WorkGrid from '../components/WorkGrid.astro';
 import WorkCategoryNav from '../components/WorkCategoryNav.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import LogoMark from '../components/LogoMark.astro';
+import ForestSpiritLayer from '../components/forest/ForestSpiritLayer.astro';
 import { PAGE_META } from '../data/page-meta';
 import homeCraftHero from '../images/home-craft-hero.jpg';
 import worksHero from '../images/works-hero-wolf-v2.png';
@@ -19,6 +20,7 @@ import nemetonHero from '../images/about-nemeton-hooded.jpg';
       <Image class="home-hero-image" src={worksHero} alt="A carved wolf relief surrounded by Celtic knotwork" widths={[768, 1280, 1774]} sizes="100vw" loading="lazy" data-hero-image />
       <Image class="home-hero-image" src={nemetonHero} alt="A hooded figure standing among ancient oak trees in a misty nemeton" widths={[768, 1280, 1774]} sizes="100vw" loading="lazy" data-hero-image />
       <div class="home-hero-shade" aria-hidden="true"></div>
+      <ForestSpiritLayer />
       <div class="home-hero-content is-active" data-hero-slide>
         <p class="home-hero-eyebrow">From the Nemeton</p>
         <h1 id="home-hero-heading">Wood lives again.</h1>

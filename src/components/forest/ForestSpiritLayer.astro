@@ -1,0 +1,58 @@
+---
+import Firefly from './Firefly.astro';
+
+interface Props {
+  fireflies?: boolean;
+}
+
+const { fireflies = true } = Astro.props;
+---
+
+<div class="forest-spirit-layer" aria-hidden="true">
+  {fireflies && (
+    <>
+      <Firefly profile="curious" />
+      <Firefly profile="distant" />
+      <Firefly profile="wanderer" />
+    </>
+  )}
+</div>
+
+<style>
+  .forest-spirit-layer {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import { FireflyController } from './firefly-engine';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const controllers: FireflyController[] = [];
+
+  if (!reduceMotion.matches) {
+    document.querySelectorAll<HTMLElement>('.forest-spirit-layer').forEach((layer) => {
+      const habitat = layer.closest<HTMLElement>('.home-hero');
+
+      layer.querySelectorAll<HTMLElement>('[data-firefly]').forEach((firefly) => {
+        if (!habitat) return;
+
+        const requestedProfile = firefly.dataset.fireflyProfile;
+        const profile = requestedProfile === 'distant' || requestedProfile === 'wanderer'
+          ? requestedProfile
+          : 'curious';
+        const controller = new FireflyController(firefly, habitat, profile);
+        controllers.push(controller);
+        controller.start();
+      });
+    });
+  }
+
+  document.addEventListener('astro:before-swap', () => {
+    controllers.forEach((controller) => controller.stop());
+  }, { once: true });
+</script>
