@@ -17,6 +17,18 @@
   --content-width: 48rem;
   --reading-width: 48rem;
   --font-display: Petrona, Georgia, serif;
+  --font-reading: Petrona, Georgia, serif;
+  --type-label: 0.75rem;
+  --type-meta: 0.875rem;
+  --type-body: 1rem;
+  --type-reading: clamp(1.03rem, 0.3vw + 0.98rem, 1.1rem);
+  --type-lead: clamp(1.05rem, 2vw, 1.25rem);
+  --type-heading-3: clamp(1.15rem, 2vw, 1.45rem);
+  --type-heading-2: clamp(1.4rem, 3.5vw, 1.95rem);
+  --type-heading-1: clamp(1.85rem, 5vw, 2.6rem);
+  --leading-body: 1.65;
+  --leading-reading: 1.7;
+  --tracking-label: 0.16em;
   --focus-color: #0b5cad;
   --hero-accent: #d8b48e;
   --cta-wood: #c3a06f;
@@ -58,10 +70,10 @@ body {
   margin: 0;
   background: #191512;
   color: var(--color-text);
-  font-family: Petrona, Georgia, serif;
-  font-size: 1rem;
+  font-family: var(--font-reading);
+  font-size: var(--type-body);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: var(--leading-body);
 }
 
 ::selection {
@@ -113,12 +125,17 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-size: var(--type-heading-1);
   font-weight: 400;
 }
 
 h2 {
-  font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+  font-size: var(--type-heading-2);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: var(--type-heading-3);
   font-weight: 400;
 }
 
@@ -355,7 +372,7 @@ h2 {
 .home-hero-eyebrow {
   margin: 0 0 0.8rem;
   color: var(--hero-accent);
-  font-size: 0.76rem;
+  font-size: var(--type-label);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -442,7 +459,7 @@ h2 {
   max-width: 32rem;
   margin: 1.3rem 0 0;
   color: rgb(248 244 237 / 0.82);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: var(--type-lead);
   line-height: 1.55;
   text-wrap: balance;
 }
@@ -1290,8 +1307,8 @@ a.work-shop-link:hover {
   max-width: 42rem;
   margin: 0 auto clamp(1.75rem, 4vw, 2.5rem);
   color: rgb(242 237 226 / 0.82);
-  font-size: clamp(1.08rem, 2.5vw, 1.22rem);
-  line-height: 1.55;
+  font-size: var(--type-reading);
+  line-height: var(--leading-reading);
   text-align: center;
   text-wrap: balance;
 }
@@ -1358,6 +1375,11 @@ a.work-shop-link:hover {
   color: #e4bd80;
   margin-top: 2em;
   margin-bottom: 0.65em;
+}
+
+.article-content {
+  font-size: var(--type-reading);
+  line-height: var(--leading-reading);
 }
 
 .article-content a:not(.work-shop-link) {
@@ -1498,7 +1520,7 @@ a.work-shop-link:hover {
 .about-hero-eyebrow {
   margin: 0 0 0.8rem;
   color: var(--hero-accent);
-  font-size: 0.76rem;
+  font-size: var(--type-label);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1554,9 +1576,9 @@ a.work-shop-link:hover {
 .eyebrow {
   margin: 0 0 0.6rem;
   color: var(--color-primary);
-  font-size: 0.78rem;
+  font-size: var(--type-label);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
 
@@ -1571,7 +1593,8 @@ a.work-shop-link:hover {
 
 .about-copy {
   color: rgb(248 244 237 / 0.8);
-  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-size: var(--type-reading);
+  line-height: var(--leading-reading);
 }
 
 .about-copy p {
