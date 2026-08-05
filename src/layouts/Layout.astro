@@ -80,6 +80,7 @@ const personSchema = {
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
       if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+        const compactViewport = window.matchMedia('(max-width: 640px)').matches;
         const sections = document.querySelectorAll<HTMLElement>(
           'main > section:not(.identity-band), main > article',
         );
@@ -93,7 +94,10 @@ const personSchema = {
               observer.unobserve(entry.target);
             });
           },
-          { rootMargin: '0px 0px -8%', threshold: 0.1 },
+          {
+            rootMargin: compactViewport ? '0px 0px 18%' : '0px 0px -8%',
+            threshold: compactViewport ? 0.01 : 0.1,
+          },
         );
 
         sections.forEach((section) => {
