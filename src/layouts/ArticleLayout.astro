@@ -2,8 +2,10 @@
 import Layout from './Layout.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import SmallDivider from '../components/SmallDivider.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE } from '../config/site';
 import { WORK_AVAILABILITY, type WorkAvailability } from '../data/work-availability';
+import { CATEGORY_META, type Category } from '../data/categories';
 
 const { frontmatter, slug } = Astro.props;
 const availability = frontmatter.availability
@@ -41,6 +43,16 @@ const articleSchema = {
   <main id="main-content" class="articles-page">
     <article class="article-shell">
       <header class="article-header">
+        <Breadcrumbs items={[
+          { label: 'Home', href: '/' },
+          { label: 'Articles', href: '/articles' },
+          {
+            label: CATEGORY_META[frontmatter.category as Category].label,
+            href: `/category/${frontmatter.category}`,
+          },
+          { label: frontmatter.title },
+        ]} />
+        <CelticDivider tone="forest" class="breadcrumb-divider" />
         <h1>{frontmatter.title}</h1>
         <p class="article-meta">
           <time datetime={frontmatter.date.toISOString()}>

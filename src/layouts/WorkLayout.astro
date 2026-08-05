@@ -2,9 +2,11 @@
 import Layout from './Layout.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import SmallDivider from '../components/SmallDivider.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { Image } from 'astro:assets';
 import { SITE } from '../config/site';
 import { WORK_AVAILABILITY, type WorkAvailability } from '../data/work-availability';
+import { WORK_CATEGORY_META, type WorkCategory } from '../data/work-categories';
 
 const { frontmatter, slug } = Astro.props;
 const availability = WORK_AVAILABILITY[frontmatter.availability as WorkAvailability];
@@ -30,9 +32,17 @@ const workSchema = {
   <main id="main-content" class="work-page">
     <article class="article-shell work-shell">
       <header class="article-header">
-        <p class="eyebrow">Original work</p>
+        <Breadcrumbs items={[
+          { label: 'Home', href: '/' },
+          { label: 'Works', href: '/works' },
+          {
+            label: WORK_CATEGORY_META[frontmatter.workCategory as WorkCategory].label,
+            href: `/works/category/${frontmatter.workCategory}`,
+          },
+          { label: frontmatter.title },
+        ]} />
+        <CelticDivider tone="forest" class="breadcrumb-divider" />
         <h1>{frontmatter.title}</h1>
-        <p class:list={['work-availability-note', availability.className]}>{availability.label}</p>
       </header>
       <CelticDivider tone="forest" class="article-divider" />
       <figure class="work-cover">
