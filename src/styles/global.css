@@ -663,6 +663,12 @@ h3 {
   transform: rotate(180deg);
 }
 
+@media (max-width: 640px) {
+  .identity-band {
+    min-height: 13rem;
+  }
+}
+
 .image-hero {
   --parallax-y: 0px;
 
