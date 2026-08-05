@@ -11,16 +11,22 @@ const allIsActive = pathname === '/articles' || pathname === '/';
     class:list={['category-nav-link', 'category-nav-all', { 'is-active': allIsActive }]}
     aria-current={allIsActive ? 'page' : undefined}
   >All</a>
-  {CATEGORY_KEYS.map((category) => {
+  <span class="category-nav-separator" aria-hidden="true"></span>
+  {CATEGORY_KEYS.map((category, index) => {
     const isActive = pathname === `/category/${category}`;
     const meta = CATEGORY_META[category];
 
     return (
-      <a
-        href={`/category/${category}`}
-        class:list={['category-nav-link', { 'is-active': isActive }]}
-        aria-current={isActive ? 'page' : undefined}
-      >{meta.label}</a>
+      <>
+        <a
+          href={`/category/${category}`}
+          class:list={['category-nav-link', { 'is-active': isActive }]}
+          aria-current={isActive ? 'page' : undefined}
+        >{meta.label}</a>
+        {index < CATEGORY_KEYS.length - 1 && (
+          <span class="category-nav-separator" aria-hidden="true"></span>
+        )}
+      </>
     );
   })}
 </nav>
