@@ -510,23 +510,38 @@ h3 {
   left: 50%;
   bottom: clamp(1.5rem, 3vw, 2.5rem);
   display: flex;
-  gap: 0.65rem;
+  gap: 0;
   transform: translateX(-50%);
 }
 
 .home-hero-controls button {
-  width: 0.72rem;
-  height: 0.72rem;
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-inline: -0.15rem;
   padding: 0;
-  border: 1px solid rgb(214 186 143 / 0.7);
-  border-radius: 50%;
+  border: 0;
   background: transparent;
   cursor: pointer;
+  place-items: center;
+}
+
+.home-hero-controls button::after {
+  width: 0.72rem;
+  height: 0.72rem;
+  border: 1px solid rgb(214 186 143 / 0.7);
+  border-radius: 50%;
+  content: '';
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .home-hero-controls button:hover,
 .home-hero-controls button.is-active {
+  transform: none;
+}
+
+.home-hero-controls button:hover::after,
+.home-hero-controls button.is-active::after {
   background: var(--hero-accent);
   border-color: var(--hero-accent);
   transform: scale(1.12);
