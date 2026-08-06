@@ -7,4 +7,6 @@ export const SITE = {
   email: 'paulcreos@gmail.com',
   locale: 'en',
   author: 'Paul Creos',
+  // Keep the early portfolio private from search results until its content is ready.
+  indexable: false,
 } as const;

@@ -46,6 +46,7 @@ const personSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {!SITE.indexable && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content="#463f3a" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

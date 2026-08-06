@@ -12,11 +12,18 @@ const { frontmatter, slug } = Astro.props;
 const availability = WORK_AVAILABILITY[frontmatter.availability as WorkAvailability];
 const workSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Product',
+  '@type': 'VisualArtwork',
   name: frontmatter.title,
   description: frontmatter.description,
   image: frontmatter.cover?.src,
-  brand: { '@type': 'Brand', name: SITE.name },
+  creator: {
+    '@type': 'Person',
+    name: SITE.name,
+    url: SITE.url,
+  },
+  artMedium: frontmatter.materials.join(' / '),
+  artform: WORK_CATEGORY_META[frontmatter.workCategory as WorkCategory].label,
+  dateCreated: (frontmatter.createdDate ?? frontmatter.date).toISOString(),
   url: `${SITE.url}/works/${slug}`,
 };
 ---
