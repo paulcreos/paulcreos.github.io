@@ -1031,13 +1031,13 @@ h3 {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(0.85rem, 2vw, 1.35rem);
+  gap: 0;
 }
 
 .work-card {
   overflow: hidden;
-  border: 1px solid rgb(83 100 72 / 0.45);
-  border-radius: 0.4rem;
+  border: 0;
+  border-radius: 0;
   background: #1c2920;
   box-shadow: var(--shadow-soft);
 }
@@ -1052,9 +1052,11 @@ h3 {
 }
 
 .work-card-link > img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
   transition: transform 450ms ease;
 }
 
@@ -1063,9 +1065,7 @@ h3 {
 }
 
 .work-card-shade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgb(8 19 12 / 0.88) 0%, rgb(8 19 12 / 0.32) 46%, transparent 76%);
+  display: none;
 }
 
 .work-card-content {
@@ -1424,6 +1424,32 @@ a.work-shop-link:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.work-model-viewer {
+  display: block;
+  width: 100%;
+  height: min(72vw, 48rem);
+  min-height: 28rem;
+  background-color: #191512;
+  background-image: var(--work-model-background);
+  background-position: center;
+  background-size: cover;
+  touch-action: pan-y;
+}
+
+.work-model-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .work-model-viewer {
+    height: 115vw;
+    min-height: 24rem;
+    max-height: 38rem;
+  }
 }
 
 .article-content > :first-child {
@@ -2064,7 +2090,6 @@ a.work-shop-link:hover {
     padding-block: clamp(3.5rem, 5vw, 5.75rem);
   }
 
-  .work-grid,
   .gallery-grid,
   .social-links {
     gap: 1.35rem;

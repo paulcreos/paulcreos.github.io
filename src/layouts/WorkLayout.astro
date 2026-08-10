@@ -3,13 +3,25 @@ import Layout from './Layout.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import SmallDivider from '../components/SmallDivider.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { Image } from 'astro:assets';
+import WorkModelViewer from '../components/WorkModelViewer.astro';
 import { SITE } from '../config/site';
 import { WORK_AVAILABILITY, type WorkAvailability } from '../data/work-availability';
 import { WORK_CATEGORY_META, type WorkCategory } from '../data/work-categories';
 
 const { frontmatter, slug } = Astro.props;
 const availability = WORK_AVAILABILITY[frontmatter.availability as WorkAvailability];
+const modelBackgrounds: Record<string, string> = {
+  'stag-of-the-grove': 'green-mist.webp',
+  'the-hearth-rune': 'amber-tree.webp',
+  'the-knotkeeper': 'green-knots.webp',
+  'the-oak-sentinel': 'brown-wood.webp',
+  'the-quiet-flame': 'green-warm.webp',
+  'the-raven-sigil': 'stone.webp',
+  'the-threshold': 'green-royal.webp',
+  'the-wayfinder': 'brown-knots.webp',
+  'the-wolf-guardian': 'brown-grunge.webp',
+};
+const modelBackground = modelBackgrounds[slug] ?? 'brown-grunge.webp';
 const workSchema = {
   '@context': 'https://schema.org',
   '@type': 'VisualArtwork',
@@ -53,12 +65,12 @@ const workSchema = {
       </header>
       <CelticDivider tone="forest" class="article-divider" />
       <figure class="work-cover">
-        <Image
-          src={frontmatter.cover}
-          alt={frontmatter.coverAlt}
-          widths={[768, 1024, 1440]}
-          sizes="(min-width: 50rem) 48rem, calc(100vw - 2rem)"
-          loading="eager"
+        <WorkModelViewer
+          src="/models/wolf.glb"
+          environmentImage="/environments/monochrome_studio_02_1k.hdr"
+          backgroundImage={`/model-backgrounds/${modelBackground}`}
+          alt={`Interactive 3D preview for ${frontmatter.title}`}
+          poster={frontmatter.cover}
         />
       </figure>
       <div class="article-content">

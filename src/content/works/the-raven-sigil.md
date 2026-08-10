@@ -1,12 +1,12 @@
 ---
-title: 'Raven Warden'
+title: 'Wolf Guardian 8'
 description: A circular raven relief carved in ash and birch, combining CNC preparation, hand carving, pyrography, Celtic-inspired forms, and a pair of protective Latin inscriptions.
 date: 2026-07-31
 author: 'Paul Creos'
 workCategory: reliefs
 availability: in-progress
-cover: images/raven-sigil-cover-v1.png
-coverAlt: Circular wooden relief of a raven bearing a triskele and surrounded by protective Latin inscriptions
+cover: images/wolf-listing-centered-v2-8.png
+coverAlt: Wolf Guardian relief displayed against a textured stone background
 materials:
   - Ash
   - Birch

@@ -1,5 +1,5 @@
 ---
-title: 'The Knotkeeper'
+title: 'Wolf Guardian 7'
 description: A fictional circular wood relief held within a continuous interlaced border, created as a placeholder for an upcoming work.
 date: 2026-08-01
 createdDate: 2026-08-01
@@ -11,8 +11,8 @@ materials:
 dimensions: 'Ø 22 cm × 22 mm'
 edition: '1/1'
 availability: in-progress
-cover: images/raven-sigil-knotwork-cover-v1.png
-coverAlt: Circular wooden relief framed by continuous Celtic-inspired knotwork
+cover: images/wolf-listing-centered-v2-7.png
+coverAlt: Wolf Guardian relief displayed against a green knotwork background
 draft: false
 ---
 

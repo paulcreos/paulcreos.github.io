@@ -19,16 +19,29 @@ if (category) {
 const sortedWorks = works
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, limit ?? undefined);
+
+const listingTitles: Record<string, string> = {
+  'the-oak-sentinel': 'Wolf Guardian 1',
+  'the-hearth-rune': 'Wolf Guardian 3',
+  'the-wayfinder': 'Wolf Guardian 2',
+  'stag-of-the-grove': 'Wolf Guardian 4',
+  'the-threshold': 'Wolf Guardian 5',
+  'the-quiet-flame': 'Wolf Guardian 6',
+  'the-knotkeeper': 'Wolf Guardian 7',
+  'the-raven-sigil': 'Wolf Guardian 8',
+  'the-wolf-guardian': 'Wolf Guardian 9',
+};
 ---
 
 <div class="work-grid">
   {sortedWorks.map((work) => {
     const availability = WORK_AVAILABILITY[work.data.availability];
     const url = `/works/${work.id}`;
+    const listingTitle = listingTitles[work.id] ?? work.data.title;
 
     return (
       <article class="work-card">
-        <a class="work-card-link" href={url} aria-label={`Explore ${work.data.title}`}>
+        <a class="work-card-link" href={url} aria-label={`Explore ${listingTitle}`}>
           <Image
             src={work.data.cover}
             alt={work.data.coverAlt}
@@ -38,7 +51,7 @@ const sortedWorks = works
           />
           <span class="work-card-shade" aria-hidden="true"></span>
           <span class="work-card-content">
-            <span class="work-card-title">{work.data.title}</span>
+            <span class="work-card-title">{listingTitle}</span>
             <span class:list={['work-card-status', availability.className]}>{availability.label}</span>
           </span>
         </a>

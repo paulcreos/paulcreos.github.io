@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  environmentImage: string;
+  backgroundImage: string;
+  alt: string;
+  poster: ImageMetadata;
+}
+
+const { src, environmentImage, backgroundImage, alt, poster } = Astro.props;
+---
+
+<model-viewer
+  class="work-model-viewer"
+  src={src}
+  alt={alt}
+  environment-image={environmentImage}
+  exposure="0.75"
+  camera-controls
+  camera-orbit="0deg 90deg 110%"
+  min-camera-orbit="-30deg 60deg auto"
+  max-camera-orbit="30deg 120deg auto"
+  min-field-of-view="25deg"
+  max-field-of-view="45deg"
+  interaction-prompt="none"
+  style={`--work-model-background: url('${backgroundImage}')`}
+>
+  <Image
+    slot="poster"
+    class="work-model-poster"
+    src={poster}
+    alt={alt}
+    widths={[768, 1024, 1440]}
+    sizes="(min-width: 50rem) 48rem, calc(100vw - 2rem)"
+    loading="eager"
+  />
+</model-viewer>
+
+<script
+  is:inline
+  type="module"
+  src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"
+></script>
