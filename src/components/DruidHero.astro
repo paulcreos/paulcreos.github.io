@@ -1,0 +1,52 @@
+<section class="home-3d-hero" aria-labelledby="druid-hero-heading">
+  <div class="home-3d-hero-frame">
+    <model-viewer
+      class="home-3d-hero-viewer"
+      src="/models/druid-room-web-texture-test.glb?v=20260815-1"
+      alt="A hooded druid studying an open book at a wooden table by lantern light"
+      exposure="0.65"
+      tone-mapping="aces"
+      camera-controls
+      disable-pan
+      disable-zoom
+      touch-action="pan-y"
+      camera-orbit="-42deg 78deg 2.85m"
+      camera-target="0m 0.95m 0m"
+      min-camera-orbit="auto 60deg 2.2m"
+      max-camera-orbit="auto 84deg 3.2m"
+      field-of-view="30deg"
+      interaction-prompt="none"
+      auto-rotate
+      auto-rotate-delay="0"
+      rotation-per-second="-2deg"
+      shadow-intensity="0"
+      shadow-softness="0.95"
+      autoplay
+      loading="eager"
+    ></model-viewer>
+    <div class="home-3d-hero-loading" role="status" aria-live="polite">
+      <span aria-hidden="true"></span>
+      <strong>Loading scene</strong>
+      <small>Preparing model…</small>
+    </div>
+  </div>
+</section>
+
+<script is:inline type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+<script is:inline>
+  const druidViewer = document.querySelector('.home-3d-hero-viewer');
+  const druidLoader = document.querySelector('.home-3d-hero-loading');
+  const druidProgress = druidLoader?.querySelector('small');
+
+  const markDruidLoaded = () => druidLoader?.classList.add('is-hidden');
+
+  druidViewer?.addEventListener('load', markDruidLoaded);
+  druidViewer?.addEventListener('progress', (event) => {
+    const percent = Math.round(event.detail.totalProgress * 100);
+    if (druidProgress) druidProgress.textContent = percent < 100 ? `${percent}%` : 'Finishing…';
+  });
+
+  customElements.whenDefined('model-viewer').then(() => {
+    if (druidViewer?.loaded) markDruidLoaded();
+  });
+</script>

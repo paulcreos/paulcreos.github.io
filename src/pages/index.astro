@@ -7,6 +7,7 @@ import WorkCategoryNav from '../components/WorkCategoryNav.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import LogoMark from '../components/LogoMark.astro';
 import ForestSpiritLayer from '../components/forest/ForestSpiritLayer.astro';
+import DruidHero from '../components/DruidHero.astro';
 import { PAGE_META } from '../data/page-meta';
 import homeCraftHero from '../images/home-craft-hero.jpg';
 import worksHero from '../images/works-hero-wolf-v2.png';
@@ -15,7 +16,8 @@ import nemetonHero from '../images/about-nemeton-hooded.jpg';
 
 <Layout {...PAGE_META.home}>
   <main id="main-content">
-    <header class="home-hero" aria-labelledby="home-hero-heading">
+    <DruidHero />
+    <header class="home-hero home-hero-temporarily-hidden" aria-labelledby="home-hero-heading">
       <Image class="home-hero-image is-active" src={homeCraftHero} alt="Hands carving an intricate circular relief from solid wood" widths={[768, 1280, 1774]} sizes="100vw" loading="eager" fetchpriority="high" data-hero-image />
       <Image class="home-hero-image" src={worksHero} alt="A carved wolf relief surrounded by Celtic knotwork" widths={[768, 1280, 1774]} sizes="100vw" loading="lazy" data-hero-image />
       <Image class="home-hero-image" src={nemetonHero} alt="A hooded figure standing among ancient oak trees in a misty nemeton" widths={[768, 1280, 1774]} sizes="100vw" loading="lazy" data-hero-image />
