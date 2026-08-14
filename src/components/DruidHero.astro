@@ -10,10 +10,10 @@
       disable-pan
       disable-zoom
       touch-action="pan-y"
-      camera-orbit="-42deg 78deg 2.85m"
+      camera-orbit="-32deg 88deg 2.85m"
       camera-target="0m 0.95m 0m"
-      min-camera-orbit="-42deg 60deg 2.2m"
-      max-camera-orbit="48deg 84deg 3.2m"
+      min-camera-orbit="-32deg 60deg 2.2m"
+      max-camera-orbit="32deg 88deg 3.2m"
       field-of-view="30deg"
       interaction-prompt="none"
       shadow-intensity="0"
@@ -48,8 +48,8 @@
   });
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const startTheta = -42;
-  const swingDegrees = 90;
+  const startTheta = -32;
+  const swingDegrees = 64;
   const swingPeriod = 34000;
   let interactionTimer;
   let pausedUntil = 0;
@@ -59,7 +59,7 @@
       const phase = (time % swingPeriod) / swingPeriod;
       const travel = 0.5 - 0.5 * Math.cos(phase * Math.PI * 2);
       const theta = startTheta + travel * swingDegrees;
-      druidViewer.cameraOrbit = `${theta.toFixed(2)}deg 78deg 2.85m`;
+      druidViewer.cameraOrbit = `${theta.toFixed(2)}deg 88deg 2.85m`;
     }
     window.requestAnimationFrame(animateCamera);
   };
