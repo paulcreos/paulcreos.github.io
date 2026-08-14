@@ -12,13 +12,10 @@
       touch-action="pan-y"
       camera-orbit="-42deg 78deg 2.85m"
       camera-target="0m 0.95m 0m"
-      min-camera-orbit="auto 60deg 2.2m"
-      max-camera-orbit="auto 84deg 3.2m"
+      min-camera-orbit="-42deg 60deg 2.2m"
+      max-camera-orbit="48deg 84deg 3.2m"
       field-of-view="30deg"
       interaction-prompt="none"
-      auto-rotate
-      auto-rotate-delay="0"
-      rotation-per-second="-2deg"
       shadow-intensity="0"
       shadow-softness="0.95"
       autoplay
@@ -49,4 +46,28 @@
   customElements.whenDefined('model-viewer').then(() => {
     if (druidViewer?.loaded) markDruidLoaded();
   });
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const startTheta = -42;
+  const swingDegrees = 90;
+  const swingPeriod = 34000;
+  let interactionTimer;
+  let pausedUntil = 0;
+
+  const animateCamera = (time) => {
+    if (!prefersReducedMotion.matches && druidViewer?.loaded && time > pausedUntil) {
+      const phase = (time % swingPeriod) / swingPeriod;
+      const travel = 0.5 - 0.5 * Math.cos(phase * Math.PI * 2);
+      const theta = startTheta + travel * swingDegrees;
+      druidViewer.cameraOrbit = `${theta.toFixed(2)}deg 78deg 2.85m`;
+    }
+    window.requestAnimationFrame(animateCamera);
+  };
+
+  druidViewer?.addEventListener('pointerdown', () => {
+    pausedUntil = performance.now() + 3200;
+    window.clearTimeout(interactionTimer);
+    interactionTimer = window.setTimeout(() => { pausedUntil = performance.now() + 900; }, 3000);
+  });
+  window.requestAnimationFrame(animateCamera);
 </script>
