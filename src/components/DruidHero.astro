@@ -1,4 +1,16 @@
-<section class="home-3d-hero" aria-labelledby="druid-hero-heading">
+---
+import wolfWorksImage from '../content/works/images/wolf-guardian-cover-v1.png';
+import articlesImage from '../content/works/images/raven-sigil-cover-v1.png';
+import aboutImage from '../images/about-nemeton-hooded.jpg';
+---
+
+<section
+  class="home-3d-hero"
+  aria-labelledby="druid-hero-heading"
+  data-image-wolf={wolfWorksImage.src}
+  data-image-book={articlesImage.src}
+  data-image-druid={aboutImage.src}
+>
   <div class="home-3d-hero-frame">
     <model-viewer
       class="home-3d-hero-viewer"
@@ -20,7 +32,48 @@
       shadow-softness="0.95"
       autoplay
       loading="eager"
-    ></model-viewer>
+    >
+      <button
+        slot="hotspot-wolf"
+        class="home-3d-hotspot"
+        data-position="0.01m 0.80m 0.54m"
+        data-normal="0m 1m 0m"
+        data-key="wolf"
+        aria-label="Explore the wolf relief"
+      ><span>Wolf · Works</span></button>
+      <button
+        slot="hotspot-book"
+        class="home-3d-hotspot"
+        data-position="0.47m 0.80m 0.49m"
+        data-normal="0m 1m 0m"
+        data-key="book"
+        aria-label="Read the articles"
+      ><span>Book · Articles</span></button>
+      <button
+        slot="hotspot-druid"
+        class="home-3d-hotspot"
+        data-position="0m 0.82m 0.28m"
+        data-normal="0m 0m 1m"
+        data-key="druid"
+        aria-label="Discover the druid's story"
+      ><span>Druid · About</span></button>
+      <button
+        slot="hotspot-lantern"
+        class="home-3d-hotspot home-3d-hotspot-lantern"
+        data-position="-0.50m 0.84m 0.49m"
+        data-normal="0m 1m 0m"
+        data-key="lantern"
+        aria-label="Open lantern information"
+      ><span>Lantern</span></button>
+    </model-viewer>
+    <aside class="home-3d-info" aria-live="polite" hidden>
+      <button class="home-3d-info-close" type="button" aria-label="Close information">×</button>
+      <p class="home-3d-info-kicker"></p>
+      <h2 class="home-3d-info-title"></h2>
+      <img class="home-3d-info-image" data-panel-image alt="" hidden />
+      <p class="home-3d-info-text"></p>
+      <a class="home-3d-info-link" href="#"></a>
+    </aside>
     <div class="home-3d-hero-loading" role="status" aria-live="polite">
       <span aria-hidden="true"></span>
       <strong>Loading scene</strong>
@@ -34,8 +87,111 @@
   const druidViewer = document.querySelector('.home-3d-hero-viewer');
   const druidLoader = document.querySelector('.home-3d-hero-loading');
   const druidProgress = druidLoader?.querySelector('small');
+  const druidInfo = document.querySelector('.home-3d-info');
+  const druidInfoKicker = druidInfo?.querySelector('.home-3d-info-kicker');
+  const druidInfoTitle = druidInfo?.querySelector('.home-3d-info-title');
+  const druidInfoImage = druidInfo?.querySelector('[data-panel-image]');
+  const druidInfoText = druidInfo?.querySelector('.home-3d-info-text');
+  const druidInfoLink = druidInfo?.querySelector('.home-3d-info-link');
+  const druidHero = document.querySelector('.home-3d-hero');
+  let pausedUntil = 0;
+  let interactionTimer;
+  let focusedKey = null;
+  let lightOn = true;
+  let hotspotsScheduled = false;
+  const hotspotContent = {
+    wolf: { kicker: 'Works', title: 'Crafted works', text: 'Reliefs, symbols, and objects shaped in wood, fire, and patient detail.', link: '/works', label: 'Explore the works' },
+    book: { kicker: 'Articles', title: 'Notes and writings', text: 'Stories, process, and reflections from the practice behind the work.', link: '/articles', label: 'Read the articles' },
+    druid: { kicker: 'About', title: 'The practice behind Creos', text: 'Discover the ideas, materials, and inner path behind Paul Creos.', link: '/about', label: 'Enter the story' },
+    lantern: { kicker: 'A small light', title: 'Lantern', text: 'Interactive light controls can be added here next.', link: null, label: '' },
+  };
 
-  const markDruidLoaded = () => druidLoader?.classList.add('is-hidden');
+  const panelImages = {
+    wolf: druidHero?.dataset.imageWolf,
+    book: druidHero?.dataset.imageBook,
+    druid: druidHero?.dataset.imageDruid,
+  };
+
+  const focusPresets = {
+    wolf: { target: '0.01m 0.80m 0.54m', orbit: '-18deg 88deg 1.65m' },
+    book: { target: '0.47m 0.80m 0.49m', orbit: '12deg 88deg 1.65m' },
+    druid: { target: '0m 0.82m 0.28m', orbit: '0deg 88deg 1.8m' },
+    lantern: { target: '-0.50m 0.84m 0.49m', orbit: '-24deg 88deg 1.7m' },
+  };
+
+  const openDruidInfo = (key) => {
+    const content = hotspotContent[key];
+    if (!content || (!druidInfo && key !== 'lantern')) return;
+    if (key === 'lantern' && druidViewer) {
+      lightOn = !lightOn;
+      druidViewer.exposure = lightOn ? 0.65 : 0.28;
+      if (druidInfo) {
+        druidInfo.classList.remove('is-open');
+        window.setTimeout(() => { if (druidInfo) druidInfo.hidden = true; }, 180);
+      }
+      return;
+    }
+    const preset = focusPresets[key];
+    if (preset && druidViewer) {
+      focusedKey = key;
+      pausedUntil = performance.now() + 9000;
+      druidViewer.setAttribute('min-camera-orbit', '-32deg 60deg 1.35m');
+      druidViewer.cameraTarget = preset.target;
+      druidViewer.cameraOrbit = preset.orbit;
+    }
+    const panelContent = content;
+    druidInfoKicker.textContent = panelContent.kicker;
+    druidInfoTitle.textContent = panelContent.title;
+    const imageSource = panelImages[key];
+    if (druidInfoImage) {
+      druidInfoImage.hidden = !imageSource;
+      if (imageSource) {
+        druidInfoImage.src = imageSource;
+        druidInfoImage.alt = `${panelContent.title} preview`;
+      }
+    }
+    druidInfoText.textContent = panelContent.text;
+    druidInfoLink.hidden = !panelContent.link;
+    if (panelContent.link) {
+      druidInfoLink.href = panelContent.link;
+      druidInfoLink.textContent = panelContent.label;
+    }
+    druidInfo.hidden = false;
+    requestAnimationFrame(() => druidInfo.classList.add('is-open'));
+  };
+
+  document.querySelectorAll('.home-3d-hotspot').forEach((hotspot) => {
+    hotspot.addEventListener('click', () => openDruidInfo(hotspot.dataset.key));
+  });
+
+  const restoreDruidView = () => {
+    if (!druidViewer || !focusedKey) return;
+    focusedKey = null;
+    pausedUntil = performance.now() + 1200;
+    druidViewer.setAttribute('min-camera-orbit', '-32deg 60deg 2.2m');
+    druidViewer.cameraTarget = '0m 0.95m 0m';
+    druidViewer.cameraOrbit = '-32deg 88deg 2.85m';
+  };
+
+  druidViewer?.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element) || !event.target.closest('.home-3d-hotspot')) restoreDruidView();
+  });
+  document.querySelector('.home-3d-info-close')?.addEventListener('click', () => {
+    restoreDruidView();
+    druidInfo?.classList.remove('is-open');
+    window.setTimeout(() => { if (druidInfo) druidInfo.hidden = true; }, 180);
+  });
+
+  const markDruidLoaded = () => {
+    if (hotspotsScheduled) return;
+    hotspotsScheduled = true;
+    druidLoader?.classList.add('is-hidden');
+    window.setTimeout(() => {
+      document.querySelectorAll('.home-3d-hotspot').forEach((hotspot, index) => {
+        window.setTimeout(() => hotspot.classList.add('is-visible'), index * 2500);
+      });
+    }, 3000);
+  };
 
   druidViewer?.addEventListener('load', markDruidLoaded);
   druidViewer?.addEventListener('progress', (event) => {
@@ -51,9 +207,6 @@
   const startTheta = -32;
   const swingDegrees = 64;
   const swingPeriod = 34000;
-  let interactionTimer;
-  let pausedUntil = 0;
-
   const animateCamera = (time) => {
     if (!prefersReducedMotion.matches && druidViewer?.loaded && time > pausedUntil) {
       const phase = (time % swingPeriod) / swingPeriod;
@@ -64,7 +217,8 @@
     window.requestAnimationFrame(animateCamera);
   };
 
-  druidViewer?.addEventListener('pointerdown', () => {
+  druidViewer?.addEventListener('pointerdown', (event) => {
+    if (event.target instanceof Element && event.target.closest('.home-3d-hotspot-lantern')) return;
     pausedUntil = performance.now() + 3200;
     window.clearTimeout(interactionTimer);
     interactionTimer = window.setTimeout(() => { pausedUntil = performance.now() + 900; }, 3000);

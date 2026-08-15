@@ -384,6 +384,183 @@ h3 {
   display: none;
 }
 
+.home-3d-hotspot {
+  --hotspot-color: var(--hero-accent);
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--hotspot-color) 78%, white);
+  border-radius: 50%;
+  background: var(--hotspot-color);
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--hotspot-color) 18%, transparent), 0 0 1rem color-mix(in srgb, var(--hotspot-color) 72%, transparent);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home-3d-hotspot.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  animation: home-3d-hotspot-pulse 3.4s ease-in-out infinite;
+}
+
+.home-3d-hotspot:hover,
+.home-3d-hotspot:focus-visible {
+  outline: none;
+  opacity: 0.9;
+  animation-play-state: paused;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 0.3rem color-mix(in srgb, var(--hotspot-color) 28%, transparent), 0 0 1.25rem color-mix(in srgb, var(--hotspot-color) 95%, transparent);
+}
+
+.home-3d-hotspot[data-key="wolf"] { --hotspot-color: #a8c58f; }
+.home-3d-hotspot[data-key="book"] { --hotspot-color: #d8b48e; }
+.home-3d-hotspot[data-key="druid"] { --hotspot-color: #c3a06f; }
+.home-3d-hotspot[data-key="lantern"] { --hotspot-color: #e6a24a; }
+
+.home-3d-hotspot span {
+  position: absolute;
+  bottom: 1.15rem;
+  left: 50%;
+  width: max-content;
+  max-width: 10rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgb(248 244 237 / 0.16);
+  background: rgb(9 12 10 / 0.86);
+  color: #f8f4ed;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.25rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.home-3d-hotspot:hover span,
+.home-3d-hotspot:focus-visible span {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.home-3d-hotspot-lantern {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--hotspot-color);
+}
+
+@keyframes home-3d-hotspot-pulse {
+  0%, 100% { opacity: 0.38; }
+  50% { opacity: 0.68; }
+}
+
+.home-3d-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  width: min(22rem, calc(100% - 2rem));
+  padding: 1.25rem 1.35rem 1.35rem;
+  border: 1px solid rgb(248 244 237 / 0.18);
+  background: linear-gradient(145deg, rgb(10 14 11 / 0.94), rgb(20 24 18 / 0.78));
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 0.38);
+  backdrop-filter: blur(10px);
+  color: #f8f4ed;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 0.75rem));
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.home-3d-info.is-open {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.home-3d-info-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  border: 0;
+  background: transparent;
+  color: rgb(248 244 237 / 0.72);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.home-3d-info-kicker,
+.home-3d-info-title,
+.home-3d-info-text {
+  margin: 0;
+}
+
+.home-3d-info-kicker {
+  color: var(--hero-accent);
+  font-size: var(--type-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-3d-info-title {
+  margin-top: 0.35rem;
+  font-family: var(--display-font);
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.home-3d-info-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 0.9rem;
+  border: 1px solid rgb(248 244 237 / 0.14);
+  object-fit: cover;
+  object-position: center;
+  background: #171d16;
+}
+
+.home-3d-info-image[hidden],
+.home-3d-info-link[hidden] {
+  display: none;
+}
+
+.home-3d-info-text {
+  margin-top: 0.65rem;
+  color: rgb(248 244 237 / 0.74);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.home-3d-info-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  margin-top: 1rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--hero-accent) 72%, white);
+  background: color-mix(in srgb, var(--hero-accent) 16%, transparent);
+  color: #f8f4ed;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.home-3d-info-link:hover,
+.home-3d-info-link:focus-visible {
+  border-color: var(--hero-accent);
+  background: var(--hero-accent);
+  color: #0b100d;
+  outline: none;
+}
+
 .home-3d-hero-loading {
   position: absolute;
   inset: 0;
