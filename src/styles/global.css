@@ -387,8 +387,8 @@ h3 {
 .home-3d-hotspot {
   --hotspot-color: var(--hero-accent);
   display: grid;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.4rem;
+  height: 1.4rem;
   padding: 0;
   place-items: center;
   border: 1px solid color-mix(in srgb, var(--hotspot-color) 78%, white);
@@ -398,6 +398,7 @@ h3 {
   color: #fff;
   cursor: pointer;
   opacity: 0;
+  transform-origin: center;
   pointer-events: none;
   transition: opacity 260ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
@@ -405,7 +406,9 @@ h3 {
 .home-3d-hotspot.is-visible {
   opacity: 1;
   pointer-events: auto;
-  animation: home-3d-hotspot-pulse 3.4s ease-in-out infinite;
+  animation:
+    home-3d-hotspot-arrive 3.4s ease-in-out both,
+    home-3d-hotspot-pulse 3.4s ease-in-out 3.4s infinite;
 }
 
 .home-3d-hotspot:hover,
@@ -417,10 +420,10 @@ h3 {
   box-shadow: 0 0 0 0.3rem color-mix(in srgb, var(--hotspot-color) 28%, transparent), 0 0 1.25rem color-mix(in srgb, var(--hotspot-color) 95%, transparent);
 }
 
-.home-3d-hotspot[data-key="wolf"] { --hotspot-color: #a8c58f; }
-.home-3d-hotspot[data-key="book"] { --hotspot-color: #d8b48e; }
-.home-3d-hotspot[data-key="druid"] { --hotspot-color: #c3a06f; }
-.home-3d-hotspot[data-key="lantern"] { --hotspot-color: #e6a24a; }
+.home-3d-hotspot[data-key="wolf"] { --hotspot-color: #b5d19b; }
+.home-3d-hotspot[data-key="book"] { --hotspot-color: #e4bd80; }
+.home-3d-hotspot[data-key="druid"] { --hotspot-color: #d68c82; }
+.home-3d-hotspot[data-key="lantern"] { --hotspot-color: #d2913c; }
 
 .home-3d-hotspot span {
   position: absolute;
@@ -447,14 +450,35 @@ h3 {
 }
 
 .home-3d-hotspot-lantern {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.4rem;
+  height: 1.4rem;
   background: var(--hotspot-color);
 }
 
 @keyframes home-3d-hotspot-pulse {
-  0%, 100% { opacity: 0.38; }
-  50% { opacity: 0.68; }
+  0%, 100% {
+    opacity: 0.38;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.68;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes home-3d-hotspot-arrive {
+  0% {
+    opacity: 0.38;
+    transform: scale(1.08);
+  }
+  50% {
+    opacity: 0.68;
+    transform: scale(1.32);
+  }
+  100% {
+    opacity: 0.38;
+    transform: scale(0.9);
+  }
 }
 
 .home-3d-info {
