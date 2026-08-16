@@ -4,7 +4,7 @@ description: A concise description of the work, its material presence, and the s
 date: 2026-08-01
 createdDate: 2026-08-01
 author: 'Paul Creos'
-workCategory: reliefs
+workCategory: roundels
 materials:
   - Ash
   - Birch

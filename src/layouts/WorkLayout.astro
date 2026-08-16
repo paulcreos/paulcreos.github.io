@@ -10,16 +10,24 @@ import { WORK_CATEGORY_META, type WorkCategory } from '../data/work-categories';
 
 const { frontmatter, slug } = Astro.props;
 const availability = WORK_AVAILABILITY[frontmatter.availability as WorkAvailability];
+const legacyWorkCategories: Record<string, WorkCategory> = {
+  reliefs: 'roundels',
+  objects: 'charms',
+};
+const categoryKey = (
+  legacyWorkCategories[frontmatter.workCategory] ?? frontmatter.workCategory
+) as WorkCategory;
+const category = WORK_CATEGORY_META[categoryKey];
 const modelBackgrounds: Record<string, string> = {
-  'stag-of-the-grove': 'green-mist.webp',
-  'the-hearth-rune': 'amber-tree.webp',
-  'the-knotkeeper': 'green-knots.webp',
-  'the-oak-sentinel': 'brown-wood.webp',
-  'the-quiet-flame': 'green-warm.webp',
-  'the-raven-sigil': 'stone.webp',
-  'the-threshold': 'green-royal.webp',
-  'the-wayfinder': 'brown-knots.webp',
-  'the-wolf-guardian': 'brown-grunge.webp',
+  'wolf-guardian-1': 'brown-wood.webp',
+  'wolf-guardian-2': 'brown-knots.webp',
+  'wolf-guardian-3': 'amber-tree.webp',
+  'wolf-guardian-4': 'green-mist.webp',
+  'wolf-guardian-5': 'green-royal.webp',
+  'wolf-guardian-6': 'green-warm.webp',
+  'wolf-guardian-7': 'green-knots.webp',
+  'wolf-guardian-8': 'stone.webp',
+  'wolf-guardian-9': 'brown-grunge.webp',
 };
 const modelBackground = modelBackgrounds[slug] ?? 'brown-grunge.webp';
 const workSchema = {
@@ -34,7 +42,7 @@ const workSchema = {
     url: SITE.url,
   },
   artMedium: frontmatter.materials.join(' / '),
-  artform: WORK_CATEGORY_META[frontmatter.workCategory as WorkCategory].label,
+  artform: category?.label ?? 'Woodwork',
   dateCreated: (frontmatter.createdDate ?? frontmatter.date).toISOString(),
   url: `${SITE.url}/works/${slug}`,
 };
@@ -54,10 +62,12 @@ const workSchema = {
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
           { label: 'Works', href: '/works' },
-          {
-            label: WORK_CATEGORY_META[frontmatter.workCategory as WorkCategory].label,
-            href: `/works/category/${frontmatter.workCategory}`,
-          },
+          category
+            ? {
+                label: category.label,
+                href: `/works/category/${categoryKey}`,
+              }
+            : { label: 'Works', href: '/works' },
           { label: frontmatter.title },
         ]} />
         <CelticDivider tone="forest" class="breadcrumb-divider" />

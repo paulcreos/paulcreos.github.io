@@ -4,7 +4,7 @@ description: A fictional relief study of a stag moving through the edge of a dee
 date: 2026-08-04
 createdDate: 2026-08-04
 author: 'Paul Creos'
-workCategory: reliefs
+workCategory: roundels
 materials:
   - Ash
   - Birch

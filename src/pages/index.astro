@@ -1,74 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
 import FollowThePath from '../components/FollowThePath.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import WorkCategoryNav from '../components/WorkCategoryNav.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import LogoMark from '../components/LogoMark.astro';
-import ForestSpiritLayer from '../components/forest/ForestSpiritLayer.astro';
 import DruidHero from '../components/DruidHero.astro';
 import { PAGE_META } from '../data/page-meta';
-import homeCraftHero from '../images/home-craft-hero.jpg';
-import worksHero from '../images/works-hero-wolf-v2.png';
-import nemetonHero from '../images/about-nemeton-hooded.jpg';
 ---
 
 <Layout {...PAGE_META.home}>
   <main id="main-content">
     <DruidHero />
-    <header class="home-hero home-hero-temporarily-hidden" aria-labelledby="home-hero-heading">
-      <Image class="home-hero-image is-active" src={homeCraftHero} alt="Hands carving an intricate circular relief from solid wood" widths={[768, 1280, 1774]} sizes="100vw" loading="eager" fetchpriority="high" data-hero-image />
-      <Image class="home-hero-image" src={worksHero} alt="A carved wolf relief surrounded by Celtic knotwork" widths={[768, 1280, 1774]} sizes="100vw" loading="lazy" data-hero-image />
-      <Image class="home-hero-image" src={nemetonHero} alt="A hooded figure standing among ancient oak trees in a misty nemeton" widths={[768, 1280, 1774]} sizes="100vw" loading="lazy" data-hero-image />
-      <div class="home-hero-shade" aria-hidden="true"></div>
-      <ForestSpiritLayer />
-      <div class="home-hero-content is-active" data-hero-slide>
-        <p class="home-hero-eyebrow">From the Nemeton</p>
-        <h1 id="home-hero-heading">Wood lives again.</h1>
-        <p class="home-hero-lead">
-          Once part of a living tree, shaped anew through technology, hand, fire, and intention.
-        </p>
-        <nav class="home-hero-actions" aria-label="Explore Paul Creos">
-          <a class="home-hero-primary" href="/works">Explore the works</a>
-          <a class="home-hero-secondary" href="/about">Enter the story</a>
-        </nav>
-      </div>
-      <div class="home-hero-content" data-hero-slide aria-hidden="true">
-        <p class="home-hero-eyebrow">The living work</p>
-        <p class="home-hero-title">A symbol finds its form.</p>
-        <p class="home-hero-lead">
-          Reliefs shaped in wood carry old stories forward — through hand, fire, and patient detail.
-        </p>
-        <nav class="home-hero-actions" aria-label="Explore the works">
-          <a class="home-hero-primary" href="/works">Explore the works</a>
-          <a class="home-hero-secondary" href="/articles">Latest articles</a>
-        </nav>
-      </div>
-      <div class="home-hero-content" data-hero-slide aria-hidden="true">
-        <p class="home-hero-eyebrow">The druid’s path</p>
-        <p class="home-hero-title">Between craft and spirit.</p>
-        <p class="home-hero-lead">
-          A practice of material, symbol, and inner experience — rooted in the living world.
-        </p>
-        <nav class="home-hero-actions" aria-label="Explore the druid's path">
-          <a class="home-hero-primary" href="/about">Enter the story</a>
-          <a class="home-hero-secondary" href="/category/druidism">Read the writings</a>
-        </nav>
-      </div>
-      <div class="home-hero-controls" aria-label="Hero slides">
-        <button class="is-active" type="button" aria-label="Show Wood lives again" aria-current="true" data-hero-control></button>
-        <button type="button" aria-label="Show The living work" data-hero-control></button>
-        <button type="button" aria-label="Show The druid’s path" data-hero-control></button>
-      </div>
-    </header>
 
-    <section class="identity-band" aria-label="Paul Creos — Imthecht in Druad">
+    <section class="identity-band" aria-label="Paul Creos">
       <CelticDivider class="identity-band-ornament identity-band-ornament-top" />
       <a href="/" aria-label="Paul Creos home">
         <LogoMark />
       </a>
-      <p>Imthecht in Druad</p>
       <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />
     </section>
 
@@ -81,115 +30,3 @@ import nemetonHero from '../images/about-nemeton-hooded.jpg';
     <FollowThePath />
   </main>
 </Layout>
-
-<script>
-  const hero = document.querySelector<HTMLElement>('.home-hero');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  if (hero) {
-    const slides = [...hero.querySelectorAll<HTMLElement>('[data-hero-slide]')];
-    const images = [...hero.querySelectorAll<HTMLElement>('[data-hero-image]')];
-    const controls = [...hero.querySelectorAll<HTMLButtonElement>('[data-hero-control]')];
-    let activeSlide = 0;
-    let rotationTimer: number | undefined;
-
-    const prepareTitle = (slide: HTMLElement) => {
-      const title = slide.querySelector<HTMLElement>('h1, .home-hero-title');
-      if (!title || title.classList.contains('hero-title-words')) return title;
-
-      const words = title.textContent?.trim().split(/\s+/) ?? [];
-      title.textContent = '';
-      title.classList.add('hero-title-words');
-
-      words.forEach((word, index) => {
-        const wordElement = document.createElement('span');
-        wordElement.className = 'hero-title-word';
-        wordElement.textContent = word;
-        wordElement.style.setProperty('--word-index', String(index));
-        title.append(wordElement, document.createTextNode(' '));
-      });
-
-      return title;
-    };
-
-    const revealTitle = (slide: HTMLElement) => {
-      if (reduceMotion.matches) return;
-
-      const title = prepareTitle(slide);
-      if (!title) return;
-
-      title.classList.remove('is-revealed');
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          if (slide.classList.contains('is-active')) title.classList.add('is-revealed');
-        });
-      });
-    };
-
-    slides.forEach(prepareTitle);
-
-    const showSlide = (index: number) => {
-      activeSlide = index;
-      slides.forEach((slide, slideIndex) => {
-        const active = slideIndex === index;
-        slide.classList.toggle('is-active', active);
-        slide.setAttribute('aria-hidden', String(!active));
-      });
-      images.forEach((image, imageIndex) => image.classList.toggle('is-active', imageIndex === index));
-      revealTitle(slides[index]);
-      controls.forEach((control, controlIndex) => {
-        const active = controlIndex === index;
-        control.classList.toggle('is-active', active);
-        control.toggleAttribute('aria-current', active);
-      });
-    };
-
-    revealTitle(slides[activeSlide]);
-
-    const startRotation = () => {
-      if (reduceMotion.matches || slides.length < 2) return;
-      window.clearInterval(rotationTimer);
-      rotationTimer = window.setInterval(() => showSlide((activeSlide + 1) % slides.length), 8500);
-    };
-
-    controls.forEach((control, index) => {
-      control.addEventListener('click', () => {
-        showSlide(index);
-        startRotation();
-      });
-    });
-
-    startRotation();
-
-    if (!reduceMotion.matches) {
-    let framePending = false;
-
-    const updateParallax = () => {
-      const bounds = hero.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      if (bounds.bottom > 0 && bounds.top < viewportHeight) {
-        const progress = Math.min(
-          1,
-          Math.max(0, (viewportHeight - bounds.top) / (viewportHeight + bounds.height)),
-        );
-        const offset = (progress - 0.5) * 110;
-        hero.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
-      }
-
-      framePending = false;
-    };
-
-    const requestUpdate = () => {
-      if (!framePending) {
-        window.requestAnimationFrame(updateParallax);
-        framePending = true;
-      }
-    };
-
-      updateParallax();
-      window.addEventListener('scroll', requestUpdate, { passive: true });
-      window.addEventListener('resize', requestUpdate);
-    }
-  }
-</script>

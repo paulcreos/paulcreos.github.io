@@ -4,7 +4,7 @@ description: A fictional circular wood relief held within a continuous interlace
 date: 2026-08-01
 createdDate: 2026-08-01
 author: 'Paul Creos'
-workCategory: reliefs
+workCategory: roundels
 materials:
   - Ash
   - Birch

@@ -4,7 +4,7 @@ description: A fictional relief study of an old oak standing watch at the edge o
 date: 2026-08-07
 createdDate: 2026-08-07
 author: 'Paul Creos'
-workCategory: reliefs
+workCategory: roundels
 materials:
   - Oak
   - Ash
