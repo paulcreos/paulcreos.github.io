@@ -6,27 +6,55 @@ import WorkCategoryNav from '../components/WorkCategoryNav.astro';
 import CelticDivider from '../components/CelticDivider.astro';
 import LogoMark from '../components/LogoMark.astro';
 import DruidHero from '../components/DruidHero.astro';
+import ForestSpiritLayer from '../components/forest/ForestSpiritLayer.astro';
 import { PAGE_META } from '../data/page-meta';
+import { SITE } from '../config/site';
+import heroImageUrl from '../images/about-nemeton-hooded.jpg?url';
+
+const pageMeta = SITE.underConstruction
+  ? {
+      title: 'The workshop hasn’t gone silent',
+      description: 'The workshop’s doors are temporarily closed while something new takes shape inside.',
+    }
+  : PAGE_META.home;
 ---
 
-<Layout {...PAGE_META.home}>
-  <main id="main-content">
-    <DruidHero />
+<Layout {...pageMeta} chrome={!SITE.underConstruction}>
+  {SITE.underConstruction ? (
+    <main
+      id="main-content"
+      class="under-construction"
+      style={`--under-construction-image: url(${heroImageUrl})`}
+    >
+      <ForestSpiritLayer />
+      <section class="under-construction-card" aria-labelledby="under-construction-title">
+        <LogoMark class="under-construction-mark" />
+        <h1 id="under-construction-title">The workshop hasn’t gone silent.</h1>
+        <p class="under-construction-copy">
+          Its doors are simply closed while something new takes shape inside.
+          The moment the work is finished, its doors will open again.
+        </p>
+      </section>
+    </main>
+  ) : (
+    <main id="main-content">
+      <DruidHero />
 
-    <section class="identity-band" aria-label="Paul Creos">
-      <CelticDivider class="identity-band-ornament identity-band-ornament-top" />
-      <a href="/" aria-label="Paul Creos home">
-        <LogoMark />
-      </a>
-      <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />
-    </section>
+      <section class="identity-band" aria-label="Paul Creos">
+        <CelticDivider class="identity-band-ornament identity-band-ornament-top" />
+        <a href="/" aria-label="Paul Creos home">
+          <LogoMark />
+        </a>
+        <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />
+      </section>
 
-    <section class="content-section works-section home-works-section" aria-labelledby="latest-works">
-      <h2 id="latest-works">Latest works</h2>
-      <WorkCategoryNav />
-      <WorkGrid limit={9} />
-    </section>
+      <section class="content-section works-section home-works-section" aria-labelledby="latest-works">
+        <h2 id="latest-works">Latest works</h2>
+        <WorkCategoryNav />
+        <WorkGrid limit={9} />
+      </section>
 
-    <FollowThePath />
-  </main>
+      <FollowThePath />
+    </main>
+  )}
 </Layout>

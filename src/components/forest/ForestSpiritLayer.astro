@@ -36,7 +36,7 @@ const { fireflies = true } = Astro.props;
 
   if (!reduceMotion.matches) {
     document.querySelectorAll<HTMLElement>('.forest-spirit-layer').forEach((layer) => {
-      const habitat = layer.closest<HTMLElement>('.home-hero');
+      const habitat = layer.closest<HTMLElement>('.home-hero, .under-construction');
 
       layer.querySelectorAll<HTMLElement>('[data-firefly]').forEach((firefly) => {
         if (!habitat) return;
