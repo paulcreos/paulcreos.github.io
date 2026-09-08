@@ -2,20 +2,22 @@
 import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
-import CelticDivider from '../../components/CelticDivider.astro';
 import { PAGE_META } from '../../data/page-meta';
 ---
 
 <Layout {...PAGE_META.articles}>
   <main id="main-content" class="articles-page">
-    <section class="content-section" aria-labelledby="all-articles">
+    <section class="articles-collection" aria-labelledby="all-articles">
+      <header class="home-works-header">
       <h1 id="all-articles">Articles</h1>
       <p class="section-intro">
         Articles on Druidry, Wyda, symbolism, and the connections between ancient Celtic and Slavic mythology and history.
       </p>
-      <CelticDivider tone="forest" class="articles-divider" />
       <CategoryNav />
+      </header>
+      <div class="articles-collection-body">
       <ArticleList />
+      </div>
     </section>
   </main>
 </Layout>

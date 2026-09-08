@@ -1,0 +1,70 @@
+---
+import crest from '../images/CREOS-logo-warm.svg?url';
+---
+
+<section class="druid-introduction" aria-labelledby="druid-introduction-title" style={`--crest: url(${crest})`}>
+  <div class="druid-introduction-copy">
+    <h2 id="druid-introduction-title">Imthecht in Druad</h2>
+    <span class="druid-introduction-diamond" aria-hidden="true"></span>
+    <p>My work grows where inner intent meets matter. Rooted in ancient forms and symbols, each artefact bears witness to a journey between the inner and outer worlds — between silence and the pulse of life.</p>
+  </div>
+</section>
+
+<style>
+  .druid-introduction {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    min-height: clamp(36rem, 61.6vw, 78rem);
+    padding: clamp(5rem, 10vw, 13rem) var(--layout-gutter);
+    overflow: hidden;
+    color: #fff;
+    background:
+      radial-gradient(ellipse at 0% 100%, #008447 0%, transparent 57%),
+      linear-gradient(115deg, #001c09 0%, #243129 56%, #001a08 100%);
+    text-align: center;
+  }
+  .druid-introduction::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -60% -20%;
+    background: #9a9d78;
+    opacity: .055;
+    mask: var(--crest) center / cover no-repeat;
+    transform: rotate(-18deg);
+    pointer-events: none;
+  }
+  .druid-introduction-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 80rem);
+    gap: clamp(1.25rem, 1.8vw, 2.25rem);
+  }
+  h2 {
+    margin: 0;
+    color: #d8b48e;
+    font: 400 clamp(.875rem, 1.1vw, 1.375rem)/1.5 var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: .025em;
+  }
+  .druid-introduction-diamond {
+    width: clamp(.625rem, .75vw, .9375rem);
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    background: #d8b48e;
+    transform: rotate(45deg);
+  }
+  p {
+    margin: 0;
+    font: 400 clamp(1.5rem, 2.55vw, 3.25rem)/1.27 var(--font-reading);
+    text-wrap: pretty;
+  }
+  @media (max-width: 47.99rem) {
+    .druid-introduction { min-height: 35rem; padding-block: 5rem; }
+    .druid-introduction::before { inset: -10% -110%; }
+    p { line-height: 1.45; }
+  }
+</style>

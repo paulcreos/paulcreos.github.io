@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import FollowThePath from '../components/FollowThePath.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import WorkCategoryNav from '../components/WorkCategoryNav.astro';
-import CelticDivider from '../components/CelticDivider.astro';
+import DruidIntroduction from '../components/DruidIntro.astro';
 import LogoMark from '../components/LogoMark.astro';
 import DruidHero from '../components/DruidHero.astro';
 import ForestSpiritLayer from '../components/forest/ForestSpiritLayer.astro';
@@ -40,18 +40,16 @@ const pageMeta = SITE.underConstruction
     <main id="main-content">
       <DruidHero />
 
-      <section class="identity-band" aria-label="Paul Creos">
-        <CelticDivider class="identity-band-ornament identity-band-ornament-top" />
-        <a href="/" aria-label="Paul Creos home">
-          <LogoMark />
-        </a>
-        <CelticDivider class="identity-band-ornament identity-band-ornament-bottom" />
-      </section>
+      <DruidIntroduction />
 
-      <section class="content-section works-section home-works-section" aria-labelledby="latest-works">
-        <h2 id="latest-works">Latest works</h2>
-        <WorkCategoryNav />
-        <WorkGrid limit={9} />
+      <section class="content-section works-section home-works-section collection-section" aria-labelledby="latest-works">
+        <div class="home-works-inner">
+          <header class="home-works-header">
+            <h2 id="latest-works">Latest works</h2>
+            <WorkCategoryNav />
+          </header>
+          <WorkGrid limit={9} />
+        </div>
       </section>
 
       <FollowThePath />

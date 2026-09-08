@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import WorkGrid from '../../components/WorkGrid.astro';
 import WorkCategoryNav from '../../components/WorkCategoryNav.astro';
-import CelticDivider from '../../components/CelticDivider.astro';
 
 const meta = {
   title: 'Original Handcrafted Wood Reliefs',
@@ -12,11 +11,12 @@ const meta = {
 
 <Layout {...meta}>
   <main id="main-content" class="works-page">
-    <section class="content-section works-section" aria-labelledby="works-heading">
+    <section class="collection-section works-section" aria-labelledby="works-heading">
+      <header class="home-works-header">
       <h1 id="works-heading">Works</h1>
       <p class="section-intro">Stylised relief pictures, roundels, icons, and symbols made from solid wood.</p>
-      <CelticDivider tone="forest" class="works-divider" />
       <WorkCategoryNav />
+      </header>
       <WorkGrid />
     </section>
   </main>
