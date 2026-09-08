@@ -425,6 +425,8 @@ h3 {
 
 .home-3d-hero {
   position: relative;
+  min-height: 100svh;
+  min-height: 100dvh;
   padding: 0;
   overflow: hidden;
   background: #0b100d;
@@ -433,7 +435,9 @@ h3 {
 
 .home-3d-hero-frame {
   position: relative;
-  min-height: clamp(28rem, 58vw, 46rem);
+  height: 100svh;
+  height: 100dvh;
+  min-height: 28rem;
   border-block: 1px solid rgb(195 160 111 / 0.22);
   background:
     radial-gradient(circle at 52% 48%, rgb(78 105 70 / 0.14), transparent 42%),
@@ -443,7 +447,7 @@ h3 {
 .home-3d-hero-viewer {
   display: block;
   width: 100%;
-  height: clamp(28rem, 58vw, 46rem);
+  height: 100%;
   background: #0b100d;
   --poster-color: #0b100d;
   touch-action: pan-y;
@@ -767,9 +771,10 @@ h3 {
 @media (max-width: 640px) {
   .home-3d-hero-frame,
   .home-3d-hero-viewer {
-    min-height: 32rem;
-    height: 120vw;
-    max-height: 42rem;
+    min-height: 100svh;
+    min-height: 100dvh;
+    height: 100svh;
+    height: 100dvh;
   }
 
   .home-3d-hero-caption {
