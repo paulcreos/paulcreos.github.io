@@ -16,13 +16,11 @@ import crest from '../images/CREOS-logo-warm.svg?url';
     isolation: isolate;
     display: grid;
     place-items: center;
-    min-height: clamp(36rem, 61.6vw, 78rem);
-    padding: clamp(5rem, 10vw, 13rem) var(--layout-gutter);
+    min-height: clamp(24rem, 68svh, 44rem);
+    padding: clamp(4rem, 7vw, 8rem) var(--layout-gutter);
     overflow: hidden;
     color: #fff;
-    background:
-      radial-gradient(ellipse at 0% 100%, #008447 0%, transparent 57%),
-      linear-gradient(115deg, #001c09 0%, #243129 56%, #001a08 100%);
+    background: radial-gradient(circle at 15% 15%, rgb(110 137 84 / 0.24), transparent 27rem), radial-gradient(circle at 86% 80%, rgb(77 106 75 / 0.2), transparent 25rem), linear-gradient(135deg, #26362c, #1e2c25 65%, #27372d);
     text-align: center;
   }
   .druid-introduction::before {
@@ -61,6 +59,18 @@ import crest from '../images/CREOS-logo-warm.svg?url';
     margin: 0;
     font: 400 clamp(1.5rem, 2.55vw, 3.25rem)/1.27 var(--font-reading);
     text-wrap: pretty;
+  }
+  @media (min-width: 48rem) {
+    .druid-introduction {
+      min-height: 100svh;
+      max-height: 100svh;
+    }
+  }
+  @media (min-width: 120rem) {
+    p {
+      font-size: clamp(1.5rem, 2.1vw, 2.85rem);
+      font-weight: 400;
+    }
   }
   @media (max-width: 47.99rem) {
     .druid-introduction { min-height: 35rem; padding-block: 5rem; }

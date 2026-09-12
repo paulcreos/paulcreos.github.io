@@ -1002,8 +1002,9 @@ h3 {
   width: 0.72rem;
   height: 0.72rem;
   border: 1px solid rgb(214 186 143 / 0.7);
-  border-radius: 50%;
+  border-radius: 0.08rem;
   content: '';
+  transform: rotate(45deg);
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
@@ -1016,7 +1017,7 @@ h3 {
 .home-hero-controls button.is-active::after {
   background: var(--hero-accent);
   border-color: var(--hero-accent);
-  transform: scale(1.12);
+  transform: rotate(45deg) scale(1.12);
 }
 
 @media (max-width: 640px) {
@@ -2730,10 +2731,13 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
 }
 
 /* Full-width homepage collection, with fluid edge-to-edge tiles. */
+.home-works-collection {
+  background: radial-gradient(circle at 15% 15%, rgb(110 137 84 / 0.24), transparent 27rem), radial-gradient(circle at 86% 80%, rgb(77 106 75 / 0.2), transparent 25rem), linear-gradient(135deg, #26362c, #1e2c25 65%, #27372d);
+}
 .collection-section {
-  padding: 0;
+  padding: 0 0 clamp(3.5rem, 7vw, 6rem);
   border: 0;
-  background: #001c0b;
+  background: transparent;
 }
 .home-works-inner {
   display: flex;
@@ -2755,6 +2759,10 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
   color: #fff;
   font: 400 clamp(2rem, 3vw, 3rem)/1.2 var(--font-display);
 }
+.home-works-header-outside {
+  background: transparent;
+}
+
 .home-works-header .category-nav {
   width: 100%;
   margin: 0;
@@ -2805,16 +2813,24 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
 }
 .collection-section .work-grid {
   display: grid;
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  width: min(1600px, calc(100% - clamp(2rem, 4vw, 4rem)));
+  max-width: 1600px;
+  margin-inline: auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
+  gap: clamp(1rem, 1.5vw, 2rem);
+  background: transparent;
 }
+@media (min-width: 120rem) {
+  .collection-section .work-grid {
+    width: min(1920px, calc(1600px + (100vw - 120rem) * .5));
+    max-width: 1920px;
+  }
+}
+
 .collection-section .work-card {
   min-width: 0;
   border: 0;
-  background: #001c0b;
+  background: radial-gradient(circle at 15% 15%, rgb(110 137 84 / 0.24), transparent 27rem), radial-gradient(circle at 86% 80%, rgb(77 106 75 / 0.2), transparent 25rem), linear-gradient(135deg, #26362c, #1e2c25 65%, #27372d);
   box-shadow: none;
 }
 .collection-section .work-card-link {
@@ -2834,7 +2850,7 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
   display: block;
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #001c0b 0%, rgb(0 28 11 / .82) 10%, transparent 45%);
+  background: linear-gradient(0deg, rgb(32 30 25 / .92) 0%, rgb(32 30 25 / .72) 15%, transparent 48%);
   pointer-events: none;
 }
 .collection-section .work-card-link:focus-visible { outline: 2px solid #d8b48e; outline-offset: -4px; }
