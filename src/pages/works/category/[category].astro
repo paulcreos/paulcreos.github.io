@@ -3,6 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import WorkGrid from '../../../components/WorkGrid.astro';
 import WorkCategoryNav from '../../../components/WorkCategoryNav.astro';
 import { WORK_CATEGORY_KEYS, WORK_CATEGORY_META, type WorkCategory } from '../../../data/work-categories';
+import worksHero from '../../../images/works-hero-wolf-v2.png';
 
 export function getStaticPaths() {
   return WORK_CATEGORY_KEYS.map((category) => ({
@@ -22,10 +23,15 @@ const meta = WORK_CATEGORY_META[category];
 <Layout title={meta.title} description={meta.description}>
   <main id="main-content" class="works-page">
     <section class="collection-section works-section" aria-labelledby="works-heading">
-      <header class="home-works-header">
-      <h1 id="works-heading">{meta.label}</h1>
-      <p class="section-intro">{meta.description}</p>
-      <WorkCategoryNav />
+      <header
+        class="home-works-header works-hero"
+        style={`--works-hero-image: url(${worksHero.src})`}
+      >
+        <div class="works-hero-copy">
+          <h1 id="works-heading">{meta.label}</h1>
+          <p class="section-intro">{meta.description}</p>
+        </div>
+        <WorkCategoryNav />
       </header>
       <WorkGrid category={category} />
     </section>

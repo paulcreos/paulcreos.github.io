@@ -29,7 +29,6 @@ const sortedArticles = articles
     return (
       <article class="article-card">
         <div class="article-card-body">
-          <h2><a href={url}>{article.data.title}</a></h2>
           <p class="article-card-meta">
             <a
               href={`/category/${article.data.category}`}
@@ -37,11 +36,14 @@ const sortedArticles = articles
             >
               {meta.label}
             </a>
-            <time datetime={article.data.date.toISOString()}>
-              {article.data.date.toLocaleDateString('en-GB')}
-            </time>
-            {article.data.author && <span> · {article.data.author}</span>}
+            <span class="article-card-byline">
+              <time datetime={article.data.date.toISOString()}>
+                {article.data.date.toLocaleDateString('en-GB')}
+              </time>
+              {article.data.author && <span> · {article.data.author}</span>}
+            </span>
           </p>
+          <h2><a href={url}>{article.data.title}</a></h2>
           <p class="article-summary">{article.data.description}</p>
           <p class="read-more">
             <a href={url}>Read article <span aria-hidden="true">→</span></a>

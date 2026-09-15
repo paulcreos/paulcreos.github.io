@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
 import { CATEGORY_KEYS, CATEGORY_META, type Category } from '../../data/categories';
+import articlesHero from '../../images/about-nemeton-hooded.jpg';
 
 export function getStaticPaths() {
   return CATEGORY_KEYS.map((category) => ({
@@ -22,10 +23,15 @@ const meta = CATEGORY_META[category];
 <Layout title={meta.title} description={meta.description}>
   <main id="main-content" class="articles-page">
     <section class="articles-collection category-page">
-      <header class="home-works-header">
-      <h1>{meta.label}</h1>
-      <p class="section-intro">{meta.description}</p>
-      <CategoryNav />
+      <header
+        class="home-works-header articles-hero"
+        style={`--articles-hero-image: url(${articlesHero.src})`}
+      >
+        <div class="articles-hero-copy">
+          <h1>{meta.label}</h1>
+          <p class="section-intro">{meta.description}</p>
+        </div>
+        <CategoryNav />
       </header>
       <div class="articles-collection-body">
       <ArticleList category={category} />

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import WorkGrid from '../../components/WorkGrid.astro';
 import WorkCategoryNav from '../../components/WorkCategoryNav.astro';
+import worksHero from '../../images/works-hero-wolf-v2.png';
 
 const meta = {
   title: 'Original Handcrafted Wood Reliefs',
@@ -12,10 +13,15 @@ const meta = {
 <Layout {...meta}>
   <main id="main-content" class="works-page">
     <section class="collection-section works-section" aria-labelledby="works-heading">
-      <header class="home-works-header">
-      <h1 id="works-heading">Works</h1>
-      <p class="section-intro">Stylised relief pictures, roundels, icons, and symbols made from solid wood.</p>
-      <WorkCategoryNav />
+      <header
+        class="home-works-header works-hero"
+        style={`--works-hero-image: url(${worksHero.src})`}
+      >
+        <div class="works-hero-copy">
+          <h1 id="works-heading">Works</h1>
+          <p class="section-intro">Stylised relief pictures, roundels, icons, and symbols made from solid wood.</p>
+        </div>
+        <WorkCategoryNav />
       </header>
       <WorkGrid />
     </section>
