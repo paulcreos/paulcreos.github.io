@@ -9,16 +9,16 @@
   --color-border: #697467;
   --color-dark: #29372e;
   --color-hero: #61715a;
-  --font-serif: Lora, Georgia, serif;
+  --font-serif: Lora, serif;
 }
 
 :root {
   color-scheme: light;
   --content-width: 48rem;
   --reading-width: 48rem;
-  --font-display: Lora, Georgia, serif;
-  --font-reading: Lora, Georgia, serif;
-  --font-ui: "Lexend Deca", Arial, sans-serif;
+  --font-display: Lora, serif;
+  --font-reading: Lora, serif;
+  --font-ui: "Lexend Deca", sans-serif;
   --type-label: 0.75rem;
   --type-meta: 0.875rem;
   --type-body: 1rem;
@@ -1203,7 +1203,7 @@ h3 {
   max-width: 22ch;
   margin: clamp(0.9rem, 2vw, 1.25rem) 0 0;
   color: rgb(248 244 237 / 0.72);
-  font-family: Lora, Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(0.9rem, 1.65vw, 1.1rem);
   font-style: italic;
   font-weight: 400;
@@ -2248,144 +2248,150 @@ a.work-shop-link:hover {
 
 .social-section {
   position: relative;
-  padding: clamp(4rem, 10vw, 7rem) 1rem;
+  min-height: clamp(38rem, 72vw, 52rem);
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   border-top: 1px solid rgb(195 160 111 / 0.2);
-  background:
-    radial-gradient(circle at 15% 15%, rgb(110 137 84 / 0.24), transparent 27rem),
-    radial-gradient(circle at 86% 80%, rgb(77 106 75 / 0.2), transparent 25rem),
-    linear-gradient(135deg, #26362c, #1e2c25 65%, #27372d);
+  background: var(--works-grunge-background);
   color: #f8f4ed;
 }
 
 .social-section::before {
   position: absolute;
-  top: -12rem;
-  left: 50%;
-  width: 32rem;
-  height: 32rem;
-  border: 1px solid rgb(195 160 111 / 0.07);
-  border-radius: 50%;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(1 19 11 / 0.2), transparent 45%, rgb(1 19 11 / 0.16));
   content: "";
-  transform: translateX(-50%);
   pointer-events: none;
 }
 
 .social-heading {
   position: relative;
   z-index: 1;
-  width: min(100%, 40rem);
-  margin: 0 auto 2.5rem;
+  width: min(calc(100% - 2rem), 42rem);
+  margin: 0 auto clamp(4.5rem, 8vw, 7rem);
   text-align: center;
 }
 
 .social-heading h2 {
   margin: 0;
   color: #f8f4ed;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .social-heading .eyebrow {
+  margin: 0;
   color: var(--cta-wood);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.social-heading-diamond {
+  display: block;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin: 1.25rem auto 1.8rem;
+  background: #d8b48e;
+  transform: rotate(45deg);
 }
 
 .social-links {
   position: relative;
   z-index: 1;
   display: grid;
-  width: min(100%, var(--content-width));
+  width: 100%;
   margin-inline: auto;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(1rem, 1fr) auto minmax(1rem, 1fr) auto minmax(1rem, 1fr) auto minmax(1rem, 1fr);
+  align-items: center;
+  gap: 0;
 }
 
 .social-card {
   position: relative;
-  display: flex;
-  min-height: 11rem;
-  padding: 1.4rem;
-  border: 1px solid rgb(195 160 111 / 0.28);
-  border-radius: 0.45rem;
-  background: linear-gradient(145deg, rgb(115 79 48 / 0.14), rgb(12 10 8 / 0.08));
+  display: grid;
+  width: clamp(8.5rem, 13vw, 11rem);
+  aspect-ratio: 1;
+  padding: 1rem;
+  border: 1px solid rgb(120 168 116 / 0.65);
+  border-radius: 50%;
+  background: #191512;
   align-items: center;
-  flex-direction: row;
-  gap: 0.45rem;
   justify-content: center;
   overflow: hidden;
-  color: #f8f4ed;
+  color: #78a874;
   text-align: center;
   text-decoration: none;
-  transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    transform 180ms ease;
-}
-
-.social-card::after {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background:
-    linear-gradient(0deg, rgb(11 10 8 / 0.94) 0%, rgb(31 25 19 / 0.76) 58%, rgb(42 33 25 / 0.64) 100%);
-  content: "";
-  transition: background 240ms ease;
-}
-
-.social-card-media {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-}
-
-.social-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.035);
-  transition: transform 420ms ease;
-}
-
-.social-card > :not(.social-card-media) {
-  position: relative;
-  z-index: 2;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .social-card:hover {
-  border-color: rgb(195 160 111 / 0.72);
-  background: linear-gradient(145deg, rgb(145 101 60 / 0.2), rgb(195 160 111 / 0.06));
+  border-color: #78a874;
+  background: #304238;
+  color: #f8f4ed;
   text-decoration: none;
-  transform: translateY(-0.2rem);
-}
-
-.social-card:hover::after {
-  background:
-    linear-gradient(0deg, rgb(11 10 8 / 0.9) 0%, rgb(31 25 19 / 0.6) 58%, rgb(42 33 25 / 0.5) 100%);
-}
-
-.social-card:hover .social-card-media img {
-  transform: scale(1.085);
+  transform: translateY(-0.18rem);
 }
 
 .social-card-primary {
-  border-color: rgb(211 178 127 / 0.7);
-  background:
-    linear-gradient(145deg, rgb(195 160 111 / 0.2), rgb(100 68 40 / 0.16));
+  border-color: rgb(120 168 116 / 0.65);
 }
 
 .social-name {
-  color: #f1e5d2;
-  font-size: 1.35rem;
+  color: currentColor;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
 }
 
-.social-description {
-  margin-top: 0.3rem;
-  color: rgb(248 244 237 / 0.72);
-  font-size: 0.88rem;
+.social-icon {
+  width: clamp(2.4rem, 4vw, 3.2rem);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
 }
 
-.social-arrow {
+.social-icon-fill,
+.social-icon-pinterest {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-connector {
   position: relative;
-  color: var(--cta-wood);
-  font-size: 1.15rem;
+  width: 100%;
+  height: 1px;
+  background: rgb(195 160 111 / 0.58);
+}
+
+.social-connector::before,
+.social-connector::after {
+  position: absolute;
+  top: 50%;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #d8b48e;
+  content: "";
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.social-connector::before {
+  left: 0;
+}
+
+.social-connector::after {
+  left: 100%;
+}
+
+.social-connector-edge-start::before,
+.social-connector-edge-end::after {
+  display: none;
 }
 
 .company-details {
@@ -2478,25 +2484,34 @@ a.work-shop-link:hover {
 }
 
 .site-footer {
-  padding: 2rem 0 3.25rem;
-  border-top: 1px solid rgb(185 154 120 / 0.42);
-  background: var(--brand-walnut-background);
-  color: rgb(228 189 128 / 0.8);
+  padding: clamp(2rem, 4vw, 3rem) 1rem;
+  border-top: 1px solid rgb(120 168 116 / 0.16);
+  background: #1e2c25;
+  color: rgb(120 168 116 / 0.78);
   text-align: center;
+}
+
+.site-footer-inner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .site-footer p {
   margin: 0;
-  font-size: 0.875rem;
-}
-
-.footer-divider {
-  width: min(calc(100% - 2rem), 30rem);
-  margin: 0 auto 1.35rem;
+  font-family: var(--font-ui);
+  font-size: clamp(0.68rem, 1vw, 0.78rem);
+  letter-spacing: 0.025em;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .site-footer a {
-  color: #d8b48e;
+  color: #78a874;
+}
+
+.site-footer p a {
+  text-underline-offset: 0.2em;
 }
 
 .not-found {
@@ -2720,6 +2735,49 @@ a.work-shop-link:hover {
 .article-content pre { max-width: 100%; overflow-x: auto; }
 .article-content iframe { max-width: 100%; }
 .site-footer p { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; }
+
+@media (max-width: 39rem) {
+  .social-section {
+    min-height: auto;
+    padding-block: 4.5rem;
+  }
+
+  .social-heading {
+    margin-bottom: 3.5rem;
+  }
+
+  .social-links {
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+
+  .social-connector {
+    width: 1px;
+    height: 2rem;
+  }
+
+  .social-connector::before {
+    top: 0;
+    left: 50%;
+  }
+
+  .social-connector::after {
+    top: 100%;
+    left: 50%;
+  }
+
+  .social-connector-edge-start,
+  .social-connector-edge-end {
+    display: none;
+  }
+
+  .social-card {
+    width: 8.5rem;
+    min-height: 0;
+  }
+}
 .home-3d-info { max-height: calc(100svh - 7rem); overflow-y: auto; overscroll-behavior: contain; }
 @media (max-width: 47.99rem) {
   .home-3d-info { max-height: calc(100svh - 6rem); }
