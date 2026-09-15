@@ -4,7 +4,7 @@ description: A circular wolf relief in ash and birch, combining Celtic-inspired 
 date: 2026-07-31
 author: 'Paul Creos'
 workCategory: roundels
-availability: in-progress
+availability: private
 cover: images/wolf-listing-centered-v2-9.png
 coverAlt: Wolf Guardian relief displayed against a dark brown grunge background
 materials:

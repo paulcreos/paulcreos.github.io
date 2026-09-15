@@ -10,7 +10,7 @@ materials:
   - Ash
 dimensions: 'Ø 24 cm × 24 mm'
 edition: '1/1'
-availability: in-progress
+availability: private
 cover: images/wolf-listing-centered-v2-1.png
 coverAlt: Wolf Guardian relief displayed against a dark brown wood background
 draft: false

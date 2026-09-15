@@ -10,7 +10,7 @@ materials:
   - Birch
 dimensions: 'Ø 22 cm × 22 mm'
 edition: '1/1'
-availability: in-progress
+availability: private
 shopUrl:
 cover: images/work-cover.png
 coverAlt: Describe the finished work, its form, material, and the main motif.

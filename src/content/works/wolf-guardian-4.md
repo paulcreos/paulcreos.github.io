@@ -10,7 +10,7 @@ materials:
   - Birch
 dimensions: 'Ø 26 cm × 24 mm'
 edition: '1/1'
-availability: in-progress
+availability: private
 cover: images/wolf-listing-centered-v2-4.png
 coverAlt: Wolf Guardian relief displayed against a misty green background
 draft: false

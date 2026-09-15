@@ -10,7 +10,7 @@ materials:
   - Walnut
 dimensions: '18 cm × 12 cm × 3 cm'
 edition: '1/1'
-availability: in-progress
+availability: private
 cover: images/wolf-listing-centered-v2-2.png
 coverAlt: Wolf Guardian relief displayed against a warm amber background
 draft: false

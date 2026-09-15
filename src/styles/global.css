@@ -1554,8 +1554,8 @@ h3 {
 }
 
 .work-card-status.is-available { color: #b5d19b; }
+.work-card-status.is-private { color: #d8b48e; }
 .work-card-status.is-sold { color: #d68c82; }
-.work-card-status.is-in-progress { color: #e4bd80; }
 
 .work-card-title {
   max-width: 13ch;
@@ -1693,8 +1693,8 @@ h3 {
 }
 
 .article-card .is-available { color: #b5d19b; }
+.article-card .is-private { color: #d8b48e; }
 .article-card .is-sold { color: #d68c82; }
-.article-card .is-in-progress { color: #e4bd80; }
 
 .article-shop-link {
   margin: 1.15rem 0 0;
@@ -1714,10 +1714,6 @@ h3 {
 .article-shop-link a:hover,
 a.work-shop-link:hover {
   background: #263f2c;
-}
-
-.work-shop-link.is-in-progress {
-  background: #6e431d;
 }
 
 .work-shop-link.is-sold {
