@@ -3108,6 +3108,8 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
 }
 
 .articles-hero-copy {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: min(calc(100% - 2 * var(--layout-gutter)), 40rem);
   gap: 1rem;
@@ -3159,6 +3161,8 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
 }
 
 .works-hero-copy {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: min(calc(100% - 2 * var(--layout-gutter)), 40rem);
   gap: 1rem;

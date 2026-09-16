@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ForestSpiritLayer from '../../components/forest/ForestSpiritLayer.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
 import { PAGE_META } from '../../data/page-meta';
@@ -13,6 +14,7 @@ import articlesHero from '../../images/about-nemeton-hooded.jpg';
         class="home-works-header articles-hero"
         style={`--articles-hero-image: url(${articlesHero.src})`}
       >
+        <ForestSpiritLayer />
         <div class="articles-hero-copy">
           <h1 id="all-articles">Articles</h1>
           <p class="section-intro">

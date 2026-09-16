@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ForestSpiritLayer from '../../components/forest/ForestSpiritLayer.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
 import { CATEGORY_KEYS, CATEGORY_META, type Category } from '../../data/categories';
@@ -27,6 +28,7 @@ const meta = CATEGORY_META[category];
         class="home-works-header articles-hero"
         style={`--articles-hero-image: url(${articlesHero.src})`}
       >
+        <ForestSpiritLayer />
         <div class="articles-hero-copy">
           <h1>{meta.label}</h1>
           <p class="section-intro">{meta.description}</p>

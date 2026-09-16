@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ForestSpiritLayer from '../../components/forest/ForestSpiritLayer.astro';
 import WorkGrid from '../../components/WorkGrid.astro';
 import WorkCategoryNav from '../../components/WorkCategoryNav.astro';
 import worksHero from '../../images/works-hero-wolf-v2.png';
@@ -17,6 +18,7 @@ const meta = {
         class="home-works-header works-hero"
         style={`--works-hero-image: url(${worksHero.src})`}
       >
+        <ForestSpiritLayer subtle />
         <div class="works-hero-copy">
           <h1 id="works-heading">Works</h1>
           <p class="section-intro">Stylised relief pictures, roundels, icons, and symbols made from solid wood.</p>

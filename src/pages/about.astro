@@ -5,6 +5,7 @@ import CelticDivider from '../components/CelticDivider.astro';
 import { PAGE_META } from '../data/page-meta';
 import aboutNemeton from '../images/about-nemeton-hooded.jpg';
 import LogoMark from '../components/LogoMark.astro';
+import ForestSpiritLayer from '../components/forest/ForestSpiritLayer.astro';
 ---
 
 <Layout {...PAGE_META.about}>
@@ -20,6 +21,7 @@ import LogoMark from '../components/LogoMark.astro';
         fetchpriority="high"
       />
       <div class="about-hero-shade" aria-hidden="true"></div>
+      <ForestSpiritLayer />
       <div class="about-hero-content">
         <p class="about-hero-eyebrow">About me</p>
         <h1 id="about-hero-heading">Between craft and spirit.</h1>
