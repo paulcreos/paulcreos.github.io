@@ -10,9 +10,9 @@ export const PAGE_META = {
       'Meet Paul Creos, a woodworker and maker whose reliefs unite digital fabrication, hand carving, fire, nature, and a personal druidic path.',
   },
   articles: {
-    title: 'Articles on Woodcraft, Technology & Druidism',
+    title: 'Articles on Symbolism & Druidry',
     description:
-      'Read Paul Creos on handcrafted wood reliefs, creative technology, digital fabrication, symbolism, nature, and the modern druid path.',
+      'Read Paul Creos on symbolism, Druidry, Wyda, and the connections between mythology, history, and traditions across cultures.',
   },
   works: {
     title: 'Original Handcrafted Wood Reliefs',

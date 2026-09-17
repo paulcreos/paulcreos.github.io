@@ -4,7 +4,7 @@ description: A fictional small-format work carrying warmth, protection, and the 
 date: 2026-08-05
 createdDate: 2026-08-05
 author: 'Paul Creos'
-workCategory: charms
+workCategory: roundels
 materials:
   - Oak
   - Walnut

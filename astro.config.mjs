@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://paulcreos.com',
   redirects: {
+    '/category/druidism': '/category/druidry',
     '/category/products': '/category/works',
     '/contact': '/about',
   },

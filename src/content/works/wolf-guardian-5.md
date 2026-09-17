@@ -4,7 +4,7 @@ description: A fictional carved sign marking the charged moment between one plac
 date: 2026-08-03
 createdDate: 2026-08-03
 author: 'Paul Creos'
-workCategory: icons
+workCategory: roundels
 materials:
   - Oak
   - Ash

@@ -18,11 +18,13 @@ const allIsActive = pathname === '/works' || pathname === '/';
 
     return (
       <>
-        <a
+        {category !== 'roundels' ? (
+          <span class="category-nav-link is-disabled" role="link" aria-disabled="true">{meta.label}</span>
+        ) : (<a
           href={`/works/category/${category}`}
           class:list={['category-nav-link', { 'is-active': isActive }]}
           aria-current={isActive ? 'page' : undefined}
-        >{meta.label}</a>
+        >{meta.label}</a>)}
         {index < WORK_CATEGORY_KEYS.length - 1 && (
           <span class="category-nav-separator" aria-hidden="true"></span>
         )}
@@ -30,3 +32,15 @@ const allIsActive = pathname === '/works' || pathname === '/';
     );
   })}
 </nav>
+
+<style>
+  .category-nav .category-nav-link.is-disabled {
+    color: #8b9186;
+    opacity: .55;
+    cursor: default;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+</style>

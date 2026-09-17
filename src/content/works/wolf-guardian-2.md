@@ -4,7 +4,7 @@ description: A fictional circular work about finding direction through symbol, i
 date: 2026-08-06
 createdDate: 2026-08-06
 author: 'Paul Creos'
-workCategory: icons
+workCategory: roundels
 materials:
   - Ash
   - Birch

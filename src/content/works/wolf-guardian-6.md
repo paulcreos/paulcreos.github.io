@@ -4,7 +4,7 @@ description: A fictional carved object inspired by an ember held steady beneath 
 date: 2026-08-02
 createdDate: 2026-08-02
 author: 'Paul Creos'
-workCategory: charms
+workCategory: roundels
 materials:
   - Walnut
   - Ash
