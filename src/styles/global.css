@@ -2974,7 +2974,7 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
 }
 
 .articles-collection-body {
-  width: min(calc(100% - 2 * var(--layout-gutter)), var(--content-width));
+  width: min(calc(100% - 2 * var(--layout-gutter)), var(--reading-width));
   margin-inline: auto;
   padding-block: clamp(4rem, 8vw, 7rem);
 }
