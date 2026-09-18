@@ -2319,6 +2319,7 @@ a.work-shop-link:hover {
   border: 1px solid rgb(120 168 116 / 0.65);
   border-radius: 50%;
   background: #191512;
+  opacity: 0.82;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -2332,12 +2333,52 @@ a.work-shop-link:hover {
   border-color: #78a874;
   background: #304238;
   color: #f8f4ed;
+  opacity: 1;  
   text-decoration: none;
-  transform: translateY(-0.18rem);
 }
 
 .social-card-primary {
   border-color: rgb(120 168 116 / 0.65);
+}
+
+.social-etsy {
+  position: relative;
+  isolation: isolate;
+  padding: 16px;
+  border: 1px solid rgb(195 160 111 / 0.58);
+  border-radius: 50%;
+}
+
+.social-etsy-aura {
+  position: absolute;
+  z-index: -1;
+  inset: -32%;
+  pointer-events: none;
+  opacity: .14;
+  animation: social-logo-pulse 8s ease-in-out infinite;
+}
+
+.social-etsy-aura img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .58;
+  object-fit: contain;
+  animation: social-logo-spin 66s linear infinite;
+}
+
+@keyframes social-logo-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes social-logo-pulse {
+  0%, 100% { opacity: .1; transform: scale(.66); }
+  50% { opacity: .24; transform: scale(.84); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-etsy-aura,
+  .social-etsy-aura img { animation: none; }
 }
 
 .social-name {
