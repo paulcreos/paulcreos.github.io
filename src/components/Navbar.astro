@@ -17,8 +17,10 @@ const items = [
       <img class="atelier-crest" src={crest} alt="" />
       <img class="atelier-wordmark" src={wordmark} alt="" />
     </a>
-    <button class="atelier-menu" type="button" aria-expanded="false" aria-controls="atelier-links" hidden>
-      <span>Menu</span><span class="atelier-menu-icon" aria-hidden="true"></span>
+    <button class="atelier-menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="atelier-links" hidden>
+      <svg class="atelier-menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </svg>
     </button>
     <ul class="atelier-links" id="atelier-links">
       {items.map((item) => (
@@ -122,7 +124,8 @@ const items = [
   .atelier-links a:hover::after, .atelier-links a[aria-current="page"]::after { transform: scaleX(1); }
   .atelier-links a:hover, .atelier-links a[aria-current="page"] { color: #fff; }
   .atelier-menu { display: flex; align-items: center; justify-content: center; gap: .75rem; min-height: 44px; padding: .5rem .75rem; border: 1px solid rgb(195 160 111 / .45); background: transparent; color: #eee9df; font: 400 .9375rem/1.4 var(--font-ui); cursor: pointer; }
-  .atelier-menu-icon { width: 16px; height: 7px; border-block: 1px solid currentColor; }
+  .atelier-menu { min-width: 44px; }
+  .atelier-menu-icon { display: block; width: 22px; height: 22px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
   .atelier-nav :focus-visible { outline: 2px solid #e5c79f; outline-offset: 5px; }
   .atelier-menu[hidden], .atelier-links[hidden] { display: none; }
   @media (max-width: 47.99rem) {

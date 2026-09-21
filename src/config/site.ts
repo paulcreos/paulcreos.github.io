@@ -9,6 +9,6 @@ export const SITE = {
   author: 'Paul Creos',
   // Set to false to restore the complete homepage.
   underConstruction: false,
-  // Keep the early portfolio private from search results until its content is ready.
-  indexable: false,
+  // Allow search engines to index the published site and its authored content.
+  indexable: true,
 } as const;

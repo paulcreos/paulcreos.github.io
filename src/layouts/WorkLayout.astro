@@ -1,9 +1,8 @@
 ---
 import Layout from './Layout.astro';
-import CelticDivider from '../components/CelticDivider.astro';
 import SmallDivider from '../components/SmallDivider.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import WorkModelViewer from '../components/WorkModelViewer.astro';
+import WorkMediaGallery from '../components/WorkMediaGallery.astro';
 import { SITE } from '../config/site';
 import { WORK_AVAILABILITY, type WorkAvailability } from '../data/work-availability';
 import { WORK_CATEGORY_META, type WorkCategory } from '../data/work-categories';
@@ -30,6 +29,14 @@ const modelBackgrounds: Record<string, string> = {
   'wolf-guardian-9': 'brown-grunge.webp',
 };
 const modelBackground = modelBackgrounds[slug] ?? 'brown-grunge.webp';
+const media = frontmatter.media ?? [{
+  type: 'model',
+  src: '/models/wolf.glb?v=20260811-1',
+  environmentImage: '/environments/monochrome_studio_02_1k.hdr',
+  backgroundImage: `/model-backgrounds/${modelBackground}`,
+  alt: `Interactive 3D preview for ${frontmatter.title}`,
+  poster: frontmatter.cover,
+}];
 const workSchema = {
   '@context': 'https://schema.org',
   '@type': 'VisualArtwork',
@@ -58,7 +65,7 @@ const workSchema = {
 >
   <main id="main-content" class="work-page">
     <article class="article-shell work-shell">
-      <header class="article-header">
+      <header class="article-header work-detail-header">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
           { label: 'Works', href: '/works' },
@@ -70,21 +77,10 @@ const workSchema = {
             : { label: 'Works', href: '/works' },
           { label: frontmatter.title },
         ]} />
-        <CelticDivider tone="forest" class="breadcrumb-divider" />
         <h1>{frontmatter.title}</h1>
       </header>
-      <CelticDivider tone="forest" class="article-divider" />
-      <figure class="work-cover">
-        <WorkModelViewer
-          src="/models/wolf.glb?v=20260811-1"
-          environmentImage="/environments/monochrome_studio_02_1k.hdr"
-          backgroundImage={`/model-backgrounds/${modelBackground}`}
-          alt={`Interactive 3D preview for ${frontmatter.title}`}
-          poster={frontmatter.cover}
-        />
-      </figure>
+      <WorkMediaGallery media={media} title={frontmatter.title} />
       <div class="article-content">
-        <p class="work-description">{frontmatter.description}</p>
         <dl class="work-specification">
           <div>
             <dt>Material</dt>
@@ -107,7 +103,9 @@ const workSchema = {
             </div>
           )}
         </dl>
-        <slot />
+        <div class="work-story">
+          <slot />
+        </div>
         <p class="work-shop-cta">
           {frontmatter.shopUrl ? (
             <a

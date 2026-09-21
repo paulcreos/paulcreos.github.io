@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+import WorkModelViewer from './WorkModelViewer.astro';
+
+interface Props {
+  media: Array<any>;
+  title: string;
+}
+
+const { media, title } = Astro.props;
+const mediaId = `work-media-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+
+<section class="work-media-gallery" id={mediaId} aria-label={`${title} media gallery`}>
+  <div class="work-media-stage-wrap">
+    <button type="button" class="work-media-stage-control work-media-stage-prev" data-media-prev aria-label="Show previous media">‹</button>
+    <div class="work-media-stage" aria-live="polite" tabindex="0">
+    {media.map((item, index) => (
+      <figure id={`${mediaId}-panel-${index}`} class:list={['work-media-panel', { 'is-active': index === 0 }]} data-media-panel={index} hidden={index !== 0}>
+        {item.type === 'image' && (
+          <Image src={item.src} alt={item.alt} widths={[768, 1024, 1440]} sizes="(min-width: 50rem) 48rem, calc(100vw - 2rem)" loading={index === 0 ? 'eager' : 'lazy'} />
+        )}
+        {item.type === 'model' && (
+          <WorkModelViewer
+            src={item.src}
+            environmentImage={item.environmentImage ?? '/environments/monochrome_studio_02_1k.hdr'}
+            backgroundImage={item.backgroundImage ?? '/model-backgrounds/brown-grunge.webp'}
+            cameraOrbit={item.cameraOrbit}
+            alt={item.alt}
+            poster={item.poster ?? item.thumbnail}
+          />
+        )}
+        {item.type === 'video' && (
+          <video controls playsinline preload="metadata" poster={item.poster?.src ?? item.thumbnail?.src} aria-label={item.alt}>
+            <source src={item.src} />
+            Your browser does not support embedded video.
+          </video>
+        )}
+        {item.caption && <figcaption>{item.caption}</figcaption>}
+      </figure>
+    ))}
+    </div>
+    <button type="button" class="work-media-stage-control work-media-stage-next" data-media-next aria-label="Show next media">›</button>
+    <button type="button" class="work-media-fullscreen" data-media-fullscreen aria-label="View media fullscreen">⛶</button>
+  </div>
+
+  <div class="work-media-filmstrip">
+    <button type="button" class="work-media-strip-control" data-strip-prev aria-label="Scroll thumbnails left" hidden>‹</button>
+    <div class="work-media-thumbnails" role="list" aria-label="Select work media">
+    {media.map((item, index) => (
+      <button
+        type="button"
+        class:list={['work-media-thumbnail', { 'is-selected': index === 0 }]}
+        role="listitem"
+        aria-label={`Show ${item.type === 'model' ? '3D model' : item.type} ${index + 1} of ${media.length}: ${item.alt}`}
+        aria-current={index === 0 ? 'true' : undefined}
+        aria-controls={`${mediaId}-panel-${index}`}
+        data-media-select={index}
+      >
+        {item.type === 'image' && <Image src={item.src} alt="" widths={[96, 144]} sizes="72px" loading="lazy" />}
+        {item.type !== 'image' && (item.thumbnail ?? item.poster) && <Image src={item.thumbnail ?? item.poster} alt="" widths={[96, 144]} sizes="72px" loading="lazy" />}
+        {item.type === 'model' && <span class="work-media-kind" aria-hidden="true">3D</span>}
+        {item.type === 'video' && <span class="work-media-kind work-media-kind-video" aria-hidden="true">▶</span>}
+      </button>
+    ))}
+    </div>
+    <button type="button" class="work-media-strip-control" data-strip-next aria-label="Scroll thumbnails right" hidden>›</button>
+  </div>
+</section>
+
+<script is:inline define:vars={{ mediaId }}>
+  const gallery = document.getElementById(mediaId);
+  if (gallery) {
+    const panels = [...gallery.querySelectorAll('[data-media-panel]')];
+    const buttons = [...gallery.querySelectorAll('[data-media-select]')];
+    const stage = gallery.querySelector('.work-media-stage');
+    const thumbnails = gallery.querySelector('.work-media-thumbnails');
+    const select = (selected) => {
+      if (selected < 0) selected = panels.length - 1;
+      if (selected >= panels.length) selected = 0;
+      panels.forEach((panel, index) => {
+        const active = index === selected;
+        panel.hidden = !active;
+        panel.classList.toggle('is-active', active);
+        panel.querySelectorAll('video').forEach((video) => { if (!active) video.pause(); });
+      });
+      buttons.forEach((item, index) => {
+        const active = index === selected;
+        item.classList.toggle('is-selected', active);
+        if (active) item.setAttribute('aria-current', 'true');
+        else item.removeAttribute('aria-current');
+      });
+      buttons[selected]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    };
+    buttons.forEach((button) => button.addEventListener('click', () => select(Number(button.dataset.mediaSelect))));
+    gallery.querySelector('[data-media-prev]')?.addEventListener('click', () => select(buttons.findIndex((button) => button.getAttribute('aria-current') === 'true') - 1));
+    gallery.querySelector('[data-media-next]')?.addEventListener('click', () => select(buttons.findIndex((button) => button.getAttribute('aria-current') === 'true') + 1));
+    stage?.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); select(buttons.findIndex((button) => button.getAttribute('aria-current') === 'true') - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); select(buttons.findIndex((button) => button.getAttribute('aria-current') === 'true') + 1); }
+    });
+    gallery.querySelector('[data-media-fullscreen]')?.addEventListener('click', () => {
+      const active = gallery.querySelector('.work-media-panel.is-active');
+      if (active?.requestFullscreen) active.requestFullscreen();
+    });
+    gallery.querySelector('[data-strip-prev]')?.addEventListener('click', () => thumbnails?.scrollBy({ left: -240, behavior: 'smooth' }));
+    gallery.querySelector('[data-strip-next]')?.addEventListener('click', () => thumbnails?.scrollBy({ left: 240, behavior: 'smooth' }));
+    const stripControls = [...gallery.querySelectorAll('[data-strip-prev], [data-strip-next]')];
+    const updateStripControls = () => {
+      const overflowing = thumbnails && thumbnails.scrollWidth > thumbnails.clientWidth + 1;
+      stripControls.forEach((control) => { control.hidden = !overflowing; });
+    };
+    updateStripControls();
+    window.addEventListener('resize', updateStripControls);
+  }
+</script>

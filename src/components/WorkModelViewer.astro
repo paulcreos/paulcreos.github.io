@@ -6,10 +6,11 @@ interface Props {
   environmentImage: string;
   backgroundImage: string;
   alt: string;
-  poster: ImageMetadata;
+  poster?: ImageMetadata;
+  cameraOrbit?: string;
 }
 
-const { src, environmentImage, backgroundImage, alt, poster } = Astro.props;
+const { src, environmentImage, backgroundImage, alt, poster, cameraOrbit } = Astro.props;
 ---
 
 <model-viewer
@@ -19,7 +20,7 @@ const { src, environmentImage, backgroundImage, alt, poster } = Astro.props;
   environment-image={environmentImage}
   exposure="0.75"
   camera-controls
-  camera-orbit="0deg 90deg auto"
+  camera-orbit={cameraOrbit ?? '0deg 90deg auto'}
   min-camera-orbit="-30deg 60deg auto"
   max-camera-orbit="30deg 120deg auto"
   min-field-of-view="25deg"
@@ -28,7 +29,7 @@ const { src, environmentImage, backgroundImage, alt, poster } = Astro.props;
   interaction-prompt-threshold="2000"
   style={`--work-model-background: url('${backgroundImage}')`}
 >
-  <Image
+  {poster && <Image
     slot="poster"
     class="work-model-poster"
     src={poster}
@@ -36,7 +37,7 @@ const { src, environmentImage, backgroundImage, alt, poster } = Astro.props;
     widths={[768, 1024, 1440]}
     sizes="(min-width: 50rem) 48rem, calc(100vw - 2rem)"
     loading="eager"
-  />
+  />}
 </model-viewer>
 
 <script
