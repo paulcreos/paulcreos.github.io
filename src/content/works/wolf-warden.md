@@ -7,7 +7,7 @@ author: Paul Creos
 workCategory: roundels
 materials:
   - Birch
-dimensions: Ø 24 cm × 24 mm
+dimensions: Ø 215 mm × 22 mm
 edition: 1/50
 availability: in_progress
 cover: images/wolf-listing-centered-v2-1.png
