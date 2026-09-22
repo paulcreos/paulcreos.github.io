@@ -24,10 +24,6 @@ import articlesHero from '../../images/about-nemeton-hooded.jpg';
         <CategoryNav />
       </header>
       <div class="articles-collection-body articles-collection-body--latest">
-        <div class="articles-listing-intro">
-          <h2>Latest articles</h2>
-          <p>Reflections on Druidry, symbolism, mythology, and the living relationship between people and the natural world.</p>
-        </div>
         <ArticleList compact />
       </div>
     </section>
@@ -39,21 +35,5 @@ import articlesHero from '../../images/about-nemeton-hooded.jpg';
     width: 100%;
     max-width: none;
     box-sizing: border-box;
-  }
-  .articles-listing-intro {
-    width: min(100% - clamp(2rem, 4vw, 4rem), 60rem);
-    margin: 0 auto clamp(2rem, 4vw, 3.5rem);
-    text-align: center;
-  }
-  .articles-listing-intro h2 {
-    margin: 0;
-    color: #fff;
-    font: 400 clamp(2rem, 3vw, 3rem)/1.2 var(--font-display);
-  }
-  .articles-listing-intro p {
-    max-width: 48rem;
-    margin: 1rem auto 0;
-    color: rgb(248 244 237 / .76);
-    font: 400 clamp(1rem, 1.35vw, 1.25rem)/1.5 var(--font-reading);
   }
 </style>
