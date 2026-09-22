@@ -87,6 +87,7 @@ const sortedArticles = articles
     padding-bottom: clamp(3.5rem, 7vw, 6rem);
   }
   .article-list-row {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -111,6 +112,8 @@ const sortedArticles = articles
     align-self: flex-start;
   }
   .article-list-row .category-badge {
+    position: relative;
+    z-index: 2;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
@@ -125,6 +128,7 @@ const sortedArticles = articles
     display: block;
     margin-top: .35rem;
     color: #d8b48e;
+    opacity: .66;
     font: 400 .75rem/1.35 var(--font-ui);
     text-align: center;
     white-space: nowrap;
@@ -143,6 +147,12 @@ const sortedArticles = articles
     text-overflow: ellipsis;
     text-decoration: none;
     transition: color .2s ease, padding-left .2s ease;
+  }
+  .article-list-row-title::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
   }
   .article-list-row-copy {
     flex: 1 1 auto;
