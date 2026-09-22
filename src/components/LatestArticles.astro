@@ -1,0 +1,127 @@
+---
+import { getCollection } from 'astro:content';
+import { CATEGORY_META } from '../data/categories';
+
+const latestArticles = (await getCollection('articles'))
+  .filter((article) => !article.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5);
+---
+
+<section class="latest-articles-section" aria-labelledby="latest-articles-title">
+  <header class="latest-articles-header">
+    <h2 id="latest-articles-title">Latest articles</h2>
+  </header>
+  <div class="latest-articles-inner">
+    <nav class="latest-articles-list" aria-label="Latest articles">
+      {latestArticles.map((article) => {
+        const meta = CATEGORY_META[article.data.category];
+
+        return (
+          <div class="latest-article-row">
+            <a href={`/category/${article.data.category}`} class={`category-badge ${meta.classes}`}>
+              {meta.label}
+            </a>
+            <a href={`/articles/${article.id}`}>{article.data.title}</a>
+          </div>
+        );
+      })}
+    </nav>
+    <a class="latest-articles-button" href="/articles">All articles</a>
+  </div>
+</section>
+
+<style>
+  .latest-articles-section {
+    color: #fff;
+    background: radial-gradient(circle at 15% 15%, rgb(110 137 84 / .24), transparent 27rem), radial-gradient(circle at 86% 80%, rgb(77 106 75 / .2), transparent 25rem), linear-gradient(135deg, #26362c, #1e2c25 65%, #27372d);
+  }
+  .latest-articles-header {
+    display: flex;
+    justify-content: center;
+    padding: clamp(3rem, 6vw, 6rem) var(--layout-gutter) clamp(1.5rem, 2.5vw, 3rem);
+    text-align: center;
+  }
+  h2 {
+    margin: 0;
+    color: #fff;
+    font: 400 clamp(2rem, 3vw, 3rem)/1.2 var(--font-display);
+  }
+  .latest-articles-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100% - clamp(2rem, 4vw, 4rem), 60rem);
+    margin-inline: auto;
+    padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  }
+  .latest-articles-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid rgb(216 180 142 / .4);
+  }
+  .latest-article-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(216 180 142 / .4);
+  }
+  .latest-article-row a {
+    color: #d8b48e;
+    font: 400 clamp(1rem, 1.35vw, 1.35rem)/1.35 var(--font-reading);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color .2s ease, padding-left .2s ease;
+  }
+  .latest-article-row .category-badge {
+    flex: 0 0 6.5rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: .24rem .7rem;
+    border: 1px solid rgb(216 180 142 / .72);
+    background: transparent;
+    color: #d8b48e;
+    font: 400 .8rem/1.35 var(--font-ui);
+    text-align: center;
+    text-transform: none;
+  }
+  .latest-article-row > a:last-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .latest-article-row > a:last-child:hover,
+  .latest-article-row > a:last-child:focus-visible {
+    padding-left: .5rem;
+    color: #fff;
+  }
+  .latest-articles-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    margin-top: clamp(1.5rem, 2vw, 2rem);
+    padding: .65rem 1.15rem;
+    border: 1px solid rgb(236 227 210 / .6);
+    border-radius: 999px;
+    background: #d8b88b;
+    color: #1d281f !important;
+    font: 400 .9rem/1.35 var(--font-ui) !important;
+    letter-spacing: .045em;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .latest-articles-button:hover,
+  .latest-articles-button:focus-visible {
+    background: #e6cba3;
+    color: #1d281f !important;
+    transform: translateY(-1px);
+  }
+  @media (max-width: 32rem) {
+    .latest-article-row { gap: .6rem; }
+    .latest-article-row .category-badge { flex-basis: 5.5rem; padding-inline: .35rem; }
+  }
+</style>
