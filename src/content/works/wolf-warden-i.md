@@ -1,6 +1,6 @@
 ---
-title: Wolf Warden
-description: Wolf Warden is a circular wood relief built around presence, strength, and protection. An alert wolf with an open jaw and focused eye is framed by continuous Celtic-inspired knotwork, a heavy chain, and symbolic pendants, giving the piece the character of a guardian at the edge of a protected place.
+title: Wolf Warden I
+description: Wolf Warden I is a circular wood relief built around presence, strength, and protection. An alert wolf with an open jaw and focused eye is framed by continuous Celtic-inspired knotwork, a heavy chain, and symbolic pendants, giving the piece the character of a guardian at the edge of a protected place.
 date: 2026-08-07
 createdDate: 2026-08-07
 author: Paul Creos
@@ -26,7 +26,7 @@ media:
 draft: false
 ---
 
-Wolf Warden is a circular wood relief built around presence, strength, and protection. The wolf is shown alert and unrestrained, with an open jaw and focused eye that give the piece a sense of immediate movement.
+Wolf Warden I is a circular wood relief built around presence, strength, and protection. The wolf is shown alert and unrestrained, with an open jaw and focused eye that give the piece a sense of immediate movement.
 
 The animal is framed by continuous Celtic-inspired knotwork, creating a protective boundary around the central figure. A heavy chain crosses the wolf's neck and connects it to two symbolic pendants: a triangular knot and a small triskele. Together, these elements give the relief the character of a guardian standing at the edge of a protected place.
 
@@ -40,6 +40,6 @@ The circular knotwork has no obvious beginning or end. It creates a feeling of c
 
 The chain adds another layer of meaning. It can suggest restraint, responsibility, or a bond to the place being guarded. At the same time, the wolf remains powerful and alert, so the chain feels less like captivity than a symbol of an oath or duty.
 
-Wolf Warden is ultimately about the kind of protection that remains watchful without losing its connection to instinct. It stands at the boundary, aware of what lies beyond it, and ready to defend what has been placed in its care.
+Wolf Warden I is ultimately about the kind of protection that remains watchful without losing its connection to instinct. It stands at the boundary, aware of what lies beyond it, and ready to defend what has been placed in its care.
 
 May this guardian bring strength to the place where it finds its home, and remind those who meet it to remain watchful, grounded, and true to their instinct.
