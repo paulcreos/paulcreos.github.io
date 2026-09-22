@@ -33,13 +33,7 @@ const sortedArticles = articles
           <a href={`/category/${article.data.category}`} class={`category-badge ${meta.classes}`}>
             {meta.label}
           </a>
-          <div class="article-list-row-copy">
-            <a class="article-list-row-title" href={url}>{article.data.title}</a>
-            <p>{article.data.description}</p>
-          </div>
-          <time datetime={article.data.date.toISOString()}>
-            {article.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-          </time>
+          <a class="article-list-row-title" href={url}>{article.data.title}</a>
         </article>
       );
     }
@@ -111,39 +105,24 @@ const sortedArticles = articles
     text-align: center;
     text-transform: none;
   }
-  .article-list-row-copy {
+  .article-list-row-title {
     flex: 1 1 auto;
     min-width: 0;
-  }
-  .article-list-row-title {
-    display: block;
     overflow: hidden;
+    color: #d8b48e;
     font: 400 clamp(1rem, 1.35vw, 1.35rem)/1.35 var(--font-reading);
     white-space: nowrap;
     text-overflow: ellipsis;
-  }
-  .article-list-row-copy p {
-    margin: .25rem 0 0;
-    overflow: hidden;
-    color: rgb(236 227 210 / .72);
-    font: 400 .85rem/1.4 var(--font-ui);
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    text-decoration: none;
+    transition: color .2s ease, padding-left .2s ease;
   }
   .article-list-row-title:hover,
   .article-list-row-title:focus-visible {
     color: #fff;
     padding-left: .5rem;
   }
-  .article-list-row > time {
-    flex: 0 0 auto;
-    margin-left: auto;
-    font: 400 .8rem/1.35 var(--font-ui);
-    white-space: nowrap;
-  }
   @media (max-width: 40rem) {
     .article-list-row { gap: .6rem; }
     .article-list-row .category-badge { flex-basis: 5.5rem; padding-inline: .35rem; }
-    .article-list-row > time { display: none; }
   }
 </style>
