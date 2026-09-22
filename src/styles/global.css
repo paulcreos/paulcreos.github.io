@@ -2039,7 +2039,8 @@ a.work-shop-link.is-private:hover {
 .articles-page .article-content > p:first-of-type::first-letter {
   float: left;
   margin: 0.08em 0.14em -0.08em 0;
-  color: var(--cta-wood);
+  color: #e4bd80;
+  opacity: 0.66;
   font-size: 4.6em;
   font-weight: 500;
   line-height: 0.72;
