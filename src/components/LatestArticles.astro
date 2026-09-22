@@ -1,11 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
-import { CATEGORY_META } from '../data/categories';
-
-const latestArticles = (await getCollection('articles'))
-  .filter((article) => !article.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 5);
+import ArticleList from './ArticleList.astro';
 ---
 
 <section class="latest-articles-section" aria-labelledby="latest-articles-title">
@@ -13,20 +7,7 @@ const latestArticles = (await getCollection('articles'))
     <h2 id="latest-articles-title">Latest articles</h2>
   </header>
   <div class="latest-articles-inner">
-    <nav class="latest-articles-list" aria-label="Latest articles">
-      {latestArticles.map((article) => {
-        const meta = CATEGORY_META[article.data.category];
-
-        return (
-          <div class="latest-article-row">
-            <a href={`/category/${article.data.category}`} class={`category-badge ${meta.classes}`}>
-              {meta.label}
-            </a>
-            <a href={`/articles/${article.id}`}>{article.data.title}</a>
-          </div>
-        );
-      })}
-    </nav>
+    <ArticleList compact limit={5} />
     <a class="latest-articles-button" href="/articles">All articles</a>
   </div>
 </section>
@@ -55,48 +36,9 @@ const latestArticles = (await getCollection('articles'))
     margin-inline: auto;
     padding-bottom: clamp(3.5rem, 7vw, 6rem);
   }
-  .latest-articles-list {
-    display: flex;
-    flex-direction: column;
+  .latest-articles-inner :global(.article-list--compact) {
     width: 100%;
-    border-top: 1px solid rgb(216 180 142 / .4);
-  }
-  .latest-article-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    min-width: 0;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgb(216 180 142 / .4);
-  }
-  .latest-article-row a {
-    color: #d8b48e;
-    font: 400 clamp(1rem, 1.35vw, 1.35rem)/1.35 var(--font-reading);
-    white-space: nowrap;
-    text-decoration: none;
-    transition: color .2s ease, padding-left .2s ease;
-  }
-  .latest-article-row .category-badge {
-    flex: 0 0 6.5rem;
-    box-sizing: border-box;
-    margin: 0;
-    padding: .24rem .7rem;
-    border: 1px solid rgb(216 180 142 / .72);
-    background: transparent;
-    color: #d8b48e;
-    font: 400 .8rem/1.35 var(--font-ui);
-    text-align: center;
-    text-transform: none;
-  }
-  .latest-article-row > a:last-child {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .latest-article-row > a:last-child:hover,
-  .latest-article-row > a:last-child:focus-visible {
-    padding-left: .5rem;
-    color: #fff;
+    padding-bottom: 0;
   }
   .latest-articles-button {
     display: inline-flex;
@@ -119,9 +61,5 @@ const latestArticles = (await getCollection('articles'))
     background: #e6cba3;
     color: #1d281f !important;
     transform: translateY(-1px);
-  }
-  @media (max-width: 32rem) {
-    .latest-article-row { gap: .6rem; }
-    .latest-article-row .category-badge { flex-basis: 5.5rem; padding-inline: .35rem; }
   }
 </style>

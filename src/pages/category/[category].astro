@@ -35,9 +35,20 @@ const meta = CATEGORY_META[category];
         </div>
         <CategoryNav />
       </header>
-      <div class="articles-collection-body">
-      <ArticleList category={category} />
+      <div class="articles-collection-body articles-collection-body--latest">
+      <ArticleList category={category} compact />
       </div>
     </section>
   </main>
 </Layout>
+
+<style is:global>
+  .category-page .articles-collection-body--latest {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+  }
+  .category-page .articles-collection-body--latest .article-list--compact {
+    gap: 0;
+  }
+</style>
