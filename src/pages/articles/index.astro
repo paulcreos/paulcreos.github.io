@@ -23,9 +23,17 @@ import articlesHero from '../../images/about-nemeton-hooded.jpg';
         </div>
         <CategoryNav />
       </header>
-      <div class="articles-collection-body">
+      <div class="articles-collection-body articles-collection-body--latest">
       <ArticleList compact />
       </div>
     </section>
   </main>
 </Layout>
+
+<style is:global>
+  .articles-collection-body--latest {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+  }
+</style>
