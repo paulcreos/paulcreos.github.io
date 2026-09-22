@@ -125,6 +125,11 @@ const latestArticles = (await getCollection('articles'))
   .latest-article-row a {
     padding: 0;
   }
+  .latest-article-row > a:last-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .latest-article-row > a:hover,
   .latest-article-row > a:focus-visible {
     padding-left: .5rem;
