@@ -30,9 +30,14 @@ const sortedArticles = articles
     if (compact) {
       return (
         <article class="article-list-row">
-          <a href={`/category/${article.data.category}`} class={`category-badge ${meta.classes}`}>
-            {meta.label}
-          </a>
+          <div class="article-list-row-meta">
+            <a href={`/category/${article.data.category}`} class={`category-badge ${meta.classes}`}>
+              {meta.label}
+            </a>
+            <time datetime={article.data.date.toISOString()}>
+              {article.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+            </time>
+          </div>
           <div class="article-list-row-copy">
             <a class="article-list-row-title" href={url}>{article.data.title}</a>
             <p>{article.data.description}</p>
@@ -97,9 +102,11 @@ const sortedArticles = articles
     color: #d8b48e;
     text-decoration: none;
   }
-  .article-list-row .category-badge {
-    align-self: flex-start;
+  .article-list-row-meta {
     flex: 0 0 6.5rem;
+    align-self: flex-start;
+  }
+  .article-list-row .category-badge {
     box-sizing: border-box;
     margin: 0;
     padding: .24rem .7rem;
@@ -108,6 +115,14 @@ const sortedArticles = articles
     font: 400 .8rem/1.35 var(--font-ui);
     text-align: center;
     text-transform: none;
+  }
+  .article-list-row-meta time {
+    display: block;
+    margin-top: .35rem;
+    color: #d8b48e;
+    font: 400 .75rem/1.35 var(--font-ui);
+    text-align: center;
+    white-space: nowrap;
   }
   .article-list-row-title {
     display: block;
@@ -138,6 +153,7 @@ const sortedArticles = articles
   }
   @media (max-width: 40rem) {
     .article-list-row { gap: .6rem; }
-    .article-list-row .category-badge { flex-basis: 5.5rem; padding-inline: .35rem; }
+    .article-list-row-meta { flex-basis: 5.5rem; }
+    .article-list-row .category-badge { padding-inline: .35rem; }
   }
 </style>
