@@ -98,6 +98,7 @@ const sortedArticles = articles
     text-decoration: none;
   }
   .article-list-row .category-badge {
+    align-self: flex-start;
     flex: 0 0 6.5rem;
     box-sizing: border-box;
     margin: 0;
@@ -111,7 +112,7 @@ const sortedArticles = articles
   .article-list-row-title {
     display: block;
     overflow: hidden;
-    color: #d8b48e !important;
+    color: #fff !important;
     font: 400 clamp(1rem, 1.35vw, 1.35rem)/1.35 var(--font-reading);
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -125,14 +126,14 @@ const sortedArticles = articles
   .article-list-row-copy p {
     margin: .25rem 0 0;
     overflow: hidden;
-    color: rgb(236 227 210 / .72);
-    font: 400 .85rem/1.4 var(--font-ui);
+    color: #d8b48e;
+    font: 400 .9rem/1.4 var(--font-reading);
     text-overflow: ellipsis;
     white-space: nowrap;
   }
   .article-list-row-title:hover,
   .article-list-row-title:focus-visible {
-    color: #fff !important;
+    color: #d8b48e !important;
     padding-left: .5rem;
   }
   @media (max-width: 40rem) {
