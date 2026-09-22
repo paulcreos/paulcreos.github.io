@@ -93,6 +93,7 @@ const sortedArticles = articles
     min-width: 0;
     padding: 1rem 0;
     border-bottom: 1px solid rgb(216 180 142 / .4);
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
   .article-list-row:first-child {
     border-top: 1px solid rgb(216 180 142 / .4);
@@ -103,10 +104,14 @@ const sortedArticles = articles
     text-decoration: none;
   }
   .article-list-row-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 0 0 6.5rem;
     align-self: flex-start;
   }
   .article-list-row .category-badge {
+    width: 100%;
     box-sizing: border-box;
     margin: 0;
     padding: .24rem .7rem;
@@ -123,6 +128,11 @@ const sortedArticles = articles
     font: 400 .75rem/1.35 var(--font-ui);
     text-align: center;
     white-space: nowrap;
+  }
+  .article-list-row:hover {
+    border-color: rgb(120 168 116 / .72);
+    background: rgb(17 39 28 / .36);
+    box-shadow: 0 .8rem 2rem rgb(4 17 10 / .18);
   }
   .article-list-row-title {
     display: block;
