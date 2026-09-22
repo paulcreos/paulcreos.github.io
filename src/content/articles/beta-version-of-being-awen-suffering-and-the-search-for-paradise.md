@@ -1,7 +1,7 @@
 ---
 title: "The Beta Version of Being: Awen, Suffering, and the Search for Paradise"
 description: A reflection on suffering, Awen, and the possibility of a world in which consciousness does not have to pay for its existence with pain.
-date: 2026-09-22
+date: 2026-06-21
 author: Paul Creos
 category: druidry
 draft: false

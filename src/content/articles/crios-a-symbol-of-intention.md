@@ -1,7 +1,7 @@
 ---
 title: "Críos — A Symbol of Intention"
 description: Explore Críos, a personal symbol of four rotating cells and an eight-pointed star, expressing freedom of movement and a commitment to pure intention.
-date: 2026-09-18
+date: 2026-05-01
 author: Paul Creos
 category: symbolism
 draft: false

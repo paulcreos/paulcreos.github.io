@@ -1,7 +1,7 @@
 ---
 title: "The Path of the Modern Druid: From Ancient Roots to a Living Personal Practice"
 description: Explore modern Druidry as a personal practice rooted in nature, inner awareness, healing, and a living relationship with the Earth.
-date: 2026-07-29
+date: 2026-03-20
 author: Paul Creos
 category: druidry
 ---

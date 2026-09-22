@@ -1,7 +1,7 @@
 ---
 title: "The Wolf in Celtic Mythology and Tradition — Between the Wild and the Human"
 description: The wolf in Irish and Celtic tradition as a creature of thresholds—between wilderness and settlement, animal and human, danger and protection.
-date: 2026-09-21
+date: 2026-08-01
 author: Paul Creos
 category: symbolism
 draft: false
