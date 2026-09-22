@@ -1,18 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ForestSpiritLayer from '../../components/forest/ForestSpiritLayer.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import CategoryNav from '../../components/CategoryNav.astro';
 import { PAGE_META } from '../../data/page-meta';
+import articlesHero from '../../images/about-nemeton-hooded.jpg';
 ---
 
 <Layout {...PAGE_META.articles}>
   <main id="main-content" class="articles-page">
     <section class="articles-collection" aria-labelledby="all-articles">
-      <header class="home-works-header articles-hero">
-        <h1 id="all-articles">Latest articles</h1>
-        <p class="section-intro">
-          Articles on Druidry, Wyda, symbolism, and the connections between mythology, history, and traditions across cultures.
-        </p>
+      <header
+        class="home-works-header articles-hero"
+        style={`--articles-hero-image: url(${articlesHero.src})`}
+      >
+        <ForestSpiritLayer />
+        <div class="articles-hero-copy">
+          <h1 id="all-articles">Articles</h1>
+          <p class="section-intro">
+            Articles on Druidry, Wyda, symbolism, and the connections between mythology, history, and traditions across cultures.
+          </p>
+        </div>
         <CategoryNav />
       </header>
       <div class="articles-collection-body">
