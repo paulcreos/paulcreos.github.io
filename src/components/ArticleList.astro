@@ -5,9 +5,10 @@ import { CATEGORY_META, type Category } from '../data/categories';
 interface Props {
   limit?: number;
   category?: Category;
+  compact?: boolean;
 }
 
-const { limit, category } = Astro.props;
+const { limit, category, compact = false } = Astro.props;
 let articles = (await getCollection('articles')).filter(
   (article) => !article.data.draft,
 );
@@ -21,10 +22,24 @@ const sortedArticles = articles
   .slice(0, limit ?? undefined);
 ---
 
-<div class="article-list">
+<div class:list={['article-list', { 'article-list--compact': compact }]}>
   {sortedArticles.map((article) => {
     const meta = CATEGORY_META[article.data.category];
     const url = `/articles/${article.id}`;
+
+    if (compact) {
+      return (
+        <article class="article-list-row">
+          <a href={`/category/${article.data.category}`} class={`category-badge ${meta.classes}`}>
+            {meta.label}
+          </a>
+          <a class="article-list-row-title" href={url}>{article.data.title}</a>
+          <time datetime={article.data.date.toISOString()}>
+            {article.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+          </time>
+        </article>
+      );
+    }
 
     return (
       <article class="article-card">
@@ -57,3 +72,63 @@ const sortedArticles = articles
     <p class="empty-state">No articles found.</p>
   )}
 </div>
+
+<style>
+  .article-list--compact {
+    display: flex;
+    flex-direction: column;
+    width: min(100% - clamp(2rem, 4vw, 4rem), 60rem);
+    margin-inline: auto;
+    padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  }
+  .article-list-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(216 180 142 / .4);
+  }
+  .article-list-row:first-child {
+    border-top: 1px solid rgb(216 180 142 / .4);
+  }
+  .article-list-row > a,
+  .article-list-row > time {
+    color: #d8b48e;
+    text-decoration: none;
+  }
+  .article-list-row .category-badge {
+    flex: 0 0 6.5rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: .24rem .7rem;
+    border: 1px solid rgb(216 180 142 / .72);
+    background: transparent;
+    font: 400 .8rem/1.35 var(--font-ui);
+    text-align: center;
+    text-transform: none;
+  }
+  .article-list-row-title {
+    min-width: 0;
+    overflow: hidden;
+    font: 400 clamp(1rem, 1.35vw, 1.35rem)/1.35 var(--font-reading);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .article-list-row-title:hover,
+  .article-list-row-title:focus-visible {
+    color: #fff;
+    padding-left: .5rem;
+  }
+  .article-list-row > time {
+    flex: 0 0 auto;
+    margin-left: auto;
+    font: 400 .8rem/1.35 var(--font-ui);
+    white-space: nowrap;
+  }
+  @media (max-width: 40rem) {
+    .article-list-row { gap: .6rem; }
+    .article-list-row .category-badge { flex-basis: 5.5rem; padding-inline: .35rem; }
+    .article-list-row > time { display: none; }
+  }
+</style>
