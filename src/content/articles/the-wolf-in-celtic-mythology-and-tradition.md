@@ -88,6 +88,8 @@ A boundary need not be only a fence, a gate or the edge of a forest. It can be i
 
 ## Wolf Guardian: Wood at the Threshold
 
+![Wolf Warden I, a hand-carved wooden roundel with a wolf, chain, pendants, and Celtic knotwork](./images/wolf-warden-i.jpg)
+
 
 The Wolf Guardian roundels grew from this interpretation. They are not reproductions of an archaeological original, nor a claim that historical Druids used precisely this image. This is contemporary work, drawing on older stories, experience of nature and personal symbolism. Each is made as an individual work rather than as a reproduction of an identical design. The wolf remains recognisable, but the wood, the grain, the surface, the details and the character of every piece are allowed to become their own. One may look calm and still; another may carry tension in its eyes and ears tuned to a sound from the forest. Wood is a natural material for such a symbol. It comes from a tree that itself stood between worlds: between roots below the earth, a trunk in the human realm and a crown exposed to wind and light. When it becomes a guardian, it need not lose its memory. It can reveal it. Each guardian therefore belongs to a particular threshold: a doorway, a garden, a place of quiet, the beginning of a new stage of life. And, eventually, to a particular keeper. I believe that when a work is created with a clean intention, a connection already begins to exist between it and the person who will one day keep it. The meeting simply has not happened yet.
 

@@ -11,10 +11,14 @@
             "id": "b610018d9afb99db",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "works/raven-warden-i.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "raven-warden-i"
             }
           }
         ]
@@ -92,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "works/wolf-warden-i.md",
+                "file": "works/wolf-warden.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for wolf-warden-i"
+              "title": "Backlinks for wolf-warden"
             }
           },
           {
@@ -111,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "works/wolf-warden-i.md",
+                "file": "works/wolf-warden.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from wolf-warden-i"
+              "title": "Outgoing links from wolf-warden"
             }
           },
           {
@@ -154,13 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "works/wolf-warden-i.md",
+                "file": "works/wolf-warden.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of wolf-warden-i"
+              "title": "Outline of wolf-warden"
             }
           }
         ]
@@ -183,6 +187,20 @@
   },
   "active": "b610018d9afb99db",
   "lastOpenFiles": [
+    "works/owl-sentinel-i.md",
+    "works/images/owl-sentinel-i-cover.jpg",
+    "works/images/raven-sigil-cover-v1-framed-v1_4x.png",
+    "works/images/raven-sigil-cover-v1-framed-v1_2x_upscayl_2x_remacri-4x.png",
+    "works/images/raven-sigil-cover-v1-framed-v1_2x.png",
+    "works/images/raven-sigil-cover-v1-framed-v1_upscayl_2x_remacri-4x.png",
+    "works/images/raven-warden-photo-01b.jpg.jpg",
+    "works/images/raven-warden-photo-01b.jpg",
+    "works/images/raven-warden-photo-02.jpg.jpg",
+    "works/images/raven-warden-photo-02.jpg",
+    "works/images/raven-warden-photo-01.jpg.jpg",
+    "articles/the-owl-in-celtic-tradition.md",
+    "works/raven-warden-i.md",
+    "works/wolf-warden.md",
     "works/wolf-warden-i.md",
     "articles/the-raven-in-celtic-mythology-and-tradition.md",
     "articles/beta-verzia-bytia-awen-utrpenie-a-hladanie-raja.md",

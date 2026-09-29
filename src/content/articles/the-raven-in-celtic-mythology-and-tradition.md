@@ -1,7 +1,7 @@
 ---
 title: "The Raven in Celtic Mythology and Tradition — Between Battlefield, Memory, and the Otherworld"
 description: The raven in Celtic tradition as a bird of thresholds, battle, prophecy, protection, memory, and the uncertain boundary between the living world and the Otherworld.
-date: 2026-09-22
+date: 2026-09-21
 author: Paul Creos
 category: symbolism
 draft: false
@@ -100,6 +100,8 @@ The raven teaches a practical kind of patience. It watches before it acts. It re
 Its wisdom is not escape from darkness. It is the ability to remain conscious within it.
 
 ## Raven Warden: A Contemporary Wooden Guardian
+
+![Raven Warden II, a hand-carved wooden roundel with a raven, triskele, and Celtic knotwork border](./images/raven-warden-ii.jpg)
 
 This is where the historical image becomes my own work. **Raven Warden** is a contemporary wooden interpretation of the raven as observer, messenger, and guardian of memory. It stands as a new piece shaped by older stories, the living landscape, and personal symbolism, rather than as a reconstruction of an archaeological object or a claim about an exact historical Druid image.
 

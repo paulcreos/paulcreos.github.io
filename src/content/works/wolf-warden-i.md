@@ -10,17 +10,17 @@ materials:
 dimensions: Ø 215 mm × 22 mm
 edition: 1/50
 availability: in_progress
-cover: images/wolf-listing-centered-v2-1.png
-coverAlt: Wolf Guardian relief displayed against a dark brown wood background
+cover: images/wolf-warden-is.jpg
+coverAlt: Wolf Warden I thumbnail showing the carved wolf roundel and Celtic knotwork border
 media:
   - type: image
-    src: images/wolf-listing-centered-v2-1.png
-    alt: Wolf Guardian relief displayed against a dark brown wood background
+    src: images/wolf-warden-i.jpg
+    alt: Wolf Warden I wooden roundel with a carved wolf, chain, pendants, and Celtic knotwork border
     caption: Front view of the finished relief.
   - type: model
     src: /models/wolf.glb?v=20260811-1
     alt: Interactive 3D model of Wolf Guardian
-    thumbnail: images/wolf-listing-centered-v2-1.png
+    thumbnail: images/wolf-warden-is.jpg
     environmentImage: /environments/monochrome_studio_02_1k.hdr
     backgroundImage: /model-backgrounds/brown-wood.webp
 draft: false

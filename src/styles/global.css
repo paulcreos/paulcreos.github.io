@@ -3005,11 +3005,11 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
   transform: none;
 }
 .collection-section .work-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   width: min(1600px, calc(100% - clamp(2rem, 4vw, 4rem)));
   max-width: 1600px;
   margin-inline: auto;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 28rem));
   justify-content: center;
   gap: clamp(1rem, 1.5vw, 2rem);
   background: transparent;
@@ -3022,6 +3022,8 @@ button, input, select, textarea, .category-nav, .work-shop-cta {
 }
 
 .collection-section .work-card {
+  flex: 0 1 28rem;
+  width: min(100%, 28rem);
   min-width: 0;
   border: 0;
   background: radial-gradient(circle at 15% 15%, rgb(110 137 84 / 0.24), transparent 27rem), radial-gradient(circle at 86% 80%, rgb(77 106 75 / 0.2), transparent 25rem), linear-gradient(135deg, #26362c, #1e2c25 65%, #27372d);
