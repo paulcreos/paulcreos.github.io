@@ -19,11 +19,6 @@ export const PAGE_META = {
     description:
       'Explore original wood reliefs by Paul Creos, shaped from solid timber through CNC preparation, hand carving, pyrography, and symbolic detail.',
   },
-  gallery: {
-    title: 'Gallery of Handcrafted Wood Reliefs',
-    description:
-      'Explore a gallery of handcrafted wood reliefs by Paul Creos, shaped from ash and birch with carving, pyrography, and symbolic detail.',
-  },
   legal: {
     title: 'Legal & Privacy Information',
     description:

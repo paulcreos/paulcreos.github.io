@@ -7,7 +7,7 @@ import { WORK_CATEGORY_KEYS } from '../data/work-categories';
 export const GET: APIRoute = async () => {
   const articles = (await getCollection('articles')).filter((article) => !article.data.draft);
   const works = (await getCollection('works')).filter((work) => !work.data.draft);
-  const staticPaths = ['', '/gallery', '/articles', '/works', '/about', '/legal'];
+  const staticPaths = ['', '/articles', '/works', '/about'];
   const categoryPaths = CATEGORY_KEYS.map((category) => `/category/${category}`);
   const workCategoryPaths = WORK_CATEGORY_KEYS.map((category) => `/works/category/${category}`);
   const articlePaths = articles.map((article) => `/articles/${article.id}`);
