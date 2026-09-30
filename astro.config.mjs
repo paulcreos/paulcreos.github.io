@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://paulcreos.com',
   redirects: {
+    '/articles/crios-a-symbol-of-intention': '/articles/imhein-the-seal-of-the-druids-journey',
     '/category/druidism': '/category/druidry',
     '/category/products': '/category/works',
     '/contact': '/about',
