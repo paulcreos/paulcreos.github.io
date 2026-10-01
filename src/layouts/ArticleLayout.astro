@@ -1,6 +1,5 @@
 ---
 import Layout from './Layout.astro';
-import CelticDivider from '../components/CelticDivider.astro';
 import SmallDivider from '../components/SmallDivider.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE } from '../config/site';
@@ -41,8 +40,8 @@ const articleSchema = {
   modifiedTime={frontmatter.updatedDate}
 >
   <main id="main-content" class="articles-page">
-    <article class="article-shell">
-      <header class="article-header">
+    <article class="article-shell article-detail-shell">
+      <header class="article-header article-detail-header">
         <Breadcrumbs items={[
           { label: 'Home', href: '/' },
           { label: 'Articles', href: '/articles' },
@@ -52,7 +51,6 @@ const articleSchema = {
           },
           { label: frontmatter.title },
         ]} />
-        <CelticDivider tone="forest" class="breadcrumb-divider" />
         <h1>{frontmatter.title}</h1>
         <p class="article-meta">
           <time datetime={frontmatter.date.toISOString()}>
@@ -65,7 +63,6 @@ const articleSchema = {
           {frontmatter.author && <span> · {frontmatter.author}</span>}
         </p>
       </header>
-      <CelticDivider tone="forest" class="article-divider" />
       <div class="article-content">
         <slot />
         {availability && (

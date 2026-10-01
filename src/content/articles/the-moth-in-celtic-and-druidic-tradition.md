@@ -101,6 +101,8 @@ The moth offers a quieter image of transformation than the butterfly. It does no
 
 ## Moth and Wood
 
+![Moth I, a hand-carved wooden roundel with an ornate moth, central triskele, and Celtic knotwork border](./images/moth-i.jpg)
+
 Wood may seem distant from such a delicate creature. It is solid, heavy, and marked by years of growth, while the moth is light, mobile, and short-lived. That contrast gives the image its strength.
 
 Wood preserves time. The moth embodies a moment of change.

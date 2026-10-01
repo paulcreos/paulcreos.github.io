@@ -1,0 +1,35 @@
+<button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 18V6M7.5 10.5 12 6l4.5 4.5" />
+  </svg>
+</button>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.back-to-top');
+
+  if (button) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let animationFrame: number | undefined;
+
+    const updateVisibility = () => {
+      animationFrame = undefined;
+      button.hidden = window.scrollY < Math.max(360, window.innerHeight * 0.6);
+    };
+
+    const requestVisibilityUpdate = () => {
+      if (animationFrame !== undefined) return;
+      animationFrame = window.requestAnimationFrame(updateVisibility);
+    };
+
+    button.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion.matches ? 'auto' : 'smooth',
+      });
+    });
+
+    window.addEventListener('scroll', requestVisibilityUpdate, { passive: true });
+    window.addEventListener('resize', requestVisibilityUpdate, { passive: true });
+    updateVisibility();
+  }
+</script>
