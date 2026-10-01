@@ -5,7 +5,7 @@ export const SITE = {
     'Discover handcrafted wood reliefs by Paul Creos, where CNC precision, hand carving, pyrography, and druidic symbolism bring wood to life.',
   url: 'https://paulcreos.com',
   email: 'paulcreos@gmail.com',
-  locale: 'en',
+  locale: 'en_GB',
   author: 'Paul Creos',
   // Set to false to restore the complete homepage.
   underConstruction: false,

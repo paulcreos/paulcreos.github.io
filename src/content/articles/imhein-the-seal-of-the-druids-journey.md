@@ -10,11 +10,11 @@ draft: false
 
 # IMHEIN — The Seal of the Druid’s Journey
 
-Some symbols come to us from the past. Others are born in the present and gather meaning as we learn to see what they contain. **IMHEIN** is an original contemporary symbol: the seal of the philosophy of *Imthecht in Druad*, the Druid’s Journey.
+IMHEIN is a symbol I made for the philosophy I call *Imthecht in Druad*, the Druid’s Journey. It is a contemporary symbol, but it does not look like one.
 
-It first appeared to me as an image. Only later did its structure begin to reveal a language of its own, one of movement, presence, freedom, and responsibility. What emerged was not a map showing the correct road, but a personal seal of commitment to the intention with which any road is chosen.
+It came to me as an image, and it looked like a prehistoric artefact. Its lines were not perfect, yet it commanded respect. I was drawn to its archaic look, to the fact that it is built from equal parts, and to the feeling it gave me of commitment: something that binds and holds together. Only later did I begin to see in its structure a language of movement, presence, freedom and responsibility.
 
-IMHEIN does not tell you which path to take. It asks something more difficult of you:
+IMHEIN does not tell you which path to take. It asks one thing of you:
 
 **Whatever path you choose, choose it with pure intention.**
 
@@ -24,22 +24,22 @@ IMHEIN does not tell you which path to take. It asks something more difficult of
 
 ## Four Cells, One Symbol
 
-At first glance, IMHEIN may appear to be a single interwoven knot, yet its structure is simple. It is made of **four identical cells**.
+IMHEIN is made of four identical cells. Each one is the same shape, turned a quarter of a turn around a common centre. None is more important than the others, and none contains the whole symbol on its own. The seal only exists when all four are together.
 
-Each cell is the same form, turned by a quarter of a turn around a common centre. None is more important than the others, and none contains the complete symbol on its own. IMHEIN emerges only when all four enter into relationship.
+Because the cells are turned, the seal seems to move. But it has no arrow, and nothing in it points to a destination.
 
-The turning gives the seal a sense of movement, but a movement without destination. The seal turns, yet it points nowhere. Around its centre, something unexpected appears.
+The cells are also woven into each other, and this is what holds the seal together. It was the hardest part to draw. As a whole, the form was easy to put on paper. The difficulty was in the joins, in every place where two paths cross and one has to pass over the other. I kept redrawing those crossings. A shape that is simple from a distance turned out to be demanding up close.
 
 ![The four identical cells of IMHEIN in distinct warm tones, each a quarter-turn of the last](images/imhein-cells.jpg)
 
 <!-- PHOTO 2: four cells in distinct colours (formerly crios-cells-v1.jpg) -->
-<!-- OPTIONAL PHOTO 2b: one cell on its own next to its four rotations, to let readers verify they are identical -->
+<!-- OPTIONAL PHOTO 2b: one cell on its own next to its four rotations, so readers can see they are identical -->
 
 ## The Star Within
 
-At the centre of IMHEIN is a star with four softly curved points. It is not drawn as a separate shape or placed on top of the design. It arises from the negative space held between the four surrounding cells. Take away their relationship and the star disappears.
+At the centre of IMHEIN there is a star with four softly curved points. I did not draw it as a separate shape. It appears in the space the four cells leave between them, and if you take the cells away, it is gone.
 
-This matters. The centre is not an object to possess, but a presence made visible by what surrounds it. It is there, unmistakably, yet it is made of nothing but openness.
+The centre is empty, yet it is the part of the seal you see first.
 
 ![The central star of IMHEIN highlighted in light sand, with the surrounding cells muted](images/imhein-star.jpg)
 
@@ -47,43 +47,33 @@ This matters. The centre is not an object to possess, but a presence made visibl
 
 ## Eight Directions
 
-I do not count eight points on the drawing. I read eight directions in the way the centre opens, and this is a symbolic reading, not a geometric claim.
+I do not count eight points on the drawing. The eight directions are a reading I give to the way the centre opens, and it is a symbolic one.
 
-We live in three-dimensional space, with six fundamental directions of movement:
-
-**forward and backward, left and right, up and down.**
-
-Three axes, each opening in two ways, give us six directions through space. Human existence also unfolds through time. Time is a single axis, but like every axis it opens two ways: **the past and the future.**
-
-Six directions through space and two through time make eight. At their meeting point stands the human being, not outside the seal, looking in, but at its centre.
+We move through space in six directions: forward and backward, left and right, up and down. We also live in time, which gives two more, the past and the future. Six through space and two through time make eight. At the place where they meet stands the human being, not looking at the seal from outside, but at its centre.
 
 ## The Centre Is Now
 
-Between past and future is the only place from which we can choose: **Now.**
+The place from which we can choose is the one between past and future: now.
 
-We can remember the past, learn from it, and carry it with us. We can imagine the future, hope for it, fear it, prepare for it, and try to shape it. Neither, however, is where a decision can be made. Every act begins in the present.
-
-And yet the present cannot be held. The moment we try to grasp it, it has already become the past. The centre of IMHEIN is therefore not a place in which to remain, but the point from which movement continually begins.
+We can remember the past and learn from it. We can imagine the future, hope for it, fear it, prepare for it. But no decision can be made in either of them. Every act begins in the present. And the present cannot be held; as soon as we try to grasp it, it has already become the past. That is why the centre of IMHEIN is empty. It is not a place to stay in. It is where each movement begins.
 
 ## All Paths Remain Open
 
-IMHEIN contains no arrow. No path is marked as the correct one. From the centre, you may move forward or return, rise or descend, turn left or right, carry something from the past, or step towards a future that does not yet exist.
+No path in IMHEIN is marked as the right one. From the centre you can go forward or go back, rise or descend, turn left or right, carry something from the past with you, or step towards a future that does not exist yet.
 
-**All paths remain open.** Freedom would mean little if the seal chose on our behalf. To stand at its centre is to accept both the possibility of movement and the responsibility that comes before it. IMHEIN does not sanctify a particular destination. It returns our attention to the intention from which the first step is taken.
+Freedom would mean little if the seal chose for us. To stand at its centre is to accept that any movement is possible, and that the responsibility for it comes before the first step.
 
 ## Purity of Intention
 
-We often judge decisions by their consequences. But consequences belong to the future, and the future is a direction we cannot yet experience.
+We usually judge decisions by their consequences. But consequences belong to the future, and we cannot see the future yet.
 
-A choice made with the best understanding available to us may lead somewhere unexpected. It may fail. Later, we may learn what we could not have known at the moment of decision. IMHEIN therefore asks for neither certainty nor perfection. It asks for honesty at the instant in which a choice is born:
+A choice made with the best understanding I have may still lead somewhere unexpected. It may fail. Later I may learn something I could not have known at the time. So IMHEIN does not ask for certainty or perfection. It asks for honesty at the moment a choice is made:
 
 **What is my intention?**
 
-This is where freedom acquires responsibility. A pure intention does not guarantee a painless road or a flawless outcome. It means that the movement begins without deliberate deceit, towards others or towards oneself.
+A pure intention does not guarantee an easy road or a good outcome. It means that I begin without deliberate deceit, towards others or towards myself. It also means that I cannot choose a path I know will harm others and still call my intention pure, because knowingly causing harm already contains a deceit.
 
-Nor is it a licence. A path that knowingly harms others cannot be walked with pure intention, because harm done knowingly already contains a deceit. Freedom to choose any path and responsibility for how it is begun belong together.
-
-IMHEIN is a personal commitment to the purity of intention with which I choose my path, not a promise that I will always choose the right one.
+IMHEIN is my personal commitment to the purity of intention with which I choose my path. It is not a promise that I will always choose rightly.
 
 ## Before I Understood It
 
@@ -91,7 +81,9 @@ Around the winter solstice of 2025, a form appeared to me during meditation agai
 
 In my memory, the image has an almost planetary quality: darkness, a vast red world or presence behind it, and in front of it the form that would later become IMHEIN.
 
-I drew what I remembered, then began to reconstruct it more precisely. As I worked, its inner geometry gradually revealed itself: four identical rotating cells, the open space between them, and the star emerging at their centre. The image came first; my understanding followed.
+The form was very dark, like the smouldering glow of embers in a hearth. It looked like an ancient artefact, but also like a hologram projected into space. The lines were not perfect, and it still commanded respect.
+
+I drew what I remembered, then redrew the interweaving of the knots again and again, until it settled into the symmetry I had seen in the meditation. As I worked, its inner geometry gradually revealed itself: four identical rotating cells, the open space between them, and the star emerging at their centre. The image came first; my understanding followed.
 
 ![Artistic reconstruction of IMHEIN as a glowing red seal on a dark, planet-like surface](images/imhein-planetary.png)
 
@@ -101,21 +93,27 @@ I drew what I remembered, then began to reconstruct it more precisely. As I work
 
 **Pronunciation:** **IM-hine** — /ˈɪm.haɪn/. Say *im* as in *him* without the initial *h*, followed by *hine*, rhyming with *mine*. The stress falls on the first syllable, and the *h* between the two syllables is clearly pronounced. It is not pronounced *eye-m-hine*.
 
-The name is a modern coinage. It is **not a historical Celtic or Old Irish word**, and it is not presented as an ancient name recovered from tradition. Like the seal itself, it was created in the present.
+The name is a modern coinage. It is **not a historical Celtic or Old Irish word**, and I do not present it as an ancient name recovered from tradition. Like the seal, it was made in the present.
 
-Its inner reading begins with **I-mhein**: the English *I*, the self who stands at the centre and accepts responsibility for the choice — *my intention, my commitment, my path*. The opening *Im-* also ties the name to *Imthecht in Druad*, the philosophy to which the seal belongs.
+I read it as **I-mhein**: the English *I*, the self who stands at the centre and takes responsibility for the choice (*my intention, my commitment, my path*). The opening *Im-* also ties the name to *Imthecht in Druad*, the philosophy the seal belongs to.
 
-In spelling, the name echoes the Irish *méin*, a word associated with mind, disposition, or nature. The resemblance is one of spelling, not of sound, and it is not a claim of historical etymology. IMHEIN does not borrow antiquity to justify itself; its meaning comes from the symbol, the philosophy, and the commitment it names.
+In spelling, the name echoes the Irish *méin*, a word associated with mind, disposition or nature. The resemblance is one of spelling, not of sound, and I am not claiming it as an etymology. IMHEIN does not borrow antiquity to justify itself. Its meaning comes from the symbol, the philosophy and the commitment it names.
 
 ## The Seal of the Druid’s Journey
 
-*Imthecht in Druad* is a phrase built from Old Irish words, meaning “the journey of the druid”. It is my own name for this philosophy, and IMHEIN is its seal. It may be carved into wood, printed on paper, or accompany objects that leave my workshop. But it is more than a logo or a maker’s mark.
+*Imthecht in Druad* is built from Old Irish words and means “the journey of the druid”. It is my own name for this philosophy, and IMHEIN is its seal.
 
-It is a personal seal of commitment to pure intention. An object will eventually leave my hands and continue along a path I cannot foresee, with someone I may not yet know. I cannot determine that path, but I can determine how it begins: with attention, honesty, and a clear intention in the present moment.
+I use it every day. It is my logo, either on its own or placed in front of the name Paul Creos. It is printed on the shipping boxes that carry my work to other people, it is on a large stamp, and it is in my watermarks. I also print it and cut it on a plotter as a personal symbol, and it is on my druid’s drum, a frame drum. So it is more than a logo or a maker’s mark. It is something I live with.
 
-That is the promise carried by IMHEIN. Not that every road will be right, but that no road should be chosen carelessly.
+![The IMHEIN seal on my druid’s frame drum](images/imhein.jpg)
 
-*May you always find your centre,*
-*may every path remain open to you,*
-*and whatever path you choose,*
+<!-- PHOTO 5: the seal on the druid's frame drum (to be added); adjust the alt text to match the photo. If you remove the photo for now, delete this line. -->
+
+A box leaves my workshop and goes along a path I cannot foresee, to someone I may not yet know. I cannot decide where it goes, but I can decide how it begins: with attention, honesty and a clear intention in the present moment.
+
+That is what IMHEIN stands for. I cannot promise that every road will be right, only that none should be chosen carelessly.
+
+*May you always find your centre,*  
+*may every path remain open to you,*  
+*and whatever path you choose,*  
 *may you walk it with pure intention.*

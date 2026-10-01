@@ -8,7 +8,7 @@ workCategory: roundels
 materials:
   - Birch
 dimensions: Ø 215 mm × 22 mm
-edition: 1/50
+edition: unique work
 availability: in_progress
 cover: images/wolf-warden-is.jpg
 coverAlt: Wolf Warden I thumbnail showing the carved wolf roundel and Celtic knotwork border
