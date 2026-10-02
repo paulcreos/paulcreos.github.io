@@ -105,9 +105,9 @@ In spelling, the name echoes the Irish *méin*, a word associated with mind, dis
 
 I use it every day. It is my logo, either on its own or placed in front of the name Paul Creos. It is printed on the shipping boxes that carry my work to other people, it is on a large stamp, and it is in my watermarks. I also print it and cut it on a plotter as a personal symbol, and it is on my druid’s drum, a frame drum. So it is more than a logo or a maker’s mark. It is something I live with.
 
-![The IMHEIN seal on my druid’s frame drum](images/imhein.jpg)
+![Imhein symbol hand-painted on a shamanic drum](images/imhein-drum.jpg)
 
-<!-- PHOTO 5: the seal on the druid's frame drum (to be added); adjust the alt text to match the photo. If you remove the photo for now, delete this line. -->
+<!-- PHOTO 5: IMHEIN hand-painted on a 55 cm frame drum; the symbol measures approximately 29 cm. -->
 
 A box leaves my workshop and goes along a path I cannot foresee, to someone I may not yet know. I cannot decide where it goes, but I can decide how it begins: with attention, honesty and a clear intention in the present moment.
 
