@@ -21,6 +21,10 @@ media:
     src: images/raven-warden-iis.jpg
     alt: Close view of Raven Warden II showing the carved raven, central triskele, and interlaced border
     caption: Detail view of the carved relief.
+  - type: image
+    src: images/raven-warden-i-ang.jpg
+    alt: Angled view of Raven Warden II showing the carved raven, triskele, and Celtic knotwork border
+    caption: Angled view of Raven Warden II.
 draft: false
 ---
 
