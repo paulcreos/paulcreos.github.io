@@ -1,8 +1,8 @@
 export const PAGE_META = {
   home: {
-    title: 'Handcrafted Wood Reliefs & Druidic Art',
+    title: 'Solid wood reliefs',
     description:
-      'Discover handcrafted wood reliefs by Paul Creos, where CNC precision, hand carving, pyrography, and druidic symbolism bring wood to life.',
+      'Discover solid wood reliefs by Paul Creos, combining CNC precision, hand carving, pyrography, and symbolic detail.',
   },
   about: {
     title: 'Craft, Symbol & the Modern Druid Path',
