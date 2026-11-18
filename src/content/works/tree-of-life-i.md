@@ -7,9 +7,9 @@ author: Paul Creos
 workCategory: roundels
 materials:
   - Birch
-dimensions: Ø 220 mm × 22 mm
+dimensions: Ø 220 mm × 22 mm (approx. 8.7" × 0.86")
 edition: unique work
-availability: in_progress
+availability: private
 cover: images/tree-of-life-is.jpg
 coverAlt: Tree of Life I thumbnail showing a carved tree with roots, leaves, and Celtic knotwork
 media:
@@ -34,10 +34,8 @@ The wider symbolism of trees in Celtic landscapes, stories, sacred groves, kings
 
 The tree does not leave the earth in order to reach the sky. Its height is made possible by its roots, and its crown remains connected to the trunk that carries the weight of both. In this sense, the roundel becomes an image of balance: ancestry and possibility, darkness and light, stillness and continual growth.
 
-Ash gives the relief a living surface. The grain moves beneath the carving, while the lighter raised forms catch the light against the darker ground. Small variations in the wood and the marks of the tools keep the image connected to the making process.
+Birch gives the relief a warm, tactile surface. The grain moves beneath the carving, while the lighter raised forms catch the light against the darker ground. Tool marks and natural wood texture keep the finished piece directly tied to the making process.
 
-Tree of Life I is a symbolic work rather than a reconstruction of a historical object. It can be read as a sign of continuity, a reminder of belonging, or a quiet image of renewal. Its meaning also changes with the place where it is displayed: beside an entrance, it may speak of rooted protection; in a room of reflection, of memory and inner growth.
+Tree of Life I anchors a space with a sense of continuity, balance, and quiet renewal. Displayed near an entrance or in a room of reflection, it brings the enduring presence of the forest into the home.
 
 The roundel belongs to a private collection.
-
-May this tree remind those who meet it that every new branch is carried by older roots, and that reaching towards the sky begins with remaining present in the earth.

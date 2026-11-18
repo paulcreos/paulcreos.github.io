@@ -7,7 +7,7 @@ author: Paul Creos
 workCategory: roundels
 materials:
   - Birch
-dimensions: Ø 215 mm × 22 mm
+dimensions: Ø 215 mm × 22 mm (approx. 8.5" × 0.86")
 edition: unique work
 availability: private
 cover: images/owl-sentinel-is.jpg
@@ -38,18 +38,14 @@ The circular form creates a sense of enclosure without closing the image in comp
 
 The border also gives the owl a place to stand. It separates the quiet centre from the world beyond it, while allowing the carved figure to remain connected to the pattern surrounding it. The result is less an image of domination than a symbol of attention held in balance.
 
-This is a personal symbolic composition rather than a reproduction of a historical artefact. The Celtic-inspired elements draw on the visual language of interlaced lines and circular forms, while the owl's meaning comes from a meeting between Welsh tradition, later folklore, observation of the natural world, and my own interpretation.
+The Celtic knotwork border establishes an unbroken frame around the owl, anchoring the composition. The design draws upon traditional interlacing and Welsh folklore, translated into the tactile language of solid carved birch.
 
 ## Wood, darkness, and perception
 
-Wood brings another layer of time to the image. The tree carries its history in grain, rings, knots, and changes in density. After carving, those traces remain part of the work. The owl's night is therefore held in a material that once grew toward light.
+Wood brings another layer of time to the image. The tree carries its history in grain, rings, knots, and changes in density, all of which remain integral to the finished piece.
 
-The darker surface allows the raised carving to emerge gradually. Details become visible through contrast, as if the image were being discovered rather than presented all at once. This suits the owl's character. Its knowledge is quiet and partial; it asks for patience from the person who looks at it.
+The darker surface allows the raised carving to emerge with shifting light. Details reveal themselves gradually through contrast, mirroring the owl's observant character.
 
-Owl Sentinel I can belong beside a doorway, in a study, near a sleeping space, or at a personal place of reflection. Wherever it stands, it can serve as a reminder to listen before acting, to accept periods of uncertainty, and to trust the kind of perception that develops in silence.
+Owl Sentinel I is suited to a study, an entrance, or a personal space of reflection—serving as a calm, watchful presence attuned to silence.
 
-## The quiet eye
-
-The owl does not promise an easy path through darkness. It offers something more useful: the possibility of seeing clearly while the way ahead is still incomplete.
-
-Owl Sentinel I is a guardian of that moment. It watches without noise, holds its place within the circle, and reminds us that not everything important reveals itself in daylight.
+The roundel belongs to a private collection.

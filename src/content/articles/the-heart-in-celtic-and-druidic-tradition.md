@@ -95,18 +95,9 @@ We should therefore avoid claiming that ancient Druids used the modern heart sha
 
 This distinction leaves the symbol meaningful while giving modern practice a more honest foundation.
 
-Modern Druidry can work with the heart as a centre of relationship and responsibility. It can ask whether a person's actions remain connected with what they claim to value. It can treat emotion as information without allowing every passing feeling to become a command.
+Modern Druidry approaches the heart as a centre of relationship and accountability. It asks whether our daily actions remain aligned with what we claim to value, treating emotion as valuable information rather than an impulsive command.
 
-The heart asks practical questions:
-
-- What am I willing to protect?
-- Which relationships give my life its centre?
-- What promise am I prepared to carry?
-- Where do I feel at home?
-- What remains alive in me after loss?
-- Is my way of living in harmony with the land I depend on?
-
-This work reaches beyond sentiment. The heart can require boundaries, endurance, and difficult honesty.
+This work reaches beyond easy sentiment. The heart demands endurance, personal boundaries, and the courage to discern what we are truly willing to protect and stand for.
 
 ## The Heart and Anam Cara
 
@@ -126,17 +117,7 @@ That distinction matters especially in craft. A new work gains strength when it 
 
 ## The Heart in Modern Druidic Practice
 
-The heart can accompany work with:
-
-- love and close relationships,
-- grief and remembrance,
-- personal courage,
-- protection of family and home,
-- ancestral connection,
-- decisions that require loyalty,
-- balance between feeling and reason,
-- commitment to a place or community,
-- and a return to personal values.
+In modern craft and practice, the heart serves as a focal point for deeper commitments: courage, remembrance, and the enduring bonds of kin and community. It balances feeling with clarity, grounding our intentions in everyday action.
 
 A heart may stand at an altar, near a doorway, beside a bed, or in a space for reflection. It may remember one person, mark a new commitment, or represent a promise made to oneself.
 

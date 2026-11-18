@@ -7,9 +7,9 @@ author: Paul Creos
 workCategory: roundels
 materials:
   - Ash
-dimensions: Ø 220 mm × 22 mm
+dimensions: Ø 220 mm × 22 mm (approx. 8.7" × 0.86")
 edition: unique work
-availability: in_progress
+availability: private
 cover: images/raven-fires.jpg
 coverAlt: Raven Fire thumbnail showing a carved raven with a central triskele and Celtic knotwork border
 media:
@@ -28,16 +28,12 @@ Raven Fire presents the raven in a different register from the darker wardens. I
 
 At the centre of the bird, the triskele becomes a bright internal mark. Its three turning arms suggest movement through change, while the raven holds the sign in the span of its wings. Around them, the continuous knotwork border creates a boundary that feels active rather than defensive, like a circle of heat around a protected fire.
 
-The raven’s place in Celtic tradition as a witness, messenger, creature of battle, memory, and the Otherworld is explored in [The Raven in Celtic Mythology and Tradition — Between Battlefield, Memory, and the Otherworld](/articles/the-raven-in-celtic-mythology-and-tradition). Raven Fire is a contemporary symbolic interpretation shaped by those older images and by the colour, grain, and presence of the wood; it is not a reconstruction of a historical artefact.
+The raven’s place in Celtic tradition as a witness, messenger, and creature of memory is explored in [The Raven in Celtic Mythology and Tradition — Between Battlefield, Memory, and the Otherworld](/articles/the-raven-in-celtic-mythology-and-tradition). Raven Fire interprets these ancient themes through the living grain of ash and the warmth of fire-toned pigment.
 
 ## The fire within the boundary
 
-The contrast between the pale carving and the red field gives this roundel a more vivid character than a quiet guardian. The raven seems to carry a message already in motion. It can be read as a keeper of inner fire: the attention that survives uncertainty, the memory that remains warm, and the courage to look directly at change.
+The contrast between the pale carving and the red field gives this roundel an energetic character. The raven carries an alert, living presence: a keeper of inner warmth, focus, and the courage to meet transformation directly.
 
-Ash gives the raised forms a living texture. Feather marks, claws, the triskele, and the knotwork catch the light differently across the surface, allowing the image to shift between emblem and animal presence. The circular form keeps that energy contained without making it feel imprisoned.
+Ash gives the raised forms a living texture. Feather marks, claws, the triskele, and the knotwork catch the light across the surface, moving naturally with shifting daylight.
 
-Raven Fire may belong beside an entrance, a hearth, or a place where creative work begins. Its meaning grows through the relationship between the carved raven and the space that receives it.
-
-The roundel belongs to a private collection.
-
-May this raven keep a clear flame through changing seasons, carrying memory forward without letting its fire go dark.
+The roundel belongs to a private collection. Placed near a hearth, an entrance, or a dedicated workspace, it anchors the room with quiet warmth and vitality.

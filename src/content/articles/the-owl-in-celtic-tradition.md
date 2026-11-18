@@ -27,18 +27,7 @@ The owl therefore represents the loss of an old place, a change of identity, and
 
 ## The Owl as a Creature of the Threshold
 
-The owl moves between day and night, sleep and waking, silence and sound. It appears when people begin to lose their certainty and their ordinary senses no longer seem sufficient.
-
-In this sense, it can represent:
-
-- the boundary between light and darkness,
-- the passage from the familiar into the unknown,
-- the inner world of dreams,
-- a period of personal transformation,
-- connection with memory and ancestors,
-- and the ability to notice what remains hidden.
-
-Celtic ideas of the Otherworld do not always describe a solid wall between human beings and supernatural powers. The Otherworld could draw near through particular places, times, dreams, or seasons. The owl fits naturally into this symbolism. It sees through darkness and moves without noise, as if it knows a path that a human being is still trying to find.
+The owl moves between day and night, sleep and waking, silence and sound. It appears when ordinary landmarks fade and conventional perception no longer suffices. In Celtic tradition, the owl marks thresholds: the passage from the familiar into the unknown, the subtle realm of dreams, and the quiet continuity of ancestral memory. It sees through darkness and moves without sound, navigating depths where ordinary sight falters.
 
 ## Wisdom That Comes Through Silence
 
@@ -70,22 +59,10 @@ The owl reminds us that we do not need to be constantly loud, active, or visible
 
 There is no surviving handbook of ancient Druidic symbolism that defines the meaning of the owl. We therefore cannot claim that every modern association belonged to an original Celtic belief system.
 
-In modern Druidic practice, however, the owl often represents:
-
-- inner vision,
-- the ability to listen to silence,
-- work with dreams,
-- periods of uncertainty and transformation,
-- acceptance of one's own shadow,
-- connection with memory and ancestors,
-- and the protection of personal and nocturnal spaces.
-
-The owl may accompany a person who cannot yet see the whole path ahead. It does not offer simple answers. It teaches patience and attention. The truth sometimes appears only after we stop looking for an immediate solution.
+In modern Druidic practice, the owl serves as a companion through periods of uncertainty. It embodies inner vision, the capacity to listen to silence, and an honest engagement with the unconscious. It accompanies the person who cannot yet perceive the full path ahead, asking for patience and calm attention rather than hasty conclusions.
 
 ## Conclusion
 
-The owl in Celtic tradition is connected with transformation, silence, and thresholds. In the story of Blodeuwedd, it becomes the form of a woman who has lost her original place in the world. In later folklore, its call evokes death and misfortune. In modern Druidic symbolism, it can become a companion through dreams, inner vision, and periods of change.
+The owl in Celtic tradition is bound to transformation, silence, and thresholds. In the tale of Blodeuwedd, it carries the weight of exiled identity; in later folklore, its night call evokes endings and fateful change. In modern practice, it offers a grounded symbol of quiet sight.
 
-The owl shows us that darkness is not empty. We can find our way through it when we learn to listen, observe, and trust our own perception.
-
-Not everything reveals itself in daylight. Some answers arrive only when we stop running from the dark.
+It reminds us that darkness holds its own clarity. When we stop demanding immediate answers, we begin to perceive what daylight easily conceals.

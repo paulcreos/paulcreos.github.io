@@ -85,19 +85,9 @@ It does not force the hidden thing into the light. It shows us that the hidden t
 
 ## The Moth in Modern Druidic Symbolism
 
-There is no surviving Druidic handbook that defines the moth's meaning. The modern practitioner must work from observation, folklore, literature, and personal experience.
+Without ancient handbooks to prescribe its meaning, modern practitioners understand the moth through observation, folklore, and personal practice. The moth accompanies quieter transitions: navigating periods of uncertainty, engaging with dreamwork, and cultivating the patience required while a new identity takes shape in shadow.
 
-In that practice, the moth can accompany:
-
-- a transition between stages of life,
-- work with dreams and the unconscious,
-- remembrance of the dead,
-- acceptance of one's shadow,
-- a search for direction in uncertainty,
-- the patient growth of a new identity,
-- and the need to distinguish true guidance from dangerous attraction.
-
-The moth offers a quieter image of transformation than the butterfly. It does not usually arrive in bright daylight. It carries the colours of bark, soil, smoke, and dusk. Its transformation is connected with concealment, persistence, and the courage to continue without being seen.
+The moth offers an unhurried archetype of transformation. It carries the muted earth-tones of bark, soil, and smoke, reminding us that genuine growth often takes place away from the glare of public visibility.
 
 ## Moth and Wood
 

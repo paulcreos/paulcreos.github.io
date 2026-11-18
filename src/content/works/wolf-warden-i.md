@@ -7,7 +7,7 @@ author: Paul Creos
 workCategory: roundels
 materials:
   - Birch
-dimensions: Ø 215 mm × 22 mm
+dimensions: Ø 215 mm × 22 mm (approx. 8.5" × 0.86")
 edition: unique work
 availability: in_progress
 cover: images/wolf-warden-is.jpg
@@ -34,12 +34,8 @@ The wider meaning of the wolf as a creature of boundaries and uncertain threshol
 
 ## The guardian at the threshold
 
-This is a personal symbolic composition rather than a reproduction of a historical artefact. The wolf represents vigilance, instinct, and the readiness to respond to what approaches. Its expression is deliberately intense: this is not a distant or passive animal portrait, but a presence confronting the unknown.
+The wolf embodies vigilance, instinct, and readiness. Its expression is direct and focused, confronting what lies beyond the boundary with steady intensity.
 
-The circular knotwork has no obvious beginning or end. It creates a feeling of continuity and enclosure, while also separating the wolf from the space beyond the relief. The triskele introduces movement into the composition, and the triangular pendant provides a smaller point of balance beneath the force of the wolf's head.
+The circular knotwork creates an unbroken boundary around the wolf, balanced by the turning movement of the triskele and the triangular pendant below. The chain represents an oath or accepted responsibility—a bond to the territory and the home it is placed to guard.
 
-The chain adds another layer of meaning. It can suggest restraint, responsibility, or a bond to the place being guarded. At the same time, the wolf remains powerful and alert, so the chain feels less like captivity than a symbol of an oath or duty.
-
-Wolf Warden I is ultimately about the kind of protection that remains watchful without losing its connection to instinct. It stands at the boundary, aware of what lies beyond it, and ready to defend what has been placed in its care.
-
-May this guardian bring strength to the place where it finds its home, and remind those who meet it to remain watchful, grounded, and true to their instinct.
+Wolf Warden I stands at the threshold, grounded in instinct and dedicated to the protection of its space. Placed near an entrance or study, it brings a protective and deliberate presence to the home.

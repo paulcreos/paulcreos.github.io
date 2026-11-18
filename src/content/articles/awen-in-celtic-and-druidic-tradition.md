@@ -77,18 +77,9 @@ Creative insight can work in the same way. It can open a new direction, disturb 
 
 Awen is often imagined as a flow: breath, wind, water, or a current moving through the poet.
 
-The image of a current is useful because inspiration cannot be held like an object. It can arrive suddenly, build slowly, or disappear for a time. A person cannot force it into existence, though they can prepare a place where it might be noticed.
+The image of a current is instructive because inspiration cannot be grasped like a physical possession. It can arrive suddenly, build gradually, or withdraw for a time. While we cannot force it into existence, we can cultivate the discipline and stillness necessary to notice it.
 
-That preparation may involve:
-
-- returning to a piece of work after the first excitement has passed,
-- listening before explaining,
-- allowing an unfinished idea to remain open,
-- spending time in nature or silence,
-- accepting mistakes as part of the process,
-- and paying attention to what keeps returning.
-
-Awen may arrive as a flash of revelation or as the slow current that carries a person through work, practice, and ordinary days.
+That preparation rarely relies on sudden epiphany. More often, it requires returning to the work after initial excitement has faded, listening patiently before explaining, and allowing an unfinished thought to breathe until its true shape emerges. Awen carries the maker through sustained labour and ordinary days.
 
 ## Awen and Druidic Thought
 
@@ -114,17 +105,11 @@ These meanings are modern interpretations layered onto an older word. They can b
 
 ## Awen in Modern Practice
 
-Modern Druids may speak or sing **Awen** as an invocation before ritual, poetry, music, teaching, or creative work. The word can open a space and remind the practitioner that inspiration is received through relationship rather than owned as a private possession.
+Modern Druids may speak or sing **Awen** as an invocation before ritual, poetry, music, teaching, or carving. The word clears an inner space, reminding the maker that true insight is received through attention and relationship rather than claimed as private property.
 
-Working with Awen can begin with questions:
+Working with Awen is fundamentally an exercise in receptivity. It asks us to notice what intuition registers before the intellect can name it, and to observe which quiet, recurring themes in our lives are seeking physical expression.
 
-- What is trying to come into form through me?
-- What do I sense before I can explain it?
-- Which silence in my life is waiting for a voice?
-- Where has an unexpected event changed my direction?
-- What kind of attention would allow new understanding to arrive?
-
-Awen can be present while writing, singing, carving, gardening, cooking, repairing, or making a difficult decision. The activity may look nothing like art. What matters is the quality of attention brought to it.
+Awen lives as much in the physical craft—carving, shaping, writing, or tending the soil—as in abstract contemplation. What matters is the unhurried quality of presence brought to the hands.
 
 The practice is less about waiting passively for a perfect idea and more about becoming available to what work, land, and experience may reveal.
 

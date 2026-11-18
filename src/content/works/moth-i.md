@@ -7,7 +7,7 @@ author: Paul Creos
 workCategory: roundels
 materials:
   - Birch
-dimensions: Ø 215 mm × 22 mm
+dimensions: Ø 215 mm × 22 mm (approx. 8.5" × 0.86")
 edition: unique work
 availability: private
 cover: images/moth-is.jpg
@@ -28,16 +28,14 @@ Moth I brings a nocturnal presence into the roundel series. The moth opens its w
 
 The image is held within a continuous knotwork border. Rather than separating the moth from the world around it, the circle suggests a threshold: the quiet space between darkness and illumination, stillness and movement, concealment and revelation. The moth belongs to that edge because it is drawn towards light without ever becoming a creature of the day.
 
-The wider symbolism of the moth in Celtic and Druidic tradition is explored in [The Moth in Celtic and Druidic Tradition](/articles/the-moth-in-celtic-and-druidic-tradition). This roundel is a contemporary symbolic work inspired by the living night, older stories, and the language of carved wood, not a reconstruction of a historical artefact.
+The wider symbolism of the moth in Celtic and Druidic tradition is explored in [The Moth in Celtic and Druidic Tradition](/articles/the-moth-in-celtic-and-druidic-tradition). The composition translates these quiet associations into the living language of relief woodwork.
 
 ## Drawn towards the light
 
-The pale raised carving stands against the darker ground, allowing the wings to appear gradually as the light changes across the surface. Interlaced details give the moth a second layer of movement: the natural body remains recognisable, while the patterns suggest memory, transformation, and a path that cannot be followed in a straight line.
+The pale raised carving stands against the darker ground, allowing the wings to appear gradually as light shifts across the surface. Interlaced details lend the moth subtle movement: the natural form remains recognisable, framed by knotwork that speaks of quiet transformation.
 
-Wood gives the image its own history. Grain, tool marks, and variations in the surface remain visible around the delicate wings and the central triskele. The moth is therefore not only a symbol of night; it is also held in material that once grew towards the sun.
+Wood gives the image its physical depth. Grain, tool marks, and variations in the birch surface remain visible around the delicate wings and central triskele.
 
-Moth I can belong in a quiet room, beside a reading place, or near an entrance where changing light makes the relief shift throughout the day. It offers a reminder that transformation is often gradual, and that what seeks the light may first need to learn the language of darkness.
+Moth I is suited to a quiet room or reading space, where natural ambient light reveals the detail of the relief throughout the day.
 
 The roundel belongs to a private collection.
-
-May this moth keep its delicate course through shadow and brightness, and remind those who meet it that change can begin with a small and persistent attraction towards the light.
